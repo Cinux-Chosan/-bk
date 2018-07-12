@@ -1,1 +1,19 @@
-{{yield}}
+
+{{#with activeGoods as |goods|}}
+  <div local-class="left">
+    <ul local-class="thumbnailList">
+      {{#each goods.goodsInfo.thumbnailList as |thumbnail|}}
+        <li local-class="thumbnail" {{action "thumbnailHoverOn" thumbnail on="mouseEnter"}}>
+          <img src={{thumbnail}} alt="">
+        </li>
+      {{/each}}
+    </ul>
+    <div local-class="preview">
+      <img src={{or activeThumbnail goods.goodsInfo.thumbnailList.firstObject}} local-class="previewImg" alt="">
+    </div>
+  </div>
+
+  <div local-class="right">
+    rigth
+  </div>
+{{/with}}

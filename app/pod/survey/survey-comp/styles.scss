@@ -1,5 +1,6 @@
 .root{
   background: #e4ce83 url(../img/Nview.jpg) no-repeat fixed top center;
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -12,6 +13,7 @@
   padding-left: 70px;
   padding-right: 70px;
   box-sizing: border-box;
+  margin-bottom: 80px;
 }
 
 .surveyHead{
@@ -24,6 +26,8 @@
     color: #39a4db;
     font-size: 24px;
     margin-bottom: 30px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 20px;
   }
 }
 
@@ -36,6 +40,9 @@
     .desc{
       font-weight: bold;
       font-size: 1em;
+      &:first-letter {
+        text-transform: capitalize;
+      }
     }
     .surveyOpts{
       line-height: 20px;
@@ -68,4 +75,11 @@
       padding-left: 14px;
     }
   }
+}
+
+.surveyFooter{
+  width: 100%;
+  border-top: 1px dashed #eee;
+  padding: 30px;
+  text-align: center;
 }
