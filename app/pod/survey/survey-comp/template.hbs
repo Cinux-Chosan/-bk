@@ -1,0 +1,47 @@
+<div class="surveyCompMain">
+  {{#with activeSurvey as |sv|}}
+  <div local-class="surveyHead">
+    <h1>
+      {{sv.title}}
+    </h1>
+
+    <div local-class="surveyBody">
+      {{#each sv.items as |item index|}}
+      <div local-class="surveyItem">
+        <div local-class="desc">
+          {{add 1 index}}、{{{item.desc}}}
+        </div>
+        {{#if (eq item.type "group")}}
+          {{#each item.opts as |subItem subIndex|}}
+            <div local-class="subItem">
+            <div local-class="desc">
+              {{add 1 index}}.{{add 1 subIndex}} {{{subItem.desc}}}
+            </div>
+            <ul local-class="surveyOpts" class="clearfix">
+              {{#each subItem.opts as |opt|}}
+                <li local-class="surveyOpt {{if (gte subItem.opts.length 5) 'largeOpts'}}">
+                  <label for="">
+                    {{i-check type=subItem.type name=subItem.desc}} {{opt}}
+                  </label>
+                </li>
+              {{/each}}
+            </ul>
+            </div>
+          {{/each}}
+        {{else}}
+          <ul local-class="surveyOpts" class="clearfix">
+            {{#each item.opts as |opt|}}
+              <li local-class="surveyOpt {{if (gte item.opts.length 5) 'largeOpts'}}">
+                <label for="">
+                  {{i-check type=item.type name=item.desc}} {{opt}}
+                </label>
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/with}}
+</div>

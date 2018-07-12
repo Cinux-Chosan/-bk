@@ -1,0 +1,71 @@
+.root{
+  background: #e4ce83 url(../img/Nview.jpg) no-repeat fixed top center;
+  overflow: hidden;
+}
+
+.surveyCompMain{
+  width: 920px;
+  margin: auto;
+  padding-top: 0;
+  margin-top: 68px;
+  background: #fff;
+  padding-left: 70px;
+  padding-right: 70px;
+  box-sizing: border-box;
+}
+
+.surveyHead{
+  line-height: 20px;
+  text-align: center;
+  width: 96%;
+  padding: 40px 2% 30px;
+  h1{
+    font-weight: bold;
+    color: #39a4db;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+
+.surveyBody{
+  text-align: left;
+  font-size: 18px;
+  .surveyItem{
+    margin-top: 20px;
+    .desc{
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .surveyOpts{
+      line-height: 20px;
+      margin-top: 16px;
+      .surveyOpt{
+        &, label{
+          cursor: pointer !important;
+        }
+        label{
+          width: 100%;
+          display: block;
+          padding: 8px 18px;
+        }
+        &:hover, label:hover {
+          background: #eee;
+        }
+      }
+      li+li{
+        margin-left: 60px;
+      }
+    }
+    .largeOpts{
+      clear: both;
+      margin: 0 !important;
+      width: 100%;
+    }
+    .subItem{
+      margin-top: 16px;
+      font-size: .8em;
+      padding-left: 14px;
+    }
+  }
+}

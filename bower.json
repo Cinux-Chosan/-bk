@@ -1,0 +1,6 @@
+{
+  "name": "amazon",
+  "dependencies": {
+    "iCheck": "^1.0.2"
+  }
+}

@@ -1,0 +1,22 @@
+html, body {
+  &, & > .ember-view{
+    height: 100%;
+  }
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li{
+    float: left;
+  }
+}
+
+:global(.clearfix){
+  &::after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
