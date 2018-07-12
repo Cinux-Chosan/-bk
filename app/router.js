@@ -7,7 +7,6 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('wenjuan');
   this.route('survey');
   this.route('amazon');
 });
