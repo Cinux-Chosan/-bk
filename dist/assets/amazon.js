@@ -431,6 +431,19 @@ define('amazon/helpers/to-fixed', ['exports'], function (exports) {
 
   exports.default = Ember.Helper.helper(toFixed);
 });
+define('amazon/helpers/to-percent', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.toPercent = toPercent;
+  function toPercent([number = 0] /*, hash*/) {
+    return number * 100 + '%';
+  }
+
+  exports.default = Ember.Helper.helper(toPercent);
+});
 define('amazon/helpers/xor', ['exports'], function (exports) {
   'use strict';
 
@@ -645,13 +658,13 @@ define('amazon/pod/amazon/amazon-comp/component', ['exports', '@ember-decorators
     return desc;
   }
 
-  var _dec, _desc, _value, _class;
+  var _dec, _dec2, _dec3, _desc, _value, _class;
 
-  let AmazonCompComponent = (_dec = (0, _object.computed)('g'), (_class = class AmazonCompComponent extends Ember.Component {
+  let AmazonCompComponent = (_dec = (0, _object.computed)('g'), _dec2 = (0, _object.computed)('currentOpt'), _dec3 = (0, _object.computed)('currentThumbnailIndex', 'activeOpt'), (_class = class AmazonCompComponent extends Ember.Component {
     constructor(...args) {
       var _temp;
 
-      return _temp = super(...args), this.goods1 = _clothesMan.default, this.goods2 = _clothesMan2.default, this.goods3 = _clothesWoman.default, this.goods4 = _clothesWoman2.default, this.goods5 = _phone.default, this.goods6 = _phone2.default, _temp;
+      return _temp = super(...args), this.goods1 = _clothesMan.default, this.goods2 = _clothesMan2.default, this.goods3 = _clothesWoman.default, this.goods4 = _clothesWoman2.default, this.goods5 = _phone.default, this.goods6 = _phone2.default, this.currentOpt = null, this.currentThumbnailIndex = 0, _temp;
     }
 
     get activeGoods() {
@@ -659,21 +672,141 @@ define('amazon/pod/amazon/amazon-comp/component', ['exports', '@ember-decorators
       return this.get(`goods${s}`);
     }
 
-    thumbnailHoverOn(thumbnail) {
-      this.set('activeThumbnail', thumbnail);
+    get activeOpt() {
+      let { currentOpt } = this.getProperties(['currentOpt']);
+      return currentOpt || this.get('activeGoods.goodsInfo.opts.firstObject');
     }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'activeGoods', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeGoods'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'thumbnailHoverOn', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'thumbnailHoverOn'), _class.prototype)), _class));
+
+    get activeThumbnail() {
+      let { currentThumbnailIndex = 0, activeOpt } = this.getProperties(['currentThumbnailIndex', 'activeOpt']);
+      return Ember.get(activeOpt, `thumbnailList.${currentThumbnailIndex}`);
+    }
+
+    setThumbnailIndex(currentThumbnailIndex) {
+      this.set('currentThumbnailIndex', currentThumbnailIndex);
+    }
+
+    setActiveOpt(opt) {
+      this.set('currentThumbnailIndex', 0);
+      this.set('currentOpt', opt);
+    }
+  }, (_applyDecoratedDescriptor(_class.prototype, 'activeGoods', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeGoods'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeOpt', [_dec2], Object.getOwnPropertyDescriptor(_class.prototype, 'activeOpt'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeThumbnail', [_dec3], Object.getOwnPropertyDescriptor(_class.prototype, 'activeThumbnail'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setThumbnailIndex', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setThumbnailIndex'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setActiveOpt', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setActiveOpt'), _class.prototype)), _class));
   exports.default = AmazonCompComponent;
 });
-define('amazon/pod/amazon/amazon-comp/goods/clothes.man.1', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "LOCALMODE Men's 100% Cotton Long Sleeve Plaid Slim Fit Button Down Dress Shirt ",
+      details: ["Notice: If There is Smell in Your Package, Please Wash the Shirt in Cold Water before You Wear, we have asked our factory to wash it in the next goods.", "GUARANTEE from localmode: Some buyers say our shirt size is way off which we are so confused, we have updated our shirt size measurement on Product Description of the page. Please check the size chart carefully before you order and we will give you free exchange and full refund if you get wrong size from us. THANK YOU!!!", "100% High-grade Cotton Fabrics: Good capability of tenderness, air permeability and moisture absorption feels soft and comfy.", "Fashion Plaid and Button-down Design, Concise and Easy, Fashionable Elegance, Convenient and Practical, and both Individual Character and Sport Function.", "Suitable for: Sports, Casual, Business Work, Date, Party, Perfect gift for families, friends and boyfriend.", "Wash Instruction: Handwash in cold water <30¡æ, NO BLEACH, Low iron and tumble dry on low heat", "It will arrive you in 8-12 days if your order is fulfilled by merchant.Any questions please feel free to contact us directly!"],
+      opts: [{
+        cover: "/img/amazon/clothes_man_2/1_1.jpg",
+        optDesc: "Acid Blue",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_2/1_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/2_1.jpg",
+        optDesc: "Blue",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_2/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/2_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        optDesc: "Grey",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_2/3_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_2/3_7.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Jake Roehmon'
+        },
+        reviewTxt: 'Amazing ! Shirt fits great looks great feels great',
+        date: 'June 25, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'James Boydon'
+        },
+        reviewTxt: 'I\'d say the shirt fits like the picture shows',
+        date: 'June 18, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Bexareagleon'
+        },
+        reviewTxt: 'Really nice slim and thin shirt that fits perfectly and looks awesome',
+        date: 'June 16, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Bodenon'
+        },
+        reviewTxt: 'I love it was exactly what I expected.',
+        date: 'June 7, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Erica'
+        },
+        reviewTxt: 'I have gotten numerous compliments about how it fits me like its custom made',
+        date: 'June 7, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Crystal Garciaon'
+        },
+        reviewTxt: 'This is a very attractive shirt with blue denim jeans or khaki slacks ',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Johnon '
+        },
+        reviewTxt: 'Variety of colors to choose from',
+        date: 'June 11, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'C. Vasquezon'
+        },
+        reviewTxt: 'high quality cotton, soft and the stitching is very good ',
+        date: 'June 7, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'capponon '
+        },
+        reviewTxt: 'Turn down collar, Slim fit',
+        date: 'June 7, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Miranda '
+        },
+        reviewTxt: '100% High-grade Cotton Fabrics',
+        date: 'June 4, 2018'
+      }]
     }
   };
 });
@@ -745,12 +878,31 @@ define("amazon/pod/amazon/amazon-comp/styles", ["exports"], function (exports) {
   });
   exports.default = {
     "root": "_root_fd9r4x",
+    "section1": "_section1_fd9r4x",
     "left": "_left_fd9r4x",
+    "right": "_right_fd9r4x",
+    "rLeft": "_rLeft_fd9r4x",
+    "goodsTitle": "_goodsTitle_fd9r4x",
+    "goodsOpts": "_goodsOpts_fd9r4x",
+    "rRight": "_rRight_fd9r4x",
+    "preview": "_preview_fd9r4x",
+    "previewImg": "_previewImg_fd9r4x",
     "thumbnailList": "_thumbnailList_fd9r4x",
     "thumbnail": "_thumbnail_fd9r4x",
-    "right": "_right_fd9r4x",
-    "preview": "_preview_fd9r4x",
-    "previewImg": "_previewImg_fd9r4x"
+    "active": "_active_fd9r4x",
+    "goodsDetails": "_goodsDetails_fd9r4x",
+    "review": "_review_fd9r4x",
+    "reviewsSum": "_reviewsSum_fd9r4x",
+    "imgAndCount": "_imgAndCount_fd9r4x",
+    "reviewSumCount": "_reviewSumCount_fd9r4x",
+    "reviewSumImg": "_reviewSumImg_fd9r4x",
+    "reviewSumDesc": "_reviewSumDesc_fd9r4x",
+    "reviewDetailList": "_reviewDetailList_fd9r4x",
+    "progressBar": "_progressBar_fd9r4x",
+    "section2": "_section2_fd9r4x",
+    "reviewDetails": "_reviewDetails_fd9r4x",
+    "rvwLeft": "_rvwLeft_fd9r4x",
+    "rvwRight": "_rvwRight_fd9r4x"
   };
 });
 define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports) {
@@ -759,7 +911,7 @@ define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "JxMeTp1F", "block": "{\"symbols\":[\"goods\",\"thumbnail\"],\"statements\":[[0,\"\\n\"],[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"goodsInfo\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"        \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"thumbnailHoverOn\",[21,2,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,2,[]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[26,\"or\",[[22,[\"activeThumbnail\"]],[21,1,[\"goodsInfo\",\"thumbnailList\",\"firstObject\"]]],null],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    rigth\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "PCweqcnm", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
 });
 define('amazon/pod/amazon/controller', ['exports'], function (exports) {
   'use strict';
@@ -803,6 +955,103 @@ define("amazon/pod/amazon/template", ["exports"], function (exports) {
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "J0KUdi+1", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"amazonContainer\"]]],null]]]],[8],[0,\"\\n  \"],[1,[26,\"amazon/amazon-comp\",null,[[\"goods\"],[[22,[\"g\"]]]]],false],[0,\"\\n\"],[9],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/template.hbs" } });
+});
+define('amazon/pod/amazon/user-review/component', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  let UserReviewComponent = class UserReviewComponent extends Ember.Component {};
+  exports.default = UserReviewComponent;
+});
+define("amazon/pod/amazon/user-review/styles", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = {
+    "root": "_root_jyi9vx",
+    "userInfo": "_userInfo_jyi9vx",
+    "avatar": "_avatar_jyi9vx",
+    "review": "_review_jyi9vx",
+    "date": "_date_jyi9vx"
+  };
+});
+define("amazon/pod/amazon/user-review/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "daUXJ0E9", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"userInfo\"]]],null]]]],[8],[0,\"\\n  \"],[6,\"img\"],[11,\"src\",[22,[\"reviewData\",\"userInfo\",\"avatar\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"avatar\"]]],null]]]],[8],[9],[0,\" \"],[1,[22,[\"reviewData\",\"userInfo\",\"userName\"]],false],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"date\"]]],null]]]],[8],[0,\"\\n  \"],[1,[22,[\"reviewData\",\"date\"]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"p\"],[8],[0,\"\\n    \"],[1,[22,[\"reviewData\",\"reviewTxt\"]],false],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/user-review/template.hbs" } });
+});
+define('amazon/pod/components/progress-bar/component', ['exports', '@ember-decorators/object'], function (exports, _object) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = undefined;
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  var _dec, _desc, _value, _class;
+
+  let ProgressBarComponent = (_dec = (0, _object.computed)('ratio'), (_class = class ProgressBarComponent extends Ember.Component {
+    get width() {
+      let ratio = this.getWithDefault('ratio', 0);
+      return ratio * 100 + '%';
+    }
+  }, (_applyDecoratedDescriptor(_class.prototype, 'width', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'width'), _class.prototype)), _class));
+  exports.default = ProgressBarComponent;
+});
+define("amazon/pod/components/progress-bar/styles", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = {
+    "root": "_root_1xzr5f",
+    "ratio": "_ratio_1xzr5f"
+  };
+});
+define("amazon/pod/components/progress-bar/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "qyOQwTw6", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[11,\"style\",[27,[\"width:\",[20,\"width\"]]]],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"ratio\"]]],null]]]],[8],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/components/progress-bar/template.hbs" } });
 });
 define('amazon/pod/survey/controller', ['exports'], function (exports) {
   'use strict';
@@ -1290,7 +1539,6 @@ define('amazon/router', ['exports', 'amazon/config/environment'], function (expo
   });
 
   Router.map(function () {
-    this.route('wenjuan');
     this.route('survey');
     this.route('amazon');
   });
@@ -1366,6 +1614,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+8548d04a"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+31243978"});
 }
 //# sourceMappingURL=amazon.map

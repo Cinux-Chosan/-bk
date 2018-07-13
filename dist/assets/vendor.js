@@ -67864,7 +67864,7 @@ createDeprecatedModule('resolver');
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = { "survey": "__survey__a639c", "survey/survey-comp": "__survey__survey-comp__994fa", "wenjuan/wenjuan-comp": "__wenjuan__wenjuan-comp__4ca3f", "amazon": "__amazon__1873c", "amazon/amazon-comp": "__amazon__amazon-comp__dd9ab" };
+  exports.default = { "amazon/amazon-comp": "__amazon__amazon-comp__dd9ab", "amazon": "__amazon__1873c", "survey": "__survey__a639c", "survey/survey-comp": "__survey__survey-comp__994fa", "progress-bar": "__progress-bar__6f60d", "amazon/amazon-comp/user-review": "__amazon__amazon-comp__user-review__4775c", "amazon/user-review": "__amazon__user-review__03c65" };
 });
 ;define('ember-css-modules/extensions', ['ember-resolver', 'ember-css-modules/mixins/component-mixin', 'ember-css-modules/mixins/controller-mixin', 'ember-css-modules/mixins/component-lookup-mixin', 'ember-css-modules/mixins/resolver-mixin'], function (_emberResolver, _componentMixin, _controllerMixin, _componentLookupMixin, _resolverMixin) {
   'use strict';

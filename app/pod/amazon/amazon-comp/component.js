@@ -6,6 +6,7 @@ import goods3 from './goods/clothes.woman.1';
 import goods4 from './goods/clothes.woman.2';
 import goods5 from './goods/phone.1';
 import goods6 from './goods/phone.2';
+import { set, get } from '@ember/object';
 
 export default class AmazonCompComponent extends Component {
   goods1 = goods1;
@@ -20,8 +21,29 @@ export default class AmazonCompComponent extends Component {
     let s = this.getWithDefault('goods', 1);
     return this.get(`goods${s}`);
   }
+
+  currentOpt = null;
+  currentThumbnailIndex = 0;
+
+  @computed('currentOpt')
+  get activeOpt() {
+    let { currentOpt } = this.getProperties(['currentOpt']);
+    return currentOpt || this.get('activeGoods.goodsInfo.opts.firstObject');
+  }
+
+  @computed('currentThumbnailIndex', 'activeOpt')
+  get activeThumbnail() {
+    let { currentThumbnailIndex = 0, activeOpt } = this.getProperties(['currentThumbnailIndex', 'activeOpt']);
+    return get(activeOpt, `thumbnailList.${currentThumbnailIndex}`);
+  }
+
   @action
-  thumbnailHoverOn(thumbnail) {
-    this.set('activeThumbnail', thumbnail);
+  setThumbnailIndex(currentThumbnailIndex) {
+    this.set('currentThumbnailIndex', currentThumbnailIndex);
+  }
+  @action
+  setActiveOpt(opt) {
+    this.set('currentThumbnailIndex', 0);
+    this.set('currentOpt', opt);
   }
 }

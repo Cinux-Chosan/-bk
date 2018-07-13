@@ -120,6 +120,11 @@ define('amazon/tests/app.lint-test', [], function () {
     assert.ok(true, 'helpers/to-fixed.js should pass ESLint\n\n');
   });
 
+  QUnit.test('helpers/to-percent.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'helpers/to-percent.js should pass ESLint\n\n');
+  });
+
   QUnit.test('helpers/xor.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'helpers/xor.js should pass ESLint\n\n');
@@ -127,7 +132,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('pod/amazon/amazon-comp/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n');
+    assert.ok(false, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n9:10 - \'set\' is defined but never used. (no-unused-vars)');
   });
 
   QUnit.test('pod/amazon/amazon-comp/goods/clothes.man.1.js', function (assert) {
@@ -168,6 +173,16 @@ define('amazon/tests/app.lint-test', [], function () {
   QUnit.test('pod/amazon/route.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'pod/amazon/route.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('pod/amazon/user-review/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pod/amazon/user-review/component.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('pod/components/progress-bar/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pod/components/progress-bar/component.js should pass ESLint\n\n');
   });
 
   QUnit.test('pod/survey/controller.js', function (assert) {
@@ -215,6 +230,23 @@ define('amazon/tests/app.lint-test', [], function () {
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
 });
+define('amazon/tests/integration/helpers/to-percent-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Helper | to-percent', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+        // Replace this with your real tests.
+        (0, _qunit.test)('it renders', async function (assert) {
+            this.set('inputValue', '1234');
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "HaqgiPFF",
+                "block": "{\"symbols\":[],\"statements\":[[1,[26,\"to-percent\",[[22,[\"inputValue\"]]],null],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+            assert.equal(this.element.textContent.trim(), '1234');
+        });
+    });
+});
 define('amazon/tests/integration/pod/components/amazon-comp/component-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
     'use strict';
 
@@ -233,6 +265,30 @@ define('amazon/tests/integration/pod/components/amazon-comp/component-test', ['q
             await (0, _testHelpers.render)(Ember.HTMLBars.template({
                 "id": "iY1u/2aI",
                 "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"amazon-comp\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                "meta": {}
+            }));
+            assert.equal(this.element.textContent.trim(), 'template block text');
+        });
+    });
+});
+define('amazon/tests/integration/pod/components/progress-bar/component-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Component | progress-bar', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+        (0, _qunit.test)('it renders', async function (assert) {
+            // Set any properties with this.set('myProperty', 'value');
+            // Handle any actions with this.set('myAction', function(val) { ... });
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "bVotFiNx",
+                "block": "{\"symbols\":[],\"statements\":[[1,[20,\"progress-bar\"],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+            assert.equal(this.element.textContent.trim(), '');
+            // Template block usage:
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "w0MfBh3b",
+                "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"progress-bar\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
                 "meta": {}
             }));
             assert.equal(this.element.textContent.trim(), 'template block text');
@@ -305,6 +361,30 @@ define('amazon/tests/integration/pod/components/t-t/component-test', ['qunit', '
             await (0, _testHelpers.render)(Ember.HTMLBars.template({
                 "id": "NYGYIqE9",
                 "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"t-t\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                "meta": {}
+            }));
+            assert.equal(this.element.textContent.trim(), 'template block text');
+        });
+    });
+});
+define('amazon/tests/integration/pod/components/user-review/component-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Component | user-review', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+        (0, _qunit.test)('it renders', async function (assert) {
+            // Set any properties with this.set('myProperty', 'value');
+            // Handle any actions with this.set('myAction', function(val) { ... });
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "7Z0Pgift",
+                "block": "{\"symbols\":[],\"statements\":[[1,[20,\"user-review\"],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+            assert.equal(this.element.textContent.trim(), '');
+            // Template block usage:
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "ca9qEwHP",
+                "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"user-review\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
                 "meta": {}
             }));
             assert.equal(this.element.textContent.trim(), 'template block text');
