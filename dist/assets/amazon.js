@@ -2146,7 +2146,7 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
         args[_key] = arguments[_key];
       }
 
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyCompComponent.__proto__ || Object.getPrototypeOf(SurveyCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.survey1 = _survey.default, _this.survey2 = _survey2.default, _this.survey3 = _survey3.default, _this.survey4 = _survey4.default, _this.color = 1, _temp), _possibleConstructorReturn(_this, _ret);
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyCompComponent.__proto__ || Object.getPrototypeOf(SurveyCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.survey1 = _survey.default, _this.survey2 = _survey2.default, _this.survey3 = _survey3.default, _this.survey4 = _survey4.default, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(SurveyCompComponent, [{
@@ -2191,177 +2191,739 @@ define("amazon/pod/survey/survey-comp/surveys/survey.1", ["exports"], function (
   exports.default = {
     title: "问卷一",
     items: [{
-      desc: "Gerder",
-      type: "radio",
-      opts: ["Mail", "Female"]
+      "desc": "Gerder",
+      "type": "radio",
+      "opts": [{
+        "optText": "Mail"
+      }, {
+        "optText": "Female"
+      }]
     }, {
-      desc: "Age",
-      type: "radio",
-      value: '',
-      opts: [" < 18", " 18 ~ 20", " > 20"]
+      "desc": "Age",
+      "type": "radio",
+      "value": "",
+      "opts": [{
+        "optText": " < 18"
+      }, {
+        "optText": " 18 ~ 20"
+      }, {
+        "optText": " > 20"
+      }]
     }, {
-      desc: "How often do you shop online?",
-      type: "radio",
-      opts: ["once two weeks", "once a month", "once several months", "once a year", "never"]
+      "desc": "How often do you shop online?",
+      "type": "radio",
+      "opts": [{
+        "optText": "once two weeks"
+      }, {
+        "optText": "once a month"
+      }, {
+        "optText": "once several months"
+      }, {
+        "optText": "once a year"
+      }, {
+        "optText": "never"
+      }]
     }, {
-      desc: "How often do you shop online from other countries?",
-      type: "radio",
-      opts: ["once two weeks", "once a month", "once several months", "once a year", "never"]
+      "desc": "How often do you shop online from other countries?",
+      "type": "radio",
+      "opts": [{
+        "optText": "once two weeks"
+      }, {
+        "optText": "once a month"
+      }, {
+        "optText": "once several months"
+      }, {
+        "optText": "once a year"
+      }, {
+        "optText": "never"
+      }]
     }, {
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "People in higher positions should make most decisions without consulting people in lower positions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "People in higher positions should make most decisions without consulting people in lower positions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should not ask the opinions of people in lower positions too frequently.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should not ask the opinions of people in lower positions too frequently.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should avoid social interaction with people in lower positions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should avoid social interaction with people in lower positions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in lower positions should not disagree with decisions by people in higher positions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in lower positions should not disagree with decisions by people in higher positions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should not delegate important tasks to people in lower positions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should not delegate important tasks to people in lower positions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to have instructions spelled out in detail so that I always know what I'm expected to do.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to have instructions spelled out in detail so that I always know what I'm expected to do.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to closely follow instructions and procedures. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to closely follow instructions and procedures. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Rules and regulations are important because they inform me of what is expected of me. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Rules and regulations are important because they inform me of what is expected of me. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Standardized work procedures are helpful. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Standardized work procedures are helpful. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Instructions for operations are important.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Instructions for operations are important.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should sacrifice self-interest for the group. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should sacrifice self-interest for the group. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should stick with the group even through difficulties. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should stick with the group even through difficulties. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group welfare is more important than individual rewards.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group welfare is more important than individual rewards.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group success is more important than individual success. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group success is more important than individual success. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should only pursue their goals after considering the welfare of the group. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should only pursue their goals after considering the welfare of the group. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group loyalty should be encouraged even if individual goals suffer.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group loyalty should be encouraged even if individual goals suffer.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to careful manage money (Thrift). ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to careful manage money (Thrift). ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to go on resolutely in spite of opposition (Persistence).",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to go on resolutely in spite of opposition (Persistence).",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Personal steadiness and stability are important.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Personal steadiness and stability are important.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to make long-term planning. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to make long-term planning. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should give up today's fun for success in the future.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should give up today's fun for success in the future.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should work hard for success in the future.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should work hard for success in the future.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is more important for men to have a professional career than it is for women. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is more important for men to have a professional career than it is for women. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Men usually solve problems with logical analysis; women usually solve problems with intuition.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Men usually solve problems with logical analysis; women usually solve problems with intuition.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Solving difficult problems usually requires an active, forcible approach, which is typical of men.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Solving difficult problems usually requires an active, forcible approach, which is typical of men.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "There are some jobs that a man can always do better than a woman.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "There are some jobs that a man can always do better than a woman.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I have some contacts with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I have some contacts with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I spend time in communicating with other consumers of amazon.com. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I spend time in communicating with other consumers of amazon.com. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I have communications with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I have communications with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com do not take advantage of each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com do not take advantage of each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com have mutual trust.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com have mutual trust.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com sincerely treat each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com sincerely treat each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I believe that consumers of amazon.com will help each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I believe that consumers of amazon.com will help each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I believe that other consumers of amazon.com will help me when I need.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I believe that other consumers of amazon.com will help me when I need.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I will actively help other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I will actively help other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar interest with other consumers of amazom.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar interest with other consumers of amazom.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar goals with other consumers of amazon.com. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar goals with other consumers of amazon.com. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar values with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar values with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -2375,52 +2937,206 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.1", ["exports"], function
   exports.default = {
     title: "问卷二",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "When I want to buy a cell phone, I have an expectation for searching for attribute-based reviews;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "When I want to buy a cell phone, I have an expectation for searching for attribute-based reviews;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I have a brief in searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I have a brief in searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I will pay more attention to attribute based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I will pay more attention to attribute based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, attribute-based reviews are more helpful for me to evaluate it; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, attribute-based reviews are more helpful for me to evaluate it; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, attribute-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, attribute-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I think I have constructed a knowledge structure to evaluate a cell phone through attribute-based reviews",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I think I have constructed a knowledge structure to evaluate a cell phone through attribute-based reviews",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, I have an expectation for searching for experience-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, I have an expectation for searching for experience-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I have a brief in searching for experience -based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I have a brief in searching for experience -based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, I will pay more attention to attribute based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, I will pay more attention to attribute based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, experience -based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, experience -based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, experience-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, experience-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -2434,52 +3150,206 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.2", ["exports"], function
   exports.default = {
     title: "问卷二",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "When I want to buy a clothing, I have an expectation for searching for experience -based reviews;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "When I want to buy a clothing, I have an expectation for searching for experience -based reviews;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have a brief in searching for experience -based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have a brief in searching for experience -based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I will pay more attention to experience based reviews;  ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I will pay more attention to experience based reviews;  ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, experience -based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, experience -based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, experience -based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, experience -based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I think I have constructed a knowledge structure to evaluate a clothing through experience -based reviews",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I think I have constructed a knowledge structure to evaluate a clothing through experience -based reviews",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have an expectation for searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have an expectation for searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have a brief in searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have a brief in searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I will pay more attention to attribute based reviews;  ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I will pay more attention to attribute based reviews;  ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, attribute-based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, attribute-based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, attribute-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, attribute-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -2493,32 +3363,116 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.3", ["exports"], function
   exports.default = {
     title: "问卷三",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "The quantity of the reviews released was large.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "The quantity of the reviews released was large.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The quantity of the reviews was enough to let me make decisions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The quantity of the reviews was enough to let me make decisions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was accurate.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was accurate.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was relevant to my needs.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was relevant to my needs.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was of sufficient to make decisions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was of sufficient to make decisions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was based on facts.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was based on facts.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -2529,7 +3483,7 @@ define("amazon/pod/survey/survey-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "l1xaLh9z", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBG\"]]],null]]]],[8],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyCompMain\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n\\n\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[11,\"for\",[21,5,[\"desc\"]],null],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]],[21,5,[\"isChecked\"]],[21,7,[]]]]],false],[0,\" \"],[1,[21,7,[]],false],[0,\" \\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[11,\"for\",[21,2,[\"desc\"]],null],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]],[21,2,[\"isChecked\"]],[21,4,[]]]]],false],[0,\" \"],[1,[21,4,[]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"type\",\"submit\"],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "mLrZ2inz", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBG\"]]],null]]]],[8],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyCompMain\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[11,\"for\",[21,5,[\"desc\"]],null],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]],[21,7,[\"isChecked\"]],[21,7,[\"optText\"]]]]],false],[0,\" \"],[1,[21,7,[\"optText\"]],false],[0,\" \\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[11,\"for\",[21,2,[\"desc\"]],null],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]],[21,4,[\"isChecked\"]],[21,4,[\"optText\"]]]]],false],[0,\" \"],[1,[21,4,[\"optText\"]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"type\",\"submit\"],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
 });
 define("amazon/pod/survey/template", ["exports"], function (exports) {
   "use strict";
@@ -2636,6 +3590,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+f6748145"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+193591a7"});
 }
 //# sourceMappingURL=amazon.map
