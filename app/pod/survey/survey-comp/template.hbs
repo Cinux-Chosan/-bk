@@ -1,7 +1,12 @@
-<div class="surveyCompMain">
+
+
+<div local-class="surveyBG"></div>
+<div local-class="surveyCompMain">
   {{#with activeSurvey as |sv|}}
   <div local-class="surveyHead">
     <h1>
+
+
       {{sv.title}}
     </h1>
 
@@ -20,8 +25,8 @@
             <ul local-class="surveyOpts" class="clearfix">
               {{#each subItem.opts as |opt|}}
                 <li local-class="surveyOpt {{if (gte subItem.opts.length 5) 'largeOpts'}}">
-                  <label for="">
-                    {{i-check type=subItem.type name=subItem.desc}} {{opt}}
+                  <label for={{subItem.desc}}>
+                    {{i-check type=subItem.type name=subItem.desc checked=subItem.isChecked value=opt}} {{opt}} 
                   </label>
                 </li>
               {{/each}}
@@ -32,8 +37,8 @@
           <ul local-class="surveyOpts" class="clearfix">
             {{#each item.opts as |opt|}}
               <li local-class="surveyOpt {{if (gte item.opts.length 5) 'largeOpts'}}">
-                <label for="">
-                  {{i-check type=item.type name=item.desc}} {{opt}}
+                <label for={{item.desc}}>
+                  {{i-check type=item.type name=item.desc checked=item.isChecked value=opt}} {{opt}}
                 </label>
               </li>
             {{/each}}

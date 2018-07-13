@@ -9,6 +9,7 @@ export default {
     {
       desc: "Age",
       type: "radio",
+      value: '',
       opts: [" < 18", " 18 ~ 20", " > 20"]
     },
     {

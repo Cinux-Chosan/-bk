@@ -11,6 +11,7 @@ export default class SurveyCompComponent extends Component {
   survey3 = survey3;
   survey4 = survey4;
   s;
+  color = 1;
   @computed('s')
   get activeSurvey() {
     let s = this.getWithDefault('s', 1);
