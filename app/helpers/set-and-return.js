@@ -3,7 +3,7 @@ import { set } from '@ember/object';
 
 export function setAndReturn([o, value]/*, hash*/) {
   set(o, value);
-  return params;
+  return o;
 }
 
 export default helper(setAndReturn);

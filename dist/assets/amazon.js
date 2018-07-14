@@ -42,45 +42,6 @@ define('amazon/components/i-check', ['exports', 'ember-cli-icheck/components/i-c
   });
   exports.default = _iCheck.default;
 });
-define('amazon/components/labeled-radio-button', ['exports', 'ember-radio-button/components/labeled-radio-button'], function (exports, _labeledRadioButton) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _labeledRadioButton.default;
-    }
-  });
-});
-define('amazon/components/radio-button-input', ['exports', 'ember-radio-button/components/radio-button-input'], function (exports, _radioButtonInput) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _radioButtonInput.default;
-    }
-  });
-});
-define('amazon/components/radio-button', ['exports', 'ember-radio-button/components/radio-button'], function (exports, _radioButton) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _radioButton.default;
-    }
-  });
-});
 define('amazon/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
 
@@ -964,7 +925,7 @@ define('amazon/helpers/set-and-return', ['exports'], function (exports) {
         value = _ref2[1];
 
     Ember.set(o, value);
-    return params;
+    return o;
   }
 
   exports.default = Ember.Helper.helper(setAndReturn);
@@ -1221,6 +1182,20 @@ define('amazon/initializers/export-application-global', ['exports', 'amazon/conf
     initialize: initialize
   };
 });
+define('amazon/initializers/inject-router', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.initialize = initialize;
+    function initialize(application) {
+        application.inject('component', 'appController', 'controller:application');
+    }
+    exports.default = {
+        initialize: initialize
+    };
+});
 define("amazon/instance-initializers/ember-data", ["exports", "ember-data/initialize-store-service"], function (exports, _initializeStoreService) {
   "use strict";
 
@@ -1385,6 +1360,123 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], functio
   });
   exports.default = {
     goodsInfo: {
+      title: "YTD Mens 100% Cotton Casual Slim Fit Long Sleeve Button Down Printed Dress Shirts",
+      details: ["US Size,100% Cotton", "Style: Casual, Fashion, Relax, Business, Date", "Machine washable, Hand Wash suggested and Dry", "Fashion Printed and Button-down Design, Concise and Easy, Fashionable Elegance, Convenient and Practical", "Notice: Please Check the Shirt Measurement on Product Description Carefully before Order !!!!!"],
+      opts: [{
+        cover: "/img/amazon/clothes_man_1/1_1.jpg",
+        optDesc: "Green",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/1_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_1/2_1.jpg",
+        optDesc: "Green",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        optDesc: "Navy Blue",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/3_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Maribelon '
+        },
+        reviewTxt: 'It is awesome. Just wish I looked as good as the model wearing it',
+        date: 'June 27, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Caden Smithon'
+        },
+        reviewTxt: 'Fits as expected, I have an athletic body and this shirt hugs just right',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Peteron '
+        },
+        reviewTxt: 'Nice and stylish shirt. I get compliments about it all the time',
+        date: 'June 14, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'emanueleon '
+        },
+        reviewTxt: 'Looks very good, fit very well, and very much enjoying',
+        date: 'June 9, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Mandy Atwellon'
+        },
+        reviewTxt: 'Perfect. Wear it all of the time! Classy and Stylish look',
+        date: 'June 5, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'César Javier Cornielon'
+        },
+        reviewTxt: 'Long Sleeve & Short Sleeve',
+        date: 'June 24, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kidlaton  '
+        },
+        reviewTxt: 'Handwash and machine availible',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'David '
+        },
+        reviewTxt: 'Slim Fit, Long Sleeve, Button Down, Printed Dress Shirts',
+        date: 'June 12, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Californianon  '
+        },
+        reviewTxt: 'The pattern design is discrete but elegant, the shirt is good Quality for the price',
+        date: 'June 5, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron '
+        },
+        reviewTxt: 'US size, 100% cotton',
+        date: 'June 4, 2018'
+      }]
+    }
+  };
+});
+define("amazon/pod/amazon/amazon-comp/goods/clothes.man.2", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = {
+    goodsInfo: {
       title: "LOCALMODE Men's 100% Cotton Long Sleeve Plaid Slim Fit Button Down Dress Shirt ",
       details: ["Notice: If There is Smell in Your Package, Please Wash the Shirt in Cold Water before You Wear, we have asked our factory to wash it in the next goods.", "GUARANTEE from localmode: Some buyers say our shirt size is way off which we are so confused, we have updated our shirt size measurement on Product Description of the page. Please check the size chart carefully before you order and we will give you free exchange and full refund if you get wrong size from us. THANK YOU!!!", "100% High-grade Cotton Fabrics: Good capability of tenderness, air permeability and moisture absorption feels soft and comfy.", "Fashion Plaid and Button-down Design, Concise and Easy, Fashionable Elegance, Convenient and Practical, and both Individual Character and Sport Function.", "Suitable for: Sports, Casual, Business Work, Date, Party, Perfect gift for families, friends and boyfriend.", "Wash Instruction: Handwash in cold water <30¡æ, NO BLEACH, Low iron and tumble dry on low heat", "It will arrive you in 8-12 days if your order is fulfilled by merchant.Any questions please feel free to contact us directly!"],
       opts: [{
@@ -1494,18 +1586,6 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], functio
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/clothes.man.2', ['exports'], function (exports) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = {
-    goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
-    }
-  };
-});
 define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.1', ['exports'], function (exports) {
   'use strict';
 
@@ -1530,15 +1610,116 @@ define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.2', ['exports'], funct
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/phone.1', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/phone.1", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "Apple iPhone X, GSM Unlocked 5.8\", 256 GB - Space Gray",
+      details: ["An all‑new 5.8‑inch Super Retina screen with all-screen OLED Multi-Touch display", "12MP wide-angle and telephoto cameras with Dual optical image stabilization", "Wireless Qi charging", "Splash, water, and dust resistant", "Sapphire crystal lens cover"],
+      opts: [{
+        cover: "/img/amazon/phone_1/1_1.jpg",
+        optDesc: "Silver",
+        thumbnailList: [{ img: "/img/amazon/phone_1/1_1.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/phone_1/2_1.jpg",
+        optDesc: "Space Gray",
+        thumbnailList: [{ img: "/img/amazon/phone_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_5.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Thomas Kingon '
+        },
+        reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
+        date: 'January 1, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'V12 Vantageon'
+        },
+        reviewTxt: 'I\'m loving it every day when I wake up and touch it',
+        date: 'November 5, 2017'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron  '
+        },
+        reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
+        date: 'February 22, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Keith H.on '
+        },
+        reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Buyeron '
+        },
+        reviewTxt: 'I quickly became comfortable using my cell phone',
+        date: 'June 27, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Carlon '
+        },
+        reviewTxt: 'This is a great phone with an amazing camera. ',
+        date: 'June 19, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kekanon   '
+        },
+        reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
+        date: 'June 8, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customer '
+        },
+        reviewTxt: 'The cell phone uses a super retina display, with 2436-by-1125 pixel resolution and a contrast ratio of 1,000,000:1',
+        date: 'June 4, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Annaon'
+        },
+        reviewTxt: 'The cell phone boasts the largest battery in Apple history',
+        date: 'May 31, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'steven hellmichon'
+        },
+        reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
+        date: 'May 23, 2018'
+      }]
     }
   };
 });
@@ -1569,6 +1750,10 @@ define("amazon/pod/amazon/amazon-comp/styles", ["exports"], function (exports) {
     "goodsTitle": "_goodsTitle_fd9r4x",
     "goodsOpts": "_goodsOpts_fd9r4x",
     "rRight": "_rRight_fd9r4x",
+    "shareImg": "_shareImg_fd9r4x",
+    "addToCartContainer": "_addToCartContainer_fd9r4x",
+    "addToCartBtn": "_addToCartBtn_fd9r4x",
+    "cartIcon": "_cartIcon_fd9r4x",
     "preview": "_preview_fd9r4x",
     "previewImg": "_previewImg_fd9r4x",
     "thumbnailList": "_thumbnailList_fd9r4x",
@@ -1595,20 +1780,39 @@ define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "PCweqcnm", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "aY2rO9TG", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n  \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n      \"],[6,\"img\"],[10,\"src\",\"/img/amazon/share.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"shareImg\"]]],null]]]],[8],[9],[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"addToCartContainer\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"button\"],[11,\"class\",[27,[\"btn \",[26,\"unbound\",[[22,[\"__styles__\",\"addToCartBtn\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"img\"],[10,\"src\",\"/img/amazon/icon_cart.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"cartIcon\"]]],null]]]],[8],[9],[0,\"\\n           Add To Cart\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[0,\"\\n          \"],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"        \"],[6,\"li\"],[8],[0,\"\\n          \"],[1,[21,8,[]],false],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n      \"]],\"parameters\":[7]},null],[0,\" \"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\"\\n            \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,6,[\"label\"]],false],[0,\" \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\\n\"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"  \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n  \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\" \"]],\"parameters\":[4]},null],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\" \"]],\"parameters\":[3]},null],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
 });
-define('amazon/pod/amazon/controller', ['exports'], function (exports) {
+define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], function (exports, _object) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.default = undefined;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
 
   function _possibleConstructorReturn(self, call) {
     if (!self) {
@@ -1634,7 +1838,38 @@ define('amazon/pod/amazon/controller', ['exports'], function (exports) {
     if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
   }
 
-  var SurveyController = function (_EmberController) {
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  var _dec, _desc, _value, _class;
+
+  var SurveyController = (_dec = (0, _object.computed)('g'), (_class = function (_EmberController) {
     _inherits(SurveyController, _EmberController);
 
     function SurveyController() {
@@ -1648,12 +1883,19 @@ define('amazon/pod/amazon/controller', ['exports'], function (exports) {
         args[_key] = arguments[_key];
       }
 
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyController.__proto__ || Object.getPrototypeOf(SurveyController)).call.apply(_ref, [this].concat(args))), _this), _this.queryParams = ['g'], _this.g = 1, _temp), _possibleConstructorReturn(_this, _ret);
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyController.__proto__ || Object.getPrototypeOf(SurveyController)).call.apply(_ref, [this].concat(args))), _this), _this.queryParams = ['g'], _this.g = '1', _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    return SurveyController;
-  }(Ember.Controller);
+    _createClass(SurveyController, [{
+      key: 'gList',
+      get: function get() {
+        var gList = this.getWithDefault('g', '1_2');
+        return gList.split('_');
+      }
+    }]);
 
+    return SurveyController;
+  }(Ember.Controller), (_applyDecoratedDescriptor(_class.prototype, 'gList', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'gList'), _class.prototype)), _class));
   exports.default = SurveyController;
 });
 define('amazon/pod/amazon/route', ['exports'], function (exports) {
@@ -1723,7 +1965,7 @@ define("amazon/pod/amazon/template", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "J0KUdi+1", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"amazonContainer\"]]],null]]]],[8],[0,\"\\n  \"],[1,[26,\"amazon/amazon-comp\",null,[[\"goods\"],[[22,[\"g\"]]]]],false],[0,\"\\n\"],[9],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "D3Kahtu2", "block": "{\"symbols\":[\"g\"],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"amazonContainer\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"gList\"]]],null,{\"statements\":[[0,\"    \"],[1,[26,\"amazon/amazon-comp\",null,[[\"goods\"],[[21,1,[]]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[9],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/template.hbs" } });
 });
 define('amazon/pod/amazon/user-review/component', ['exports'], function (exports) {
   'use strict';
@@ -2132,6 +2374,13 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
 
   var _dec, _desc, _value, _class;
 
+  var SURVEY = {
+    SURVEY_1: 1,
+    SURVEY_2: 2,
+    SURVEY_3: 3,
+    SURVEY_4: 4
+  };
+
   var SurveyCompComponent = (_dec = (0, _object.computed)('s'), (_class = function (_EmberComponent) {
     _inherits(SurveyCompComponent, _EmberComponent);
 
@@ -2150,6 +2399,34 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
     }
 
     _createClass(SurveyCompComponent, [{
+      key: 'surveySubmitAction1',
+      value: function surveySubmitAction1() {
+        this.get('appController').transitionToRoute('amazon', { queryParams: {
+            g: '1_2'
+          } });
+      }
+    }, {
+      key: 'submit',
+      value: function submit() {
+        var s = this.getWithDefault('s', 1);
+        switch (s) {
+          case SURVEY.SURVEY_1:
+            this.send('surveySubmitAction1');
+            break;
+          case SURVEY.SURVEY_2:
+            this.send('surveySubmitAction2');
+            break;
+          case SURVEY.SURVEY_3:
+            this.send('surveySubmitAction3');
+            break;
+          case SURVEY.SURVEY_4:
+            this.send('surveySubmitAction4');
+            break;
+          default:
+            break;
+        }
+      }
+    }, {
       key: 'activeSurvey',
       get: function get() {
         var s = this.getWithDefault('s', 1);
@@ -2158,7 +2435,7 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
     }]);
 
     return SurveyCompComponent;
-  }(Ember.Component), (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype)), _class));
+  }(Ember.Component), (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'surveySubmitAction1', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'surveySubmitAction1'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'submit', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'submit'), _class.prototype)), _class));
   exports.default = SurveyCompComponent;
 });
 define("amazon/pod/survey/survey-comp/styles", ["exports"], function (exports) {
@@ -3483,7 +3760,7 @@ define("amazon/pod/survey/survey-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "mLrZ2inz", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBG\"]]],null]]]],[8],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyCompMain\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[11,\"for\",[21,5,[\"desc\"]],null],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]],[21,7,[\"isChecked\"]],[21,7,[\"optText\"]]]]],false],[0,\" \"],[1,[21,7,[\"optText\"]],false],[0,\" \\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[11,\"for\",[21,2,[\"desc\"]],null],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]],[21,4,[\"isChecked\"]],[21,4,[\"optText\"]]]]],false],[0,\" \"],[1,[21,4,[\"optText\"]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"type\",\"submit\"],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "K7froftL", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBG\"]]],null]]]],[8],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyCompMain\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[11,\"for\",[21,5,[\"desc\"]],null],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]],[21,7,[\"isChecked\"]],[21,7,[\"optText\"]]]]],false],[0,\" \"],[1,[21,7,[\"optText\"]],false],[0,\" \\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[11,\"for\",[21,2,[\"desc\"]],null],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]],[21,4,[\"isChecked\"]],[21,4,[\"optText\"]]]]],false],[0,\" \"],[1,[21,4,[\"optText\"]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"btn btn-primary\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"submit\"]],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
 });
 define("amazon/pod/survey/template", ["exports"], function (exports) {
   "use strict";
@@ -3590,6 +3867,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+193591a7"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+979c82b5"});
 }
 //# sourceMappingURL=amazon.map

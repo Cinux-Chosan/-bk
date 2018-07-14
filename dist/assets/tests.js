@@ -107,7 +107,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('helpers/set-and-return.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'helpers/set-and-return.js should pass ESLint\n\n6:10 - \'params\' is not defined. (no-undef)');
+    assert.ok(true, 'helpers/set-and-return.js should pass ESLint\n\n');
   });
 
   QUnit.test('helpers/string.js', function (assert) {
@@ -132,7 +132,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('pod/amazon/amazon-comp/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n9:10 - \'set\' is defined but never used. (no-unused-vars)');
+    assert.ok(true, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n');
   });
 
   QUnit.test('pod/amazon/amazon-comp/goods/clothes.man.1.js', function (assert) {
@@ -844,6 +844,78 @@ define('amazon/tests/tests.lint-test', [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/pod/wenjuan/route-test.js should pass ESLint\n\n');
   });
+});
+define('amazon/tests/unit/initializers/inject-router-test', ['amazon/initializers/inject-router', 'qunit', 'ember-qunit', 'amazon/tests/helpers/destroy-app'], function (_injectRouter, _qunit, _emberQunit, _destroyApp) {
+    'use strict';
+
+    function _asyncToGenerator(fn) {
+        return function () {
+            var gen = fn.apply(this, arguments);
+            return new Promise(function (resolve, reject) {
+                function step(key, arg) {
+                    try {
+                        var info = gen[key](arg);
+                        var value = info.value;
+                    } catch (error) {
+                        reject(error);
+                        return;
+                    }
+
+                    if (info.done) {
+                        resolve(value);
+                    } else {
+                        return Promise.resolve(value).then(function (value) {
+                            step("next", value);
+                        }, function (err) {
+                            step("throw", err);
+                        });
+                    }
+                }
+
+                return step("next");
+            });
+        };
+    }
+
+    (0, _qunit.module)('Unit | Initializer | inject-router', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+        hooks.beforeEach(function () {
+            this.TestApplication = Ember.Application.extend();
+            this.TestApplication.initializer({
+                name: 'initializer under test',
+                initialize: _injectRouter.initialize
+            });
+            this.application = this.TestApplication.create({ autoboot: false });
+        });
+        hooks.afterEach(function () {
+            (0, _destroyApp.default)(this.application);
+        });
+        // Replace this with your real tests.
+        (0, _qunit.test)('it works', function () {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(assert) {
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.next = 2;
+                                return this.application.boot();
+
+                            case 2:
+                                assert.ok(true);
+
+                            case 3:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+
+            return function (_x) {
+                return _ref.apply(this, arguments);
+            };
+        }());
+    });
 });
 define('amazon/tests/unit/pod/amazon/route-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
     'use strict';

@@ -37,7 +37,35 @@
         margin-left: 10px; }
   ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x {
     float: right;
-    width: 240px; }
+    width: 240px;
+    text-align: center;
+    padding: 18px;
+    box-sizing: border-box; }
+    ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._shareImg_fd9r4x {
+      cursor: pointer; }
+    ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x {
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      padding: 18px;
+      border-radius: 5px;
+      margin-top: 10px; }
+      ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x {
+        background: #f0c14b;
+        border: 1px solid;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: #111;
+        height: 31px;
+        line-height: 26px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0; }
+        ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x:hover {
+          border-color: #a88734 #9c7e31 #846a29;
+          background: #e6be58; }
+        ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x ._cartIcon_fd9r4x {
+          float: left;
+          vertical-align: middle;
+          margin-left: 2px; }
 
 ._section1_fd9r4x ._preview_fd9r4x {
   margin-left: 60px;
@@ -63,6 +91,7 @@
     ._section1_fd9r4x ._goodsOpts_fd9r4x ._thumbnail_fd9r4x img, ._section1_fd9r4x ._thumbnailList_fd9r4x ._thumbnail_fd9r4x img {
       vertical-align: middle;
       max-width: 100%;
+      max-height: 100%;
       position: relative;
       top: 50%;
       transform: translateY(-50%); }
@@ -553,6 +582,36 @@ ul:global(.clearfix)::after, section:global(.clearfix)::after {
   clear: both;
   display: block; }
 
+button:global(.btn) {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+button:global(.btn-primary) {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+  button:global(.btn-primary):hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74; }
+
 /* styles for amazon/styles/common.scss */
 html, html > ._ember-view_sj9897, body, body > ._ember-view_sj9897 {
   height: 100%; }
@@ -568,6 +627,36 @@ ul.clearfix::after, section.clearfix::after {
   content: '';
   clear: both;
   display: block; }
+
+button.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+button.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+  button.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74; }
 
 /* styles for amazon/styles/normalize.scss */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
