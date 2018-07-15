@@ -4,6 +4,11 @@ import survey1 from './surveys/survey.1';
 import survey2 from './surveys/survey.2.1';
 import survey3 from './surveys/survey.2.2';
 import survey4 from './surveys/survey.2.3';
+import { copy } from '@ember/object/internals';
+import { scrollTo } from 'amazon/utils/util';
+import styles from './styles';
+
+const { random } = Math;
 
 const SURVEY = {
   SURVEY_1: 1,
@@ -13,42 +18,119 @@ const SURVEY = {
 }
 
 export default class SurveyCompComponent extends Component {
-  survey1 = survey1;
-  survey2 = survey2;
-  survey3 = survey3;
-  survey4 = survey4;
+  survey1 = copy(survey1, true);
+  survey2 = copy(survey2, true);
+  survey3 = copy(survey3, true);
+  survey4 = copy(survey4, true);
   s;
   @computed('s')
   get activeSurvey() {
     let s = this.getWithDefault('s', 1);
     return this.get(`survey${s}`);
   }
+
+  didInsertElement() {
+    let radios = this.$('[id^="i-check"]');
+    let ctx = this;
+    radios.on('ifToggled', function() {
+      if (this.checked) {
+        ctx.$(this).closest(`.${styles['error']}`).removeClass(styles['error']);
+      }
+    })
+  }
+
+  validate(surveyItems) {
+    return surveyItems.every(el => {
+      if (el.type === 'radio') {
+        if (!el.opts.some(opEl => opEl.isChecked)) {
+          // 该选项都没有选中
+          let selector = `[data-desc="${el.desc}"]`;
+          scrollTo(selector);
+          this.$(selector).addClass(styles['error']);
+          return false;
+        } else {
+          return true;
+        }
+      } else if (el.type === 'group') {
+        return this.validate(el.items);
+      }
+    })
+  }
+
   @action
   surveySubmitAction1() {
-    let { activeSurvey, appController } = this.getProperties(['activeSurvey', 'appController']);
-    let genderSelected = activeSurvey.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
-    if (genderSelected.optText === 'Male') {
-      appController.transitionToRoute('amazon', { queryParams: { g: '1_2_5_6' }});
+    let appController  = this.get('appController');
+    if (+random().toFixed()) {  // 随机跳手机、衣服
+      appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});  // 跳手机页面
     } else {
-      appController.transitionToRoute('amazon', { queryParams: { g: '3_4_5_6' }});
+      let survey1 = JSON.parse(localStorage.getItem('survey1'));
+      let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+      if (genderSelected.optText === 'Male') {
+        appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});  // 跳男人装
+      } else {
+        appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});  // 跳女人装
+      }
     }
   }
 
   @action
+  surveySubmitAction2() {
+    let { appController } = this.getProperties(['appController']);
+    if (localStorage.getItem('survey3')) {  
+      // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
+      appController.transitionToRoute({ queryParams: { s: 4 }});
+    } else {
+      // 否则跳转到衣服
+      let survey1 = JSON.parse(localStorage.getItem('survey1'));
+      let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+      if (genderSelected.optText === 'Male') {
+        appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});
+      } else {
+        appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});
+      }
+    }
+  }
+
+  @action
+  surveySubmitAction3() {
+    let appController  = this.get('appController');
+    if (localStorage.getItem('survey2')) {
+      // 如果 survey2 有记录， 则证明手机问卷已经填写， 则跳最后一个问卷
+      appController.transitionToRoute({ queryParams: { s: 4 }});
+    } else {
+      // 否则跳手机购买页面
+      appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});
+    }
+  }
+
+  @action
+  surveySubmitAction4() {
+    // 存储数据到 indexDB 和 excel
+    let appController  = this.get('appController');
+    appController.transitionToRoute({ queryParams: { s: 1 }});
+  }
+
+  @action
   submit() {
+    let activeSurvey = this.get('activeSurvey');
     let s = this.getWithDefault('s', 1);
-    switch (s) {
+    if (this.validate(activeSurvey.items)) {
+      localStorage.setItem(`survey${s}`, JSON.stringify(activeSurvey)); // 存储当前问卷数据
+    } else {
+      return;
+    }
+    switch (Number(s)) {
       case SURVEY.SURVEY_1:
-        this.send('surveySubmitAction1');
+        this.send('surveySubmitAction1');  // 填完第一个问卷
       break;
       case SURVEY.SURVEY_2:
-        this.send('surveySubmitAction2');
+        this.send('surveySubmitAction2');  // 填完手机问卷
       break;
       case SURVEY.SURVEY_3:
-        this.send('surveySubmitAction3');
+        this.send('surveySubmitAction3');  // 填完衣服问卷
       break;
       case SURVEY.SURVEY_4:
-        this.send('surveySubmitAction4');
+        this.send('surveySubmitAction4');  // 填完最终问卷
       break;
       default:
         break;

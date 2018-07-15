@@ -82,7 +82,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Jake Roehmon'
+          userName: 'Jake Roehm'
         },
         reviewTxt: 'Amazing ! Shirt fits great looks great feels great',
         date: 'June 25, 2018'
@@ -90,7 +90,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'James Boydon'
+          userName: 'James Boyd'
         },
         reviewTxt: 'I\'d say the shirt fits like the picture shows',
         date: 'June 18, 2018'
@@ -98,7 +98,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Bexareagleon'
+          userName: 'Bexareagle'
         },
         reviewTxt: 'Really nice slim and thin shirt that fits perfectly and looks awesome',
         date: 'June 16, 2018'
@@ -106,7 +106,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Bodenon'
+          userName: 'Boden'
         },
         reviewTxt: 'I love it was exactly what I expected.',
         date: 'June 7, 2018'
@@ -124,7 +124,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Crystal Garciaon'
+          userName: 'Crystal Garcia'
         },
         reviewTxt: 'This is a very attractive shirt with blue denim jeans or khaki slacks ',
         date: 'June 23, 2018'
@@ -132,7 +132,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Johnon '
+          userName: 'John'
         },
         reviewTxt: 'Variety of colors to choose from',
         date: 'June 11, 2018'
@@ -140,7 +140,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'C. Vasquezon'
+          userName: 'C. Vasquez'
         },
         reviewTxt: 'high quality cotton, soft and the stitching is very good ',
         date: 'June 7, 2018'
@@ -148,7 +148,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'capponon '
+          userName: 'cappon'
         },
         reviewTxt: 'Turn down collar, Slim fit',
         date: 'June 7, 2018'

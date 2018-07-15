@@ -76,7 +76,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'jesmon '
+          userName: 'jesm'
         },
         reviewTxt: 'Super comfy and adorable. It\'s stretchy.',
         date: 'June 30, 2018'
@@ -84,7 +84,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Hoof Artedon '
+          userName: 'Hoof Arted'
         },
         reviewTxt: 'This summer dress is now my favorite go-to dress in my closet',
         date: 'June 29, 2018'
@@ -92,7 +92,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron'
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'Super cute summer dress! Loved the look and looks exactly like the picture',
         date: 'June 30, 2018'
@@ -100,7 +100,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Gary Lewison'
+          userName: 'Gary Lewis'
         },
         reviewTxt: 'Super comfy and perfect for summer',
         date: 'June 29, 2018'
@@ -108,7 +108,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amandaon  '
+          userName: 'Amanda'
         },
         reviewTxt: 'The dress is so light and airy. It is perfect for the summer! I love it!!',
         date: 'June 29, 2018'
@@ -118,7 +118,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Kimon '
+          userName: 'Kim'
         },
         reviewTxt: '85% Polyester+15% Cotton. 100% brand new and high quality',
         date: 'June 30, 2018'
@@ -126,7 +126,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron'
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'it has POCKETS! The pockets are deep and super handy',
         date: 'June 29, 2018'
@@ -134,7 +134,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Jonathan Alveson'
+          userName: 'Jonathan Alves'
         },
         reviewTxt: 'The Style is Sexy, Floral, V Neck, Backless',
         date: 'June 29, 2018'
@@ -142,7 +142,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'MQon'
+          userName: 'MQ'
         },
         reviewTxt: 'A Line, Spaghetti Strap, Midi Length',
         date: 'June 29, 2018'
@@ -150,7 +150,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'cody fisheron'
+          userName: 'cody fisher'
         },
         reviewTxt: 'It has two pockets',
         date: 'June 29, 2018'

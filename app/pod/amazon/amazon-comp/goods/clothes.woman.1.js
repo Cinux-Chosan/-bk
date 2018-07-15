@@ -76,7 +76,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Jessica Clarkon '
+          userName: 'Jessica Clark'
         },
         reviewTxt: 'It\'s so cute and soft. I wear it at least a few times a week',
         date: 'June 29, 2018'
@@ -84,7 +84,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'T Lynnon '
+          userName: 'T Lynn '
         },
         reviewTxt: 'LOVE! So cute and comfortable!!',
         date: 'June 28, 2018'
@@ -100,7 +100,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Anaon  '
+          userName: 'Ana'
         },
         reviewTxt: 'Amazing top, love the way it feels and looks!',
         date: 'June 20, 2018'
@@ -108,7 +108,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Lemon253on '
+          userName: 'Lemon253'
         },
         reviewTxt: 'Very comfy, looks great, feels very soft, is perfect for spring and early fall',
         date: 'June 19, 2018'
@@ -118,7 +118,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron'
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'The material is so warm, yet light',
         date: 'June 28, 2018'
@@ -126,7 +126,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Stephanie B.on  '
+          userName: 'Stephanie B'
         },
         reviewTxt: 'Love the sweatshirt. Comfortable and light weight for those cool nights',
         date: 'June 25, 2018'
@@ -142,7 +142,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Elizabethon   '
+          userName: 'Elizabeth'
         },
         reviewTxt: 'The blue in this is slightly less greenish than it looks',
         date: 'June 20, 2018'
@@ -150,7 +150,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Erin Holzeron'
+          userName: 'Erin Holzer'
         },
         reviewTxt: 'Soft fabric, light weight, cute top, Gorgeous colors',
         date: 'June 19, 2018'

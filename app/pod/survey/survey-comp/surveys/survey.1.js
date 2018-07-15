@@ -1,5 +1,5 @@
 export default {
-  title: "问卷一",
+  title: "Survey 1",
   items: [{
     "desc": "Gerder",
     "type": "radio",
@@ -50,7 +50,7 @@ export default {
   }, {
     "desc": "Please indicate how much you disagree or agree with each of the following statements.",
     "type": "group",
-    "opts": [{
+    "items": [{
       "desc": "People in higher positions should make most decisions without consulting people in lower positions.",
       "type": "radio",
       "opts": [{

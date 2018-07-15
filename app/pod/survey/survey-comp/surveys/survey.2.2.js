@@ -1,9 +1,9 @@
 export default {
-  title: "问卷二",
+  title: "Survey 3",
   items: [{
     "desc": "Please indicate how much you disagree or agree with each of the following statements.",
     "type": "group",
-    "opts": [{
+    "items": [{
       "desc": "When I want to buy a clothing, I have an expectation for searching for experience -based reviews;",
       "type": "radio",
       "opts": [{

@@ -59,7 +59,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Thomas Kingon '
+          userName: 'Thomas King'
         },
         reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
         date: 'January 1, 2018'
@@ -67,7 +67,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'V12 Vantageon'
+          userName: 'V12 Vantage'
         },
         reviewTxt: 'I\'m loving it every day when I wake up and touch it',
         date: 'November 5, 2017'
@@ -75,7 +75,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron  '
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
         date: 'February 22, 2018'
@@ -83,7 +83,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Keith H.on '
+          userName: 'Keith H.'
         },
         reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
         date: 'June 29, 2018'
@@ -91,7 +91,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Buyeron '
+          userName: 'Buyer'
         },
         reviewTxt: 'I quickly became comfortable using my cell phone',
         date: 'June 27, 2018'
@@ -101,7 +101,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Carlon '
+          userName: 'Carl'
         },
         reviewTxt: 'This is a great phone with an amazing camera. ',
         date: 'June 19, 2018'
@@ -109,7 +109,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Kekanon   '
+          userName: 'Kekan'
         },
         reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
         date: 'June 8, 2018'
@@ -125,7 +125,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Annaon'
+          userName: 'Anna'
         },
         reviewTxt: 'The cell phone boasts the largest battery in Apple history',
         date: 'May 31, 2018'
@@ -133,7 +133,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'steven hellmichon'
+          userName: 'steven hellmich'
         },
         reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
         date: 'May 23, 2018'

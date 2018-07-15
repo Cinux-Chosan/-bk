@@ -78,7 +78,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Maribelon '
+          userName: 'Maribel'
         },
         reviewTxt: 'It is awesome. Just wish I looked as good as the model wearing it',
         date: 'June 27, 2018'
@@ -86,7 +86,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Caden Smithon'
+          userName: 'Caden Smith'
         },
         reviewTxt: 'Fits as expected, I have an athletic body and this shirt hugs just right',
         date: 'June 23, 2018'
@@ -94,7 +94,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Peteron '
+          userName: 'Peter'
         },
         reviewTxt: 'Nice and stylish shirt. I get compliments about it all the time',
         date: 'June 14, 2018'
@@ -102,7 +102,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'emanueleon '
+          userName: 'emanuele'
         },
         reviewTxt: 'Looks very good, fit very well, and very much enjoying',
         date: 'June 9, 2018'
@@ -110,7 +110,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Mandy Atwellon'
+          userName: 'Mandy Atwell'
         },
         reviewTxt: 'Perfect. Wear it all of the time! Classy and Stylish look',
         date: 'June 5, 2018'
@@ -120,7 +120,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'César Javier Cornielon'
+          userName: 'César Javier Corniel'
         },
         reviewTxt: 'Long Sleeve & Short Sleeve',
         date: 'June 24, 2018'
@@ -128,7 +128,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Kidlaton  '
+          userName: 'Kidlat'
         },
         reviewTxt: 'Handwash and machine availible',
         date: 'June 23, 2018'
@@ -136,7 +136,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'David '
+          userName: 'David'
         },
         reviewTxt: 'Slim Fit, Long Sleeve, Button Down, Printed Dress Shirts',
         date: 'June 12, 2018'
@@ -144,7 +144,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Californianon  '
+          userName: 'Californian'
         },
         reviewTxt: 'The pattern design is discrete but elegant, the shirt is good Quality for the price',
         date: 'June 5, 2018'
@@ -152,7 +152,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron '
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'US size, 100% cotton',
         date: 'June 4, 2018'

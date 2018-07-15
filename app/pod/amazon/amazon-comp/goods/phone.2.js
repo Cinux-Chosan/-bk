@@ -87,7 +87,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Win2000on '
+          userName: 'Win2000'
         },
         reviewTxt: 'The speakers are excellent, music sounds great and phone calls come through very clear',
         date: 'April 1, 2018'
@@ -95,7 +95,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'CVPIon '
+          userName: 'CVPI'
         },
         reviewTxt: 'This phone is really fast, great camera, speakers, screen',
         date: 'March 16, 2018'
@@ -103,7 +103,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'KGon'
+          userName: 'KG'
         },
         reviewTxt: 'The camera is nice, the pictures come out clean and clear',
         date: 'March 17, 2018'
@@ -111,7 +111,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Alexon '
+          userName: 'Alex'
         },
         reviewTxt: 'Very nice upgrade. I\'m glad I went with the cell . I really like the big screen, and extra camera',
         date: 'June 14, 2018'
@@ -119,7 +119,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Mad Scientiston '
+          userName: 'Mad Scientist'
         },
         reviewTxt: 'The S9 works VERY fast when loading apps and pages',
         date: 'May 16, 2018'
@@ -129,7 +129,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'sam surbruggon '
+          userName: 'sam surbrugg'
         },
         reviewTxt: 'It\'s gorgeous! I love the display and the infinity edge ',
         date: 'June 29, 2018'
@@ -145,7 +145,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'keithmichalon '
+          userName: 'keithmichal '
         },
         reviewTxt: 'Great camera, awesome software, fast and productive',
         date: 'June 27, 2018'
@@ -153,7 +153,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Margie Nunezon '
+          userName: 'Margie Nunez'
         },
         reviewTxt: 'This phone features ability to record video at 4K 60fps',
         date: 'June 26, 2018'
@@ -161,7 +161,7 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'jon slusarzon'
+          userName: 'jon slusarz'
         },
         reviewTxt: 'The phone provides the security features like the fingerprint scanner and face detection',
         date: 'June 26, 2018'

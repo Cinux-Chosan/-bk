@@ -1,6 +1,6 @@
 <div local-class="amazonContainer">
   {{#each gList as |g|}}
-    {{amazon/amazon-comp goods=g}}
+    {{amazon/amazon-comp goods=g onAdding2Cart=(action "onAdding2Cart" g)}}
   {{/each}}
 </div>
 
