@@ -37,7 +37,35 @@
         margin-left: 10px; }
   ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x {
     float: right;
-    width: 240px; }
+    width: 240px;
+    text-align: center;
+    padding: 18px;
+    box-sizing: border-box; }
+    ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._shareImg_fd9r4x {
+      cursor: pointer; }
+    ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x {
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      padding: 18px;
+      border-radius: 5px;
+      margin-top: 10px; }
+      ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x {
+        background: #f0c14b;
+        border: 1px solid;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: #111;
+        height: 31px;
+        line-height: 26px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0; }
+        ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x:hover {
+          border-color: #a88734 #9c7e31 #846a29;
+          background: #e6be58; }
+        ._section1_fd9r4x ._right_fd9r4x ._rRight_fd9r4x ._addToCartContainer_fd9r4x ._addToCartBtn_fd9r4x ._cartIcon_fd9r4x {
+          float: left;
+          vertical-align: middle;
+          margin-left: 2px; }
 
 ._section1_fd9r4x ._preview_fd9r4x {
   margin-left: 60px;
@@ -63,6 +91,7 @@
     ._section1_fd9r4x ._goodsOpts_fd9r4x ._thumbnail_fd9r4x img, ._section1_fd9r4x ._thumbnailList_fd9r4x ._thumbnail_fd9r4x img {
       vertical-align: middle;
       max-width: 100%;
+      max-height: 100%;
       position: relative;
       top: 50%;
       transform: translateY(-50%); }
@@ -163,9 +192,16 @@
 
 /* styles for amazon/pod/survey/survey-comp/styles.scss */
 ._root_1oqx04 {
-  background: #e4ce83 url(../img/Nview.jpg) no-repeat fixed top center;
   min-height: 100%;
+  position: relative;
   overflow: hidden; }
+  ._root_1oqx04 ._surveyBG_1oqx04 {
+    background: #e4ce83 url(../img/Nview.jpg) no-repeat top center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
 
 ._surveyCompMain_1oqx04 {
   width: 920px;
@@ -176,6 +212,7 @@
   padding-left: 70px;
   padding-right: 70px;
   box-sizing: border-box;
+  position: relative;
   margin-bottom: 80px; }
 
 ._surveyHead_1oqx04 {
@@ -205,7 +242,8 @@
       line-height: 20px;
       margin-top: 16px; }
       ._surveyBody_1oqx04 ._surveyItem_1oqx04 ._surveyOpts_1oqx04 ._surveyOpt_1oqx04, ._surveyBody_1oqx04 ._surveyItem_1oqx04 ._surveyOpts_1oqx04 ._surveyOpt_1oqx04 label {
-        cursor: pointer !important; }
+        cursor: pointer !important;
+        border-radius: 5px; }
       ._surveyBody_1oqx04 ._surveyItem_1oqx04 ._surveyOpts_1oqx04 ._surveyOpt_1oqx04 label {
         width: 100%;
         display: block;
@@ -230,231 +268,6 @@
   text-align: center; }
 
 /* styles for amazon/styles/app.scss */
-.__amazon__1873c .amazonContainer {
-  min-width: 996px;
-  height: 100%; }
-
-.__survey__a639c .surveyContainer {
-  height: 100%; }
-
-.__amazon__amazon-comp__dd9ab .root {
-  min-height: 100%;
-  width: 100%;
-  padding-top: 20px; }
-  .__amazon__amazon-comp__dd9ab .root header {
-    font-size: 3em;
-    text-align: center;
-    line-height: 2em;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 1em; }
-
-.__amazon__amazon-comp__dd9ab .section1 .left {
-  float: left;
-  width: 40%; }
-
-.__amazon__amazon-comp__dd9ab .section1 .right {
-  float: left;
-  width: 60%; }
-  .__amazon__amazon-comp__dd9ab .section1 .right .rLeft {
-    padding: 18px;
-    box-sizing: border-box;
-    margin-right: 240px; }
-    .__amazon__amazon-comp__dd9ab .section1 .right .rLeft .goodsTitle {
-      color: #555;
-      font-weight: 400;
-      font-size: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #e7e7e7; }
-    .__amazon__amazon-comp__dd9ab .section1 .right .rLeft .goodsOpts {
-      width: 100%;
-      margin-top: 10px; }
-      .__amazon__amazon-comp__dd9ab .section1 .right .rLeft .goodsOpts dd {
-        float: left;
-        margin: 10px 0; }
-      .__amazon__amazon-comp__dd9ab .section1 .right .rLeft .goodsOpts dd + dd {
-        margin-left: 10px; }
-  .__amazon__amazon-comp__dd9ab .section1 .right .rRight {
-    float: right;
-    width: 240px; }
-
-.__amazon__amazon-comp__dd9ab .section1 .preview {
-  margin-left: 60px;
-  width: auto;
-  text-align: center; }
-  .__amazon__amazon-comp__dd9ab .section1 .preview .previewImg {
-    max-width: 100%; }
-
-.__amazon__amazon-comp__dd9ab .section1 .goodsOpts, .__amazon__amazon-comp__dd9ab .section1 .thumbnailList {
-  float: left;
-  width: 38px; }
-  .__amazon__amazon-comp__dd9ab .section1 .goodsOpts .thumbnail, .__amazon__amazon-comp__dd9ab .section1 .thumbnailList .thumbnail {
-    width: 38px;
-    height: 50px;
-    cursor: pointer;
-    overflow: hidden;
-    text-align: center;
-    margin-bottom: 10px;
-    border: 1px solid #eee; }
-    .__amazon__amazon-comp__dd9ab .section1 .goodsOpts .thumbnail.active, .__amazon__amazon-comp__dd9ab .section1 .goodsOpts .thumbnail:hover, .__amazon__amazon-comp__dd9ab .section1 .thumbnailList .thumbnail.active, .__amazon__amazon-comp__dd9ab .section1 .thumbnailList .thumbnail:hover {
-      border-color: #e77600;
-      box-shadow: rgba(228, 121, 17, 0.5) 0px 0px 3px 2px; }
-    .__amazon__amazon-comp__dd9ab .section1 .goodsOpts .thumbnail img, .__amazon__amazon-comp__dd9ab .section1 .thumbnailList .thumbnail img {
-      vertical-align: middle;
-      max-width: 100%;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%); }
-
-.__amazon__amazon-comp__dd9ab .section1 .goodsDetails {
-  list-style-type: disc;
-  font-size: .7em;
-  margin-left: 1.2em;
-  line-height: 16px; }
-  .__amazon__amazon-comp__dd9ab .section1 .goodsDetails li + li {
-    margin-top: 8px; }
-
-.__amazon__amazon-comp__dd9ab .section1 .review {
-  clear: both;
-  margin-top: 30px; }
-
-.__amazon__amazon-comp__dd9ab .section1 .reviewsSum .imgAndCount {
-  cursor: pointer; }
-  .__amazon__amazon-comp__dd9ab .section1 .reviewsSum .imgAndCount:hover .reviewSumCount {
-    color: #c45500; }
-
-.__amazon__amazon-comp__dd9ab .section1 .reviewsSum h2 {
-  font-size: 1.2em;
-  margin-bottom: 14px; }
-
-.__amazon__amazon-comp__dd9ab .section1 .reviewsSum .reviewSumImg {
-  vertical-align: bottom; }
-
-.__amazon__amazon-comp__dd9ab .section1 .reviewsSum .reviewSumDesc {
-  color: #0066c0;
-  margin: 4px 0 14px;
-  font-size: .8em; }
-
-.__amazon__amazon-comp__dd9ab .section1 .reviewDetailList {
-  font-size: 1.2em; }
-  .__amazon__amazon-comp__dd9ab .section1 .reviewDetailList li {
-    font-family: monospace;
-    float: none;
-    color: #0066c0; }
-    .__amazon__amazon-comp__dd9ab .section1 .reviewDetailList li .progressBar {
-      width: 100px;
-      max-width: 100px;
-      vertical-align: middle;
-      margin-bottom: 3px; }
-
-.__amazon__amazon-comp__dd9ab .section2 {
-  margin-top: 30px; }
-  .__amazon__amazon-comp__dd9ab .section2 .reviewDetails .rvwLeft, .__amazon__amazon-comp__dd9ab .section2 .reviewDetails .rvwRight {
-    width: 50%;
-    float: left;
-    padding: 20px;
-    box-sizing: border-box; }
-  .__amazon__amazon-comp__dd9ab .section2 .reviewDetails .rvwRight {
-    border-left: 1px solid #eee; }
-
-.__amazon__user-review__03c65 .root {
-  font-size: 16px;
-  border-bottom: 1px dashed #eee;
-  padding: 20px; }
-
-.__amazon__user-review__03c65 .userInfo .avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 34px;
-  vertical-align: middle;
-  margin-right: 8px; }
-
-.__amazon__user-review__03c65 .review .date {
-  font-size: .8em;
-  margin-top: .3em; }
-
-.__progress-bar__6f60d .root {
-  display: inline-block;
-  width: 100%;
-  height: 1em;
-  background: #f3f3f3;
-  background: linear-gradient(to bottom, #eee, #f6f6f6);
-  border-radius: 1px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-  border-radius: 1px; }
-
-.__progress-bar__6f60d .ratio {
-  transition: all 0.2s;
-  background-color: #ffc403;
-  height: 100%;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.05); }
-
-.__survey__survey-comp__994fa .root {
-  background: #e4ce83 url(../img/Nview.jpg) no-repeat fixed top center;
-  min-height: 100%;
-  overflow: hidden; }
-
-.__survey__survey-comp__994fa .surveyCompMain {
-  width: 920px;
-  margin: auto;
-  padding-top: 0;
-  margin-top: 68px;
-  background: #fff;
-  padding-left: 70px;
-  padding-right: 70px;
-  box-sizing: border-box;
-  margin-bottom: 80px; }
-
-.__survey__survey-comp__994fa .surveyHead {
-  line-height: 20px;
-  text-align: center;
-  width: 96%;
-  padding: 40px 2% 30px; }
-  .__survey__survey-comp__994fa .surveyHead h1 {
-    font-weight: bold;
-    color: #39a4db;
-    font-size: 24px;
-    margin-bottom: 30px;
-    border-bottom: 1px dashed #eee;
-    padding-bottom: 20px; }
-
-.__survey__survey-comp__994fa .surveyBody {
-  text-align: left;
-  font-size: 18px; }
-  .__survey__survey-comp__994fa .surveyBody .surveyItem {
-    margin-top: 20px; }
-    .__survey__survey-comp__994fa .surveyBody .surveyItem .desc {
-      font-weight: bold;
-      font-size: 1em; }
-      .__survey__survey-comp__994fa .surveyBody .surveyItem .desc:first-letter {
-        text-transform: capitalize; }
-    .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts {
-      line-height: 20px;
-      margin-top: 16px; }
-      .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts .surveyOpt, .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts .surveyOpt label {
-        cursor: pointer !important; }
-      .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts .surveyOpt label {
-        width: 100%;
-        display: block;
-        padding: 8px 18px; }
-      .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts .surveyOpt:hover, .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts .surveyOpt label:hover {
-        background: #eee; }
-      .__survey__survey-comp__994fa .surveyBody .surveyItem .surveyOpts li + li {
-        margin-left: 60px; }
-    .__survey__survey-comp__994fa .surveyBody .surveyItem .largeOpts {
-      clear: both;
-      margin: 0 !important;
-      width: 100%; }
-    .__survey__survey-comp__994fa .surveyBody .surveyItem .subItem {
-      margin-top: 16px;
-      font-size: .8em;
-      padding-left: 14px; }
-
-.__survey__survey-comp__994fa .surveyFooter {
-  width: 100%;
-  border-top: 1px dashed #eee;
-  padding: 30px;
-  text-align: center; }
-
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -764,10 +577,40 @@ ul {
   ul li {
     float: left; }
 
-:global(.clearfix)::after {
+ul:global(.clearfix)::after, section:global(.clearfix)::after {
   content: '';
   clear: both;
   display: block; }
+
+button:global(.btn) {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+button:global(.btn-primary) {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+  button:global(.btn-primary):hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74; }
 
 /* styles for amazon/styles/common.scss */
 html, html > ._ember-view_sj9897, body, body > ._ember-view_sj9897 {
@@ -780,10 +623,40 @@ ul {
   ul li {
     float: left; }
 
-.clearfix::after {
+ul.clearfix::after, section.clearfix::after {
   content: '';
   clear: both;
   display: block; }
+
+button.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+button.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+  button.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74; }
 
 /* styles for amazon/styles/normalize.scss */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

@@ -107,7 +107,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('helpers/set-and-return.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'helpers/set-and-return.js should pass ESLint\n\n6:10 - \'params\' is not defined. (no-undef)');
+    assert.ok(true, 'helpers/set-and-return.js should pass ESLint\n\n');
   });
 
   QUnit.test('helpers/string.js', function (assert) {
@@ -132,7 +132,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('pod/amazon/amazon-comp/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n9:10 - \'set\' is defined but never used. (no-unused-vars)');
+    assert.ok(true, 'pod/amazon/amazon-comp/component.js should pass ESLint\n\n');
   });
 
   QUnit.test('pod/amazon/amazon-comp/goods/clothes.man.1.js', function (assert) {

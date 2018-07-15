@@ -388,7 +388,7 @@ define('amazon/helpers/set-and-return', ['exports'], function (exports) {
   exports.setAndReturn = setAndReturn;
   function setAndReturn([o, value] /*, hash*/) {
     Ember.set(o, value);
-    return params;
+    return o;
   }
 
   exports.default = Ember.Helper.helper(setAndReturn);
@@ -701,6 +701,123 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], functio
   });
   exports.default = {
     goodsInfo: {
+      title: "YTD Mens 100% Cotton Casual Slim Fit Long Sleeve Button Down Printed Dress Shirts",
+      details: ["US Size,100% Cotton", "Style: Casual, Fashion, Relax, Business, Date", "Machine washable, Hand Wash suggested and Dry", "Fashion Printed and Button-down Design, Concise and Easy, Fashionable Elegance, Convenient and Practical", "Notice: Please Check the Shirt Measurement on Product Description Carefully before Order !!!!!"],
+      opts: [{
+        cover: "/img/amazon/clothes_man_1/1_1.jpg",
+        optDesc: "Green",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/1_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_1/2_1.jpg",
+        optDesc: "Green",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        optDesc: "Navy Blue",
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/3_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/3_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Maribelon '
+        },
+        reviewTxt: 'It is awesome. Just wish I looked as good as the model wearing it',
+        date: 'June 27, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Caden Smithon'
+        },
+        reviewTxt: 'Fits as expected, I have an athletic body and this shirt hugs just right',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Peteron '
+        },
+        reviewTxt: 'Nice and stylish shirt. I get compliments about it all the time',
+        date: 'June 14, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'emanueleon '
+        },
+        reviewTxt: 'Looks very good, fit very well, and very much enjoying',
+        date: 'June 9, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Mandy Atwellon'
+        },
+        reviewTxt: 'Perfect. Wear it all of the time! Classy and Stylish look',
+        date: 'June 5, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'César Javier Cornielon'
+        },
+        reviewTxt: 'Long Sleeve & Short Sleeve',
+        date: 'June 24, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kidlaton  '
+        },
+        reviewTxt: 'Handwash and machine availible',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'David '
+        },
+        reviewTxt: 'Slim Fit, Long Sleeve, Button Down, Printed Dress Shirts',
+        date: 'June 12, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Californianon  '
+        },
+        reviewTxt: 'The pattern design is discrete but elegant, the shirt is good Quality for the price',
+        date: 'June 5, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron '
+        },
+        reviewTxt: 'US size, 100% cotton',
+        date: 'June 4, 2018'
+      }]
+    }
+  };
+});
+define("amazon/pod/amazon/amazon-comp/goods/clothes.man.2", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = {
+    goodsInfo: {
       title: "LOCALMODE Men's 100% Cotton Long Sleeve Plaid Slim Fit Button Down Dress Shirt ",
       details: ["Notice: If There is Smell in Your Package, Please Wash the Shirt in Cold Water before You Wear, we have asked our factory to wash it in the next goods.", "GUARANTEE from localmode: Some buyers say our shirt size is way off which we are so confused, we have updated our shirt size measurement on Product Description of the page. Please check the size chart carefully before you order and we will give you free exchange and full refund if you get wrong size from us. THANK YOU!!!", "100% High-grade Cotton Fabrics: Good capability of tenderness, air permeability and moisture absorption feels soft and comfy.", "Fashion Plaid and Button-down Design, Concise and Easy, Fashionable Elegance, Convenient and Practical, and both Individual Character and Sport Function.", "Suitable for: Sports, Casual, Business Work, Date, Party, Perfect gift for families, friends and boyfriend.", "Wash Instruction: Handwash in cold water <30¡æ, NO BLEACH, Low iron and tumble dry on low heat", "It will arrive you in 8-12 days if your order is fulfilled by merchant.Any questions please feel free to contact us directly!"],
       opts: [{
@@ -810,18 +927,6 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], functio
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/clothes.man.2', ['exports'], function (exports) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = {
-    goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
-    }
-  };
-});
 define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.1', ['exports'], function (exports) {
   'use strict';
 
@@ -846,15 +951,116 @@ define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.2', ['exports'], funct
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/phone.1', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/phone.1", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "Apple iPhone X, GSM Unlocked 5.8\", 256 GB - Space Gray",
+      details: ["An all‑new 5.8‑inch Super Retina screen with all-screen OLED Multi-Touch display", "12MP wide-angle and telephoto cameras with Dual optical image stabilization", "Wireless Qi charging", "Splash, water, and dust resistant", "Sapphire crystal lens cover"],
+      opts: [{
+        cover: "/img/amazon/phone_1/1_1.jpg",
+        optDesc: "Silver",
+        thumbnailList: [{ img: "/img/amazon/phone_1/1_1.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/phone_1/2_1.jpg",
+        optDesc: "Space Gray",
+        thumbnailList: [{ img: "/img/amazon/phone_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/phone_1/2_5.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Thomas Kingon '
+        },
+        reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
+        date: 'January 1, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'V12 Vantageon'
+        },
+        reviewTxt: 'I\'m loving it every day when I wake up and touch it',
+        date: 'November 5, 2017'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron  '
+        },
+        reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
+        date: 'February 22, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Keith H.on '
+        },
+        reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Buyeron '
+        },
+        reviewTxt: 'I quickly became comfortable using my cell phone',
+        date: 'June 27, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Carlon '
+        },
+        reviewTxt: 'This is a great phone with an amazing camera. ',
+        date: 'June 19, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kekanon   '
+        },
+        reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
+        date: 'June 8, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customer '
+        },
+        reviewTxt: 'The cell phone uses a super retina display, with 2436-by-1125 pixel resolution and a contrast ratio of 1,000,000:1',
+        date: 'June 4, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Annaon'
+        },
+        reviewTxt: 'The cell phone boasts the largest battery in Apple history',
+        date: 'May 31, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'steven hellmichon'
+        },
+        reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
+        date: 'May 23, 2018'
+      }]
     }
   };
 });
@@ -885,6 +1091,10 @@ define("amazon/pod/amazon/amazon-comp/styles", ["exports"], function (exports) {
     "goodsTitle": "_goodsTitle_fd9r4x",
     "goodsOpts": "_goodsOpts_fd9r4x",
     "rRight": "_rRight_fd9r4x",
+    "shareImg": "_shareImg_fd9r4x",
+    "addToCartContainer": "_addToCartContainer_fd9r4x",
+    "addToCartBtn": "_addToCartBtn_fd9r4x",
+    "cartIcon": "_cartIcon_fd9r4x",
     "preview": "_preview_fd9r4x",
     "previewImg": "_previewImg_fd9r4x",
     "thumbnailList": "_thumbnailList_fd9r4x",
@@ -911,22 +1121,59 @@ define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "PCweqcnm", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "aY2rO9TG", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n  \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n      \"],[6,\"img\"],[10,\"src\",\"/img/amazon/share.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"shareImg\"]]],null]]]],[8],[9],[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"addToCartContainer\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"button\"],[11,\"class\",[27,[\"btn \",[26,\"unbound\",[[22,[\"__styles__\",\"addToCartBtn\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"img\"],[10,\"src\",\"/img/amazon/icon_cart.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"cartIcon\"]]],null]]]],[8],[9],[0,\"\\n           Add To Cart\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[0,\"\\n          \"],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"        \"],[6,\"li\"],[8],[0,\"\\n          \"],[1,[21,8,[]],false],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n      \"]],\"parameters\":[7]},null],[0,\" \"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\"\\n            \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,6,[\"label\"]],false],[0,\" \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\\n\"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"  \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n  \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\" \"]],\"parameters\":[4]},null],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\" \"]],\"parameters\":[3]},null],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
 });
-define('amazon/pod/amazon/controller', ['exports'], function (exports) {
+define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], function (exports, _object) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  let SurveyController = class SurveyController extends Ember.Controller {
+  exports.default = undefined;
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  var _dec, _desc, _value, _class;
+
+  let SurveyController = (_dec = (0, _object.computed)('g'), (_class = class SurveyController extends Ember.Controller {
     constructor(...args) {
       var _temp;
 
-      return _temp = super(...args), this.queryParams = ['g'], this.g = 1, _temp;
+      return _temp = super(...args), this.queryParams = ['g'], this.g = '1', _temp;
     }
 
-  };
+    get gList() {
+      let gList = this.getWithDefault('g', '1_2');
+      return gList.split('_');
+    }
+  }, (_applyDecoratedDescriptor(_class.prototype, 'gList', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'gList'), _class.prototype)), _class));
   exports.default = SurveyController;
 });
 define('amazon/pod/amazon/route', ['exports'], function (exports) {
@@ -954,7 +1201,7 @@ define("amazon/pod/amazon/template", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "J0KUdi+1", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"amazonContainer\"]]],null]]]],[8],[0,\"\\n  \"],[1,[26,\"amazon/amazon-comp\",null,[[\"goods\"],[[22,[\"g\"]]]]],false],[0,\"\\n\"],[9],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "D3Kahtu2", "block": "{\"symbols\":[\"g\"],\"statements\":[[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"amazonContainer\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"gList\"]]],null,{\"statements\":[[0,\"    \"],[1,[26,\"amazon/amazon-comp\",null,[[\"goods\"],[[21,1,[]]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[9],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/template.hbs" } });
 });
 define('amazon/pod/amazon/user-review/component', ['exports'], function (exports) {
   'use strict';
@@ -1127,6 +1374,13 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
 
   var _dec, _desc, _value, _class;
 
+  const SURVEY = {
+    SURVEY_1: 1,
+    SURVEY_2: 2,
+    SURVEY_3: 3,
+    SURVEY_4: 4
+  };
+
   let SurveyCompComponent = (_dec = (0, _object.computed)('s'), (_class = class SurveyCompComponent extends Ember.Component {
     constructor(...args) {
       var _temp;
@@ -1138,7 +1392,33 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
       let s = this.getWithDefault('s', 1);
       return this.get(`survey${s}`);
     }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype)), _class));
+
+    surveySubmitAction1() {
+      this.get('appController').transitionToRoute('amazon', { queryParams: {
+          g: '1_2'
+        } });
+    }
+
+    submit() {
+      let s = this.getWithDefault('s', 1);
+      switch (s) {
+        case SURVEY.SURVEY_1:
+          this.send('surveySubmitAction1');
+          break;
+        case SURVEY.SURVEY_2:
+          this.send('surveySubmitAction2');
+          break;
+        case SURVEY.SURVEY_3:
+          this.send('surveySubmitAction3');
+          break;
+        case SURVEY.SURVEY_4:
+          this.send('surveySubmitAction4');
+          break;
+        default:
+          break;
+      }
+    }
+  }, (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'surveySubmitAction1', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'surveySubmitAction1'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'submit', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'submit'), _class.prototype)), _class));
   exports.default = SurveyCompComponent;
 });
 define("amazon/pod/survey/survey-comp/styles", ["exports"], function (exports) {
@@ -1149,6 +1429,7 @@ define("amazon/pod/survey/survey-comp/styles", ["exports"], function (exports) {
   });
   exports.default = {
     "root": "_root_1oqx04",
+    "surveyBG": "_surveyBG_1oqx04",
     "surveyCompMain": "_surveyCompMain_1oqx04",
     "surveyHead": "_surveyHead_1oqx04",
     "surveyBody": "_surveyBody_1oqx04",
@@ -1170,176 +1451,739 @@ define("amazon/pod/survey/survey-comp/surveys/survey.1", ["exports"], function (
   exports.default = {
     title: "问卷一",
     items: [{
-      desc: "Gerder",
-      type: "radio",
-      opts: ["Mail", "Female"]
+      "desc": "Gerder",
+      "type": "radio",
+      "opts": [{
+        "optText": "Mail"
+      }, {
+        "optText": "Female"
+      }]
     }, {
-      desc: "Age",
-      type: "radio",
-      opts: [" < 18", " 18 ~ 20", " > 20"]
+      "desc": "Age",
+      "type": "radio",
+      "value": "",
+      "opts": [{
+        "optText": " < 18"
+      }, {
+        "optText": " 18 ~ 20"
+      }, {
+        "optText": " > 20"
+      }]
     }, {
-      desc: "How often do you shop online?",
-      type: "radio",
-      opts: ["once two weeks", "once a month", "once several months", "once a year", "never"]
+      "desc": "How often do you shop online?",
+      "type": "radio",
+      "opts": [{
+        "optText": "once two weeks"
+      }, {
+        "optText": "once a month"
+      }, {
+        "optText": "once several months"
+      }, {
+        "optText": "once a year"
+      }, {
+        "optText": "never"
+      }]
     }, {
-      desc: "How often do you shop online from other countries?",
-      type: "radio",
-      opts: ["once two weeks", "once a month", "once several months", "once a year", "never"]
+      "desc": "How often do you shop online from other countries?",
+      "type": "radio",
+      "opts": [{
+        "optText": "once two weeks"
+      }, {
+        "optText": "once a month"
+      }, {
+        "optText": "once several months"
+      }, {
+        "optText": "once a year"
+      }, {
+        "optText": "never"
+      }]
     }, {
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "People in higher positions should make most decisions without consulting people in lower positions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "People in higher positions should make most decisions without consulting people in lower positions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should not ask the opinions of people in lower positions too frequently.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should not ask the opinions of people in lower positions too frequently.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should avoid social interaction with people in lower positions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should avoid social interaction with people in lower positions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in lower positions should not disagree with decisions by people in higher positions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in lower positions should not disagree with decisions by people in higher positions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "People in higher positions should not delegate important tasks to people in lower positions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "People in higher positions should not delegate important tasks to people in lower positions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to have instructions spelled out in detail so that I always know what I'm expected to do.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to have instructions spelled out in detail so that I always know what I'm expected to do.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to closely follow instructions and procedures. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to closely follow instructions and procedures. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Rules and regulations are important because they inform me of what is expected of me. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Rules and regulations are important because they inform me of what is expected of me. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Standardized work procedures are helpful. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Standardized work procedures are helpful. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Instructions for operations are important.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Instructions for operations are important.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should sacrifice self-interest for the group. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should sacrifice self-interest for the group. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should stick with the group even through difficulties. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should stick with the group even through difficulties. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group welfare is more important than individual rewards.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group welfare is more important than individual rewards.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group success is more important than individual success. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group success is more important than individual success. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should only pursue their goals after considering the welfare of the group. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should only pursue their goals after considering the welfare of the group. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Group loyalty should be encouraged even if individual goals suffer.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Group loyalty should be encouraged even if individual goals suffer.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to careful manage money (Thrift). ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to careful manage money (Thrift). ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to go on resolutely in spite of opposition (Persistence).",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to go on resolutely in spite of opposition (Persistence).",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Personal steadiness and stability are important.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Personal steadiness and stability are important.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is important to make long-term planning. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is important to make long-term planning. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should give up today's fun for success in the future.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should give up today's fun for success in the future.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Individuals should work hard for success in the future.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Individuals should work hard for success in the future.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "It is more important for men to have a professional career than it is for women. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "It is more important for men to have a professional career than it is for women. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Men usually solve problems with logical analysis; women usually solve problems with intuition.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Men usually solve problems with logical analysis; women usually solve problems with intuition.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "Solving difficult problems usually requires an active, forcible approach, which is typical of men.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "Solving difficult problems usually requires an active, forcible approach, which is typical of men.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "There are some jobs that a man can always do better than a woman.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "There are some jobs that a man can always do better than a woman.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I have some contacts with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I have some contacts with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I spend time in communicating with other consumers of amazon.com. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I spend time in communicating with other consumers of amazon.com. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I have communications with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I have communications with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com do not take advantage of each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com do not take advantage of each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com have mutual trust.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com have mutual trust.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The consumers of amazon.com sincerely treat each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The consumers of amazon.com sincerely treat each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I believe that consumers of amazon.com will help each other.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I believe that consumers of amazon.com will help each other.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I believe that other consumers of amazon.com will help me when I need.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I believe that other consumers of amazon.com will help me when I need.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I will actively help other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I will actively help other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar interest with other consumers of amazom.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar interest with other consumers of amazom.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar goals with other consumers of amazon.com. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar goals with other consumers of amazon.com. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "During shopping, I have similar values with other consumers of amazon.com.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "During shopping, I have similar values with other consumers of amazon.com.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -1353,52 +2197,206 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.1", ["exports"], function
   exports.default = {
     title: "问卷二",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "When I want to buy a cell phone, I have an expectation for searching for attribute-based reviews;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "When I want to buy a cell phone, I have an expectation for searching for attribute-based reviews;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I have a brief in searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I have a brief in searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I will pay more attention to attribute based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I will pay more attention to attribute based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, attribute-based reviews are more helpful for me to evaluate it; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, attribute-based reviews are more helpful for me to evaluate it; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, attribute-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, attribute-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I think I have constructed a knowledge structure to evaluate a cell phone through attribute-based reviews",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I think I have constructed a knowledge structure to evaluate a cell phone through attribute-based reviews",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, I have an expectation for searching for experience-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, I have an expectation for searching for experience-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy cell phone, I have a brief in searching for experience -based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy cell phone, I have a brief in searching for experience -based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, I will pay more attention to attribute based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, I will pay more attention to attribute based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, experience -based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, experience -based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a cell phone, experience-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a cell phone, experience-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -1412,52 +2410,206 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.2", ["exports"], function
   exports.default = {
     title: "问卷二",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "When I want to buy a clothing, I have an expectation for searching for experience -based reviews;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "When I want to buy a clothing, I have an expectation for searching for experience -based reviews;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have a brief in searching for experience -based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have a brief in searching for experience -based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I will pay more attention to experience based reviews;  ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I will pay more attention to experience based reviews;  ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, experience -based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, experience -based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, experience -based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, experience -based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "I think I have constructed a knowledge structure to evaluate a clothing through experience -based reviews",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "I think I have constructed a knowledge structure to evaluate a clothing through experience -based reviews",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have an expectation for searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have an expectation for searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I have a brief in searching for attribute-based reviews; ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I have a brief in searching for attribute-based reviews; ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, I will pay more attention to attribute based reviews;  ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, I will pay more attention to attribute based reviews;  ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, attribute-based reviews are more helpful for me to evaluate it;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, attribute-based reviews are more helpful for me to evaluate it;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "When I want to buy a clothing, attribute-based reviews are more valuable for me to make a decision;",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "When I want to buy a clothing, attribute-based reviews are more valuable for me to make a decision;",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -1471,32 +2623,116 @@ define("amazon/pod/survey/survey-comp/surveys/survey.2.3", ["exports"], function
   exports.default = {
     title: "问卷三",
     items: [{
-      desc: "Please indicate how much you disagree or agree with each of the following statements.",
-      type: "group",
-      opts: [{
-        desc: "The quantity of the reviews released was large.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+      "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+      "type": "group",
+      "opts": [{
+        "desc": "The quantity of the reviews released was large.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The quantity of the reviews was enough to let me make decisions. ",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The quantity of the reviews was enough to let me make decisions. ",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was accurate.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was accurate.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was relevant to my needs.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was relevant to my needs.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was of sufficient to make decisions.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was of sufficient to make decisions.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }, {
-        desc: "The information from online reviews was based on facts.",
-        type: "radio",
-        opts: ["Strongly Disagree", "Disagree", "Somewhat disagree", "Neutral", "Somewhat Agree", "Agree", "Strongly  Agree"]
+        "desc": "The information from online reviews was based on facts.",
+        "type": "radio",
+        "opts": [{
+          "optText": "Strongly Disagree"
+        }, {
+          "optText": "Disagree"
+        }, {
+          "optText": "Somewhat disagree"
+        }, {
+          "optText": "Neutral"
+        }, {
+          "optText": "Somewhat Agree"
+        }, {
+          "optText": "Agree"
+        }, {
+          "optText": "Strongly  Agree"
+        }]
       }]
     }]
   };
@@ -1507,7 +2743,7 @@ define("amazon/pod/survey/survey-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "XJekgkFW", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[6,\"div\"],[10,\"class\",\"surveyCompMain\"],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[10,\"for\",\"\"],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]]]]],false],[0,\" \"],[1,[21,7,[]],false],[0,\"\\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[10,\"for\",\"\"],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]]]]],false],[0,\" \"],[1,[21,4,[]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"type\",\"submit\"],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "K7froftL", "block": "{\"symbols\":[\"sv\",\"item\",\"index\",\"opt\",\"subItem\",\"subIndex\",\"opt\"],\"statements\":[[0,\"\\n\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBG\"]]],null]]]],[8],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyCompMain\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[22,[\"activeSurvey\"]]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyHead\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"h1\"],[8],[0,\"\\n      \"],[1,[21,1,[\"title\"]],false],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyBody\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,1,[\"items\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyItem\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n          \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\"、\"],[1,[21,2,[\"desc\"]],true],[0,\"\\n        \"],[9],[0,\"\\n\"],[4,\"if\",[[26,\"eq\",[[21,2,[\"type\"]],\"group\"],null]],null,{\"statements\":[[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"subItem\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"desc\"]]],null]]]],[8],[0,\"\\n              \"],[1,[26,\"add\",[1,[21,3,[]]],null],false],[0,\".\"],[1,[26,\"add\",[1,[21,6,[]]],null],false],[0,\" \"],[1,[21,5,[\"desc\"]],true],[0,\"\\n            \"],[9],[0,\"\\n            \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"opts\"]]],null,{\"statements\":[[0,\"                \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,5,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                  \"],[6,\"label\"],[11,\"for\",[21,5,[\"desc\"]],null],[8],[0,\"\\n                    \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,5,[\"type\"]],[21,5,[\"desc\"]],[21,7,[\"isChecked\"]],[21,7,[\"optText\"]]]]],false],[0,\" \"],[1,[21,7,[\"optText\"]],false],[0,\" \\n                  \"],[9],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[0,\"            \"],[9],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[5,6]},null]],\"parameters\":[]},{\"statements\":[[0,\"          \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"surveyOpts\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"opts\"]]],null,{\"statements\":[[0,\"              \"],[6,\"li\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"surveyOpt \",[26,\"if\",[[26,\"gte\",[[21,2,[\"opts\",\"length\"]],5],null],\"largeOpts\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n                \"],[6,\"label\"],[11,\"for\",[21,2,[\"desc\"]],null],[8],[0,\"\\n                  \"],[1,[26,\"i-check\",null,[[\"type\",\"name\",\"checked\",\"value\"],[[21,2,[\"type\"]],[21,2,[\"desc\"]],[21,4,[\"isChecked\"]],[21,4,[\"optText\"]]]]],false],[0,\" \"],[1,[21,4,[\"optText\"]],false],[0,\"\\n                \"],[9],[0,\"\\n              \"],[9],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"          \"],[9],[0,\"\\n\"]],\"parameters\":[]}],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[2,3]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"surveyFooter\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"btn btn-primary\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"submit\"]],[8],[0,\"提交问卷\"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/survey/survey-comp/template.hbs" } });
 });
 define("amazon/pod/survey/template", ["exports"], function (exports) {
   "use strict";
@@ -1614,6 +2850,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+31243978"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+f6748145"});
 }
 //# sourceMappingURL=amazon.map

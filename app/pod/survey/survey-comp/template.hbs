@@ -1,4 +1,7 @@
-<div class="surveyCompMain">
+
+
+<div local-class="surveyBG"></div>
+<div local-class="surveyCompMain">
   {{#with activeSurvey as |sv|}}
   <div local-class="surveyHead">
     <h1>
@@ -20,8 +23,8 @@
             <ul local-class="surveyOpts" class="clearfix">
               {{#each subItem.opts as |opt|}}
                 <li local-class="surveyOpt {{if (gte subItem.opts.length 5) 'largeOpts'}}">
-                  <label for="">
-                    {{i-check type=subItem.type name=subItem.desc}} {{opt}}
+                  <label for={{subItem.desc}}>
+                    {{i-check type=subItem.type name=subItem.desc checked=opt.isChecked value=opt.optText}} {{opt.optText}} 
                   </label>
                 </li>
               {{/each}}
@@ -32,8 +35,8 @@
           <ul local-class="surveyOpts" class="clearfix">
             {{#each item.opts as |opt|}}
               <li local-class="surveyOpt {{if (gte item.opts.length 5) 'largeOpts'}}">
-                <label for="">
-                  {{i-check type=item.type name=item.desc}} {{opt}}
+                <label for={{item.desc}}>
+                  {{i-check type=item.type name=item.desc checked=opt.isChecked value=opt.optText}} {{opt.optText}}
                 </label>
               </li>
             {{/each}}
@@ -45,6 +48,6 @@
   </div>
   {{/with}}
   <div local-class="surveyFooter">
-    <button type="submit">提交问卷</button>
+    <button type="submit" class="btn btn-primary" {{action "submit" }}>提交问卷</button>
   </div>
 </div>

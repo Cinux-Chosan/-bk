@@ -6,7 +6,7 @@ import goods3 from './goods/clothes.woman.1';
 import goods4 from './goods/clothes.woman.2';
 import goods5 from './goods/phone.1';
 import goods6 from './goods/phone.2';
-import { set, get } from '@ember/object';
+import { get } from '@ember/object';
 
 export default class AmazonCompComponent extends Component {
   goods1 = goods1;
