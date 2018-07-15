@@ -14,42 +14,42 @@ export default {
     ],
     opts: [
       {
-        cover: "/img/amazon/clothes_man_2/1_1.jpg",
+        cover: "img/amazon/clothes_man_2/1_1.jpg",
         optDesc: "Acid Blue",
         thumbnailList: [
-          { img: "/img/amazon/clothes_man_2/1_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_4.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_6.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/1_7.jpg", optDesc: "" }
+          { img: "img/amazon/clothes_man_2/1_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_5.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_6.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/1_7.jpg", optDesc: "" }
         ]
       },
       {
-        cover: "/img/amazon/clothes_man_2/2_1.jpg",
+        cover: "img/amazon/clothes_man_2/2_1.jpg",
         optDesc: "Blue",
         thumbnailList: [
-          { img: "/img/amazon/clothes_man_2/2_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_4.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_6.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/2_7.jpg", optDesc: "" }
+          { img: "img/amazon/clothes_man_2/2_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_5.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_6.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/2_7.jpg", optDesc: "" }
         ]
       },
       {
-        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        cover: "img/amazon/clothes_man_2/3_1.jpg",
         optDesc: "Grey",
         thumbnailList: [
-          { img: "/img/amazon/clothes_man_2/3_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_4.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_6.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_2/3_7.jpg", optDesc: "" }
+          { img: "img/amazon/clothes_man_2/3_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_5.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_6.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_man_2/3_7.jpg", optDesc: "" }
         ]
       }
     ]
@@ -81,7 +81,7 @@ export default {
     reviewQuality: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Jake Roehm'
         },
         reviewTxt: 'Amazing ! Shirt fits great looks great feels great',
@@ -89,7 +89,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'James Boyd'
         },
         reviewTxt: 'I\'d say the shirt fits like the picture shows',
@@ -97,7 +97,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Bexareagle'
         },
         reviewTxt: 'Really nice slim and thin shirt that fits perfectly and looks awesome',
@@ -105,7 +105,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Boden'
         },
         reviewTxt: 'I love it was exactly what I expected.',
@@ -113,7 +113,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Erica'
         },
         reviewTxt: 'I have gotten numerous compliments about how it fits me like its custom made',
@@ -123,7 +123,7 @@ export default {
     reviewExperience: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Crystal Garcia'
         },
         reviewTxt: 'This is a very attractive shirt with blue denim jeans or khaki slacks ',
@@ -131,7 +131,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'John'
         },
         reviewTxt: 'Variety of colors to choose from',
@@ -139,7 +139,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'C. Vasquez'
         },
         reviewTxt: 'high quality cotton, soft and the stitching is very good ',
@@ -147,7 +147,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'cappon'
         },
         reviewTxt: 'Turn down collar, Slim fit',
@@ -155,7 +155,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Miranda '
         },
         reviewTxt: '100% High-grade Cotton Fabrics',

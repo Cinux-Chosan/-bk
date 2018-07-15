@@ -12,20 +12,20 @@ export default {
     ],
     opts: [
       {
-        cover: "/img/amazon/phone_2/1_1.jpg",
+        cover: "img/amazon/phone_2/1_1.jpg",
         optDesc: "Coral Blue",
         title: "Samsung Galaxy S9 Unlocked Smartphone - Coral Blue - US Warranty",
         thumbnailList: [
-          { img: "/img/amazon/phone_2/1_1.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/1_2.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/1_3.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/1_4.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/1_5.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/1_6.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_1.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_2.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_3.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_4.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_5.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/1_6.jpg", optDesc: "" },
         ]
       },
       {
-        cover: "/img/amazon/phone_2/2_1.jpg",
+        cover: "img/amazon/phone_2/2_1.jpg",
         optDesc: "Lilac Purple",
         title: "Samsung Galaxy S9 Unlocked Smartphone - Lilac Purple - US Warranty ",
         details: [
@@ -36,25 +36,25 @@ export default {
           "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "
         ],
         thumbnailList: [
-          { img: "/img/amazon/phone_2/2_1.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/2_2.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/2_3.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/2_4.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/2_5.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/2_6.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_1.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_2.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_3.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_4.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_5.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/2_6.jpg", optDesc: "" },
         ]
       },
       {
-        cover: "/img/amazon/phone_2/2_1.jpg",
+        cover: "img/amazon/phone_2/2_1.jpg",
         optDesc: "Midnight Black",
         title: "Samsung Galaxy S9 Unlocked Smartphone - Midnight Black - US Warranty ",
         thumbnailList: [
-          { img: "/img/amazon/phone_2/3_1.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/3_2.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/3_3.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/3_4.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/3_5.jpg", optDesc: "" },
-          { img: "/img/amazon/phone_2/3_6.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_1.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_2.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_3.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_4.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_5.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_6.jpg", optDesc: "" },
         ]
       }
     ]
@@ -86,7 +86,7 @@ export default {
     reviewQuality: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Win2000'
         },
         reviewTxt: 'The speakers are excellent, music sounds great and phone calls come through very clear',
@@ -94,7 +94,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'CVPI'
         },
         reviewTxt: 'This phone is really fast, great camera, speakers, screen',
@@ -102,7 +102,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'KG'
         },
         reviewTxt: 'The camera is nice, the pictures come out clean and clear',
@@ -110,7 +110,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Alex'
         },
         reviewTxt: 'Very nice upgrade. I\'m glad I went with the cell . I really like the big screen, and extra camera',
@@ -118,7 +118,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Mad Scientist'
         },
         reviewTxt: 'The S9 works VERY fast when loading apps and pages',
@@ -128,7 +128,7 @@ export default {
     reviewExperience: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'sam surbrugg'
         },
         reviewTxt: 'It\'s gorgeous! I love the display and the infinity edge ',
@@ -136,7 +136,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Stephen '
         },
         reviewTxt: 'it feels good in the hand, excellent screen quality, finally an excellent cell',
@@ -144,7 +144,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'keithmichal '
         },
         reviewTxt: 'Great camera, awesome software, fast and productive',
@@ -152,7 +152,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Margie Nunez'
         },
         reviewTxt: 'This phone features ability to record video at 4K 60fps',
@@ -160,7 +160,7 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'jon slusarz'
         },
         reviewTxt: 'The phone provides the security features like the fingerprint scanner and face detection',

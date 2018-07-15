@@ -9,7 +9,7 @@ export default class SurveyRoute extends Route {
   }
   model(params) {
     if (params.s == 1) {
-      localStorage.clear();
+      window.myLocalStorage.clear();
     }
     window.scrollTo(0, 0);
   }
