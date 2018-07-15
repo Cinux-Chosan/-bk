@@ -18,6 +18,15 @@
   </div>
 
   <div local-class="right">
+    <div local-class="rRight">
+      <img src="/img/amazon/share.png" local-class="shareImg" alt="">
+      <div local-class="addToCartContainer">
+        <button local-class="addToCartBtn" class="btn">
+          <img src="/img/amazon/icon_cart.png" local-class="cartIcon" alt="">
+           Add To Cart
+        </button>
+      </div>
+    </div>
     <div local-class="rLeft">
       {{#with goods.goodsInfo as |info|}}
       <div local-class="goodsTitle">
@@ -58,8 +67,6 @@
         </ul>
       </div>
       {{/with}}
-    </div>
-    <div local-class="rRight">
     </div>
   </div>
   </section>

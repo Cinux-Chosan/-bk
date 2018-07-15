@@ -10,7 +10,7 @@ define('amazon/app', ['exports', 'amazon/resolver', 'ember-load-initializers', '
   });
 
 
-  const App = Ember.Application.extend({
+  var App = Ember.Application.extend({
     modulePrefix: _environment.default.modulePrefix,
     podModulePrefix: _environment.default.podModulePrefix,
     Resolver: _resolver.default
@@ -21,7 +21,7 @@ define('amazon/app', ['exports', 'amazon/resolver', 'ember-load-initializers', '
   exports.default = App;
 
 
-  let base = {
+  var base = {
     localClassNames: 'root',
     _uid: Ember.computed(function () {
       return Ember.guidFor(this);
@@ -63,7 +63,7 @@ define('amazon/helpers/add', ['exports'], function (exports) {
   });
   exports.add = add;
   function add(params /*, hash*/) {
-    return params.reduce((prev, next) => {
+    return params.reduce(function (prev, next) {
       return prev + next;
     });
   }
@@ -78,7 +78,9 @@ define('amazon/helpers/and', ['exports'], function (exports) {
   });
   exports.and = and;
   function and(params /*, hash*/) {
-    return params.reduce((prev, next) => prev && next);
+    return params.reduce(function (prev, next) {
+      return prev && next;
+    });
   }
 
   exports.default = Ember.Helper.helper(and);
@@ -90,15 +92,17 @@ define('amazon/helpers/app-version', ['exports', 'amazon/config/environment', 'e
     value: true
   });
   exports.appVersion = appVersion;
-  function appVersion(_, hash = {}) {
-    const version = _environment.default.APP.version;
+  function appVersion(_) {
+    var hash = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var version = _environment.default.APP.version;
     // e.g. 1.0.0-alpha.1+4jds75hf
 
     // Allow use of 'hideSha' and 'hideVersion' For backwards compatibility
-    let versionOnly = hash.versionOnly || hash.hideSha;
-    let shaOnly = hash.shaOnly || hash.hideVersion;
+    var versionOnly = hash.versionOnly || hash.hideSha;
+    var shaOnly = hash.shaOnly || hash.hideVersion;
 
-    let match = null;
+    var match = null;
 
     if (versionOnly) {
       if (hash.showExtended) {
@@ -126,7 +130,11 @@ define('amazon/helpers/array', ['exports'], function (exports) {
     value: true
   });
   exports.array = array;
-  function array(...params /*, hash*/) {
+  function array() /*, hash*/{
+    for (var _len = arguments.length, params = Array(_len), _key = 0; _key < _len; _key++) {
+      params[_key] = arguments[_key];
+    }
+
     return params;
   }
 
@@ -139,7 +147,50 @@ define('amazon/helpers/default', ['exports'], function (exports) {
     value: true
   });
   exports.deft = deft;
-  function deft([param, def] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function deft(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        param = _ref2[0],
+        def = _ref2[1];
+
     return typeof param !== 'undefined' ? param : def;
   }
 
@@ -154,8 +205,10 @@ define('amazon/helpers/eq', ['exports'], function (exports) {
   exports.eq = eq;
   function eq(params /*, hash*/) {
     if (params.length <= 1) return true;
-    let first = params[0];
-    return params.every(el => el == first);
+    var first = params[0];
+    return params.every(function (el) {
+      return el == first;
+    });
   }
 
   exports.default = Ember.Helper.helper(eq);
@@ -167,8 +220,56 @@ define('amazon/helpers/find-by', ['exports'], function (exports) {
     value: true
   });
   exports.findBy = findBy;
-  function findBy([arr = [], valName = '', val] /*, hash*/) {
-    return arr.find(el => el[valName] == val);
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function findBy(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 3),
+        _ref2$ = _ref2[0],
+        arr = _ref2$ === undefined ? [] : _ref2$,
+        _ref2$2 = _ref2[1],
+        valName = _ref2$2 === undefined ? '' : _ref2$2,
+        val = _ref2[2];
+
+    return arr.find(function (el) {
+      return el[valName] == val;
+    });
   }
 
   exports.default = Ember.Helper.helper(findBy);
@@ -180,7 +281,51 @@ define('amazon/helpers/format-date', ['exports', 'npm:moment'], function (export
     value: true
   });
   exports.fomatDate = fomatDate;
-  function fomatDate([timeStamp, format = 'Y-M-D H:mm:ss'] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function fomatDate(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        timeStamp = _ref2[0],
+        _ref2$ = _ref2[1],
+        format = _ref2$ === undefined ? 'Y-M-D H:mm:ss' : _ref2$;
+
     return timeStamp && (0, _npmMoment.default)(timeStamp).format(format);
   }
 
@@ -193,7 +338,50 @@ define('amazon/helpers/gt', ['exports'], function (exports) {
     value: true
   });
   exports.gt = gt;
-  function gt([first, second] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function gt(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        first = _ref2[0],
+        second = _ref2[1];
+
     return first > second;
   }
 
@@ -206,7 +394,50 @@ define('amazon/helpers/gte', ['exports'], function (exports) {
     value: true
   });
   exports.gte = gte;
-  function gte([first, second] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function gte(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        first = _ref2[0],
+        second = _ref2[1];
+
     return first >= second;
   }
 
@@ -219,8 +450,25 @@ define('amazon/helpers/in', ['exports'], function (exports) {
     value: true
   });
   exports.isIn = isIn;
-  function isIn([first, ...rest] /*, hash*/) {
-    return rest.some(el => el && typeof el === 'object' ? first in el : el === first);
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+
+  function _toArray(arr) {
+    return Array.isArray(arr) ? arr : Array.from(arr);
+  }
+
+  function isIn(_ref) /*, hash*/{
+    var _ref2 = _toArray(_ref),
+        first = _ref2[0],
+        rest = _ref2.slice(1);
+
+    return rest.some(function (el) {
+      return el && (typeof el === 'undefined' ? 'undefined' : _typeof(el)) === 'object' ? first in el : el === first;
+    });
   }
 
   exports.default = Ember.Helper.helper(isIn);
@@ -232,7 +480,51 @@ define('amazon/helpers/inc', ['exports'], function (exports) {
     value: true
   });
   exports.inc = inc;
-  function inc([baseCount, nInc = 1] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function inc(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        baseCount = _ref2[0],
+        _ref2$ = _ref2[1],
+        nInc = _ref2$ === undefined ? 1 : _ref2$;
+
     return +baseCount + +nInc;
   }
 
@@ -264,7 +556,50 @@ define('amazon/helpers/lt', ['exports'], function (exports) {
     value: true
   });
   exports.lt = lt;
-  function lt([first, second] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function lt(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        first = _ref2[0],
+        second = _ref2[1];
+
     return first < second;
   }
 
@@ -277,7 +612,50 @@ define('amazon/helpers/lte', ['exports'], function (exports) {
     value: true
   });
   exports.lte = lte;
-  function lte([first, second] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function lte(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        first = _ref2[0],
+        second = _ref2[1];
+
     return first <= second;
   }
 
@@ -290,8 +668,22 @@ define('amazon/helpers/minus', ['exports'], function (exports) {
     value: true
   });
   exports.minus = minus;
-  function minus([minuend = 0, ...subtrahend] /*, hash*/) {
-    return subtrahend.reduce((prev = 0, next = 0) => prev - next, minuend);
+
+  function _toArray(arr) {
+    return Array.isArray(arr) ? arr : Array.from(arr);
+  }
+
+  function minus(_ref) /*, hash*/{
+    var _ref2 = _toArray(_ref),
+        _ref2$ = _ref2[0],
+        minuend = _ref2$ === undefined ? 0 : _ref2$,
+        subtrahend = _ref2.slice(1);
+
+    return subtrahend.reduce(function () {
+      var prev = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      var next = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      return prev - next;
+    }, minuend);
   }
 
   exports.default = Ember.Helper.helper(minus);
@@ -303,13 +695,31 @@ define('amazon/helpers/not-eq', ['exports'], function (exports) {
     value: true
   });
   exports.notEq = notEq;
-  function notEq(params = [] /*, hash*/) {
+
+  function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+        arr2[i] = arr[i];
+      }
+
+      return arr2;
+    } else {
+      return Array.from(arr);
+    }
+  }
+
+  function notEq() /*, hash*/{
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
     // return params.every((el, index) => !~params.indexOf(el, index + 1));
-    params = [...params];
-    let bRs, item;
+    params = [].concat(_toConsumableArray(params));
+    var bRs = void 0,
+        item = void 0;
     do {
       item = params.popObject();
-      bRs = params.every(el => el != item);
+      bRs = params.every(function (el) {
+        return el != item;
+      });
     } while (bRs && params.length);
     return bRs;
   }
@@ -323,7 +733,49 @@ define('amazon/helpers/not', ['exports'], function (exports) {
     value: true
   });
   exports.not = not;
-  function not([truthy] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function not(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 1),
+        truthy = _ref2[0];
+
     return !truthy;
   }
 
@@ -336,7 +788,49 @@ define('amazon/helpers/number', ['exports'], function (exports) {
     value: true
   });
   exports.number = number;
-  function number([num] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function number(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 1),
+        num = _ref2[0];
+
     return Number(num);
   }
 
@@ -364,7 +858,7 @@ define('amazon/helpers/or', ['exports'], function (exports) {
   });
   exports.or = or;
   function or(params /*, hash*/) {
-    return params.reduce((prev, next) => {
+    return params.reduce(function (prev, next) {
       return prev || next;
     });
   }
@@ -386,7 +880,50 @@ define('amazon/helpers/set-and-return', ['exports'], function (exports) {
     value: true
   });
   exports.setAndReturn = setAndReturn;
-  function setAndReturn([o, value] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function setAndReturn(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        o = _ref2[0],
+        value = _ref2[1];
+
     Ember.set(o, value);
     return o;
   }
@@ -412,7 +949,9 @@ define('amazon/helpers/string', ['exports'], function (exports) {
     if (params.length === 1 && !Array.isArray(params[0])) {
       return params[0] + '';
     } else {
-      return params[0].map(el => el + '');
+      return params[0].map(function (el) {
+        return el + '';
+      });
     }
   }
 
@@ -425,7 +964,50 @@ define('amazon/helpers/to-fixed', ['exports'], function (exports) {
     value: true
   });
   exports.toFixed = toFixed;
-  function toFixed([num, fix] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function toFixed(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 2),
+        num = _ref2[0],
+        fix = _ref2[1];
+
     return Number(num).toFixed(fix);
   }
 
@@ -438,7 +1020,50 @@ define('amazon/helpers/to-percent', ['exports'], function (exports) {
     value: true
   });
   exports.toPercent = toPercent;
-  function toPercent([number = 0] /*, hash*/) {
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  function toPercent(_ref) /*, hash*/{
+    var _ref2 = _slicedToArray(_ref, 1),
+        _ref2$ = _ref2[0],
+        number = _ref2$ === undefined ? 0 : _ref2$;
+
     return number * 100 + '%';
   }
 
@@ -452,7 +1077,9 @@ define('amazon/helpers/xor', ['exports'], function (exports) {
   });
   exports.xor = xor;
   function xor(params /*, hash*/) {
-    return params.reduce((prev, next) => !prev ^ !next);
+    return params.reduce(function (prev, next) {
+      return !prev ^ !next;
+    });
   }
 
   exports.default = Ember.Helper.helper(xor);
@@ -465,7 +1092,8 @@ define('amazon/initializers/app-version', ['exports', 'ember-cli-app-version/ini
   });
 
 
-  let name, version;
+  var name = void 0,
+      version = void 0;
   if (_environment.default.APP) {
     name = _environment.default.APP.name;
     version = _environment.default.APP.version;
@@ -476,30 +1104,6 @@ define('amazon/initializers/app-version', ['exports', 'ember-cli-app-version/ini
     initialize: (0, _initializerFactory.default)(name, version)
   };
 });
-define('amazon/initializers/component-styles', ['exports', 'ember-component-css/initializers/component-styles', 'amazon/mixins/style-namespacing-extras'], function (exports, _componentStyles, _styleNamespacingExtras) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.initialize = exports.default = undefined;
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _componentStyles.default;
-    }
-  });
-  Object.defineProperty(exports, 'initialize', {
-    enumerable: true,
-    get: function () {
-      return _componentStyles.initialize;
-    }
-  });
-
-
-  // eslint-disable-next-line ember/new-module-imports
-  Ember.Component.reopen(_styleNamespacingExtras.default);
-});
 define('amazon/initializers/container-debug-adapter', ['exports', 'ember-resolver/resolvers/classic/container-debug-adapter'], function (exports, _containerDebugAdapter) {
   'use strict';
 
@@ -509,8 +1113,8 @@ define('amazon/initializers/container-debug-adapter', ['exports', 'ember-resolve
   exports.default = {
     name: 'container-debug-adapter',
 
-    initialize() {
-      let app = arguments[1] || arguments[0];
+    initialize: function initialize() {
+      var app = arguments[1] || arguments[0];
 
       app.register('container-debug-adapter:main', _containerDebugAdapter.default);
       app.inject('container-debug-adapter:main', 'namespace', 'application:main');
@@ -563,7 +1167,7 @@ define('amazon/initializers/export-application-global', ['exports', 'amazon/conf
         theGlobal[globalName] = application;
 
         application.reopen({
-          willDestroy: function () {
+          willDestroy: function willDestroy() {
             this._super.apply(this, arguments);
             delete theGlobal[globalName];
           }
@@ -578,24 +1182,19 @@ define('amazon/initializers/export-application-global', ['exports', 'amazon/conf
     initialize: initialize
   };
 });
-define('amazon/initializers/route-styles', ['exports', 'ember-component-css/initializers/route-styles'], function (exports, _routeStyles) {
-  'use strict';
+define('amazon/initializers/inject-router', ['exports'], function (exports) {
+    'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _routeStyles.default;
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.initialize = initialize;
+    function initialize(application) {
+        application.inject('component', 'appController', 'controller:application');
     }
-  });
-  Object.defineProperty(exports, 'initialize', {
-    enumerable: true,
-    get: function () {
-      return _routeStyles.initialize;
-    }
-  });
+    exports.default = {
+        initialize: initialize
+    };
 });
 define("amazon/instance-initializers/ember-data", ["exports", "ember-data/initialize-store-service"], function (exports, _initializeStoreService) {
   "use strict";
@@ -608,19 +1207,6 @@ define("amazon/instance-initializers/ember-data", ["exports", "ember-data/initia
     initialize: _initializeStoreService.default
   };
 });
-define('amazon/mixins/style-namespacing-extras', ['exports', 'ember-component-css/mixins/style-namespacing-extras'], function (exports, _styleNamespacingExtras) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function () {
-      return _styleNamespacingExtras.default;
-    }
-  });
-});
 define('amazon/pod/amazon/amazon-comp/component', ['exports', '@ember-decorators/object', 'amazon/pod/amazon/amazon-comp/goods/clothes.man.1', 'amazon/pod/amazon/amazon-comp/goods/clothes.man.2', 'amazon/pod/amazon/amazon-comp/goods/clothes.woman.1', 'amazon/pod/amazon/amazon-comp/goods/clothes.woman.2', 'amazon/pod/amazon/amazon-comp/goods/phone.1', 'amazon/pod/amazon/amazon-comp/goods/phone.2'], function (exports, _object, _clothesMan, _clothesMan2, _clothesWoman, _clothesWoman2, _phone, _phone2) {
   'use strict';
 
@@ -628,6 +1214,54 @@ define('amazon/pod/amazon/amazon-comp/component', ['exports', '@ember-decorators
     value: true
   });
   exports.default = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
 
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
@@ -660,37 +1294,62 @@ define('amazon/pod/amazon/amazon-comp/component', ['exports', '@ember-decorators
 
   var _dec, _dec2, _dec3, _desc, _value, _class;
 
-  let AmazonCompComponent = (_dec = (0, _object.computed)('g'), _dec2 = (0, _object.computed)('currentOpt'), _dec3 = (0, _object.computed)('currentThumbnailIndex', 'activeOpt'), (_class = class AmazonCompComponent extends Ember.Component {
-    constructor(...args) {
-      var _temp;
+  var AmazonCompComponent = (_dec = (0, _object.computed)('g'), _dec2 = (0, _object.computed)('currentOpt'), _dec3 = (0, _object.computed)('currentThumbnailIndex', 'activeOpt'), (_class = function (_EmberComponent) {
+    _inherits(AmazonCompComponent, _EmberComponent);
 
-      return _temp = super(...args), this.goods1 = _clothesMan.default, this.goods2 = _clothesMan2.default, this.goods3 = _clothesWoman.default, this.goods4 = _clothesWoman2.default, this.goods5 = _phone.default, this.goods6 = _phone2.default, this.currentOpt = null, this.currentThumbnailIndex = 0, _temp;
+    function AmazonCompComponent() {
+      var _ref;
+
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, AmazonCompComponent);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AmazonCompComponent.__proto__ || Object.getPrototypeOf(AmazonCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.goods1 = _clothesMan.default, _this.goods2 = _clothesMan2.default, _this.goods3 = _clothesWoman.default, _this.goods4 = _clothesWoman2.default, _this.goods5 = _phone.default, _this.goods6 = _phone2.default, _this.currentOpt = null, _this.currentThumbnailIndex = 0, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    get activeGoods() {
-      let s = this.getWithDefault('goods', 1);
-      return this.get(`goods${s}`);
-    }
+    _createClass(AmazonCompComponent, [{
+      key: 'setThumbnailIndex',
+      value: function setThumbnailIndex(currentThumbnailIndex) {
+        this.set('currentThumbnailIndex', currentThumbnailIndex);
+      }
+    }, {
+      key: 'setActiveOpt',
+      value: function setActiveOpt(opt) {
+        this.set('currentThumbnailIndex', 0);
+        this.set('currentOpt', opt);
+      }
+    }, {
+      key: 'activeGoods',
+      get: function get() {
+        var s = this.getWithDefault('goods', 1);
+        return this.get('goods' + s);
+      }
+    }, {
+      key: 'activeOpt',
+      get: function get() {
+        var _getProperties = this.getProperties(['currentOpt']),
+            currentOpt = _getProperties.currentOpt;
 
-    get activeOpt() {
-      let { currentOpt } = this.getProperties(['currentOpt']);
-      return currentOpt || this.get('activeGoods.goodsInfo.opts.firstObject');
-    }
+        return currentOpt || this.get('activeGoods.goodsInfo.opts.firstObject');
+      }
+    }, {
+      key: 'activeThumbnail',
+      get: function get() {
+        var _getProperties2 = this.getProperties(['currentThumbnailIndex', 'activeOpt']),
+            _getProperties2$curre = _getProperties2.currentThumbnailIndex,
+            currentThumbnailIndex = _getProperties2$curre === undefined ? 0 : _getProperties2$curre,
+            activeOpt = _getProperties2.activeOpt;
 
-    get activeThumbnail() {
-      let { currentThumbnailIndex = 0, activeOpt } = this.getProperties(['currentThumbnailIndex', 'activeOpt']);
-      return Ember.get(activeOpt, `thumbnailList.${currentThumbnailIndex}`);
-    }
+        return Ember.get(activeOpt, 'thumbnailList.' + currentThumbnailIndex);
+      }
+    }]);
 
-    setThumbnailIndex(currentThumbnailIndex) {
-      this.set('currentThumbnailIndex', currentThumbnailIndex);
-    }
-
-    setActiveOpt(opt) {
-      this.set('currentThumbnailIndex', 0);
-      this.set('currentOpt', opt);
-    }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'activeGoods', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeGoods'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeOpt', [_dec2], Object.getOwnPropertyDescriptor(_class.prototype, 'activeOpt'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeThumbnail', [_dec3], Object.getOwnPropertyDescriptor(_class.prototype, 'activeThumbnail'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setThumbnailIndex', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setThumbnailIndex'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setActiveOpt', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setActiveOpt'), _class.prototype)), _class));
+    return AmazonCompComponent;
+  }(Ember.Component), (_applyDecoratedDescriptor(_class.prototype, 'activeGoods', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeGoods'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeOpt', [_dec2], Object.getOwnPropertyDescriptor(_class.prototype, 'activeOpt'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'activeThumbnail', [_dec3], Object.getOwnPropertyDescriptor(_class.prototype, 'activeThumbnail'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setThumbnailIndex', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setThumbnailIndex'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'setActiveOpt', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'setActiveOpt'), _class.prototype)), _class));
   exports.default = AmazonCompComponent;
 });
 define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], function (exports) {
@@ -710,7 +1369,7 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.1", ["exports"], functio
       }, {
         cover: "/img/amazon/clothes_man_1/2_1.jpg",
         optDesc: "Green",
-        thumbnailList: [{ img: "/img/amazon/clothes_man_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
+        thumbnailList: [{ img: "/img/amazon/clothes_man_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }]
       }, {
         cover: "/img/amazon/clothes_man_2/3_1.jpg",
         optDesc: "Navy Blue",
@@ -927,27 +1586,237 @@ define("amazon/pod/amazon/amazon-comp/goods/clothes.man.2", ["exports"], functio
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.1', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/clothes.woman.1", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "Angashion Women Hoodies-Tops- Floral Printed Long Sleeve Pocket Drawstring Sweatshirt with Pocket",
+      details: ["Catagory: Women Hoodies, Floral Printed Sweatshirt, Double Pocket Hooded Sweatshirt, Drawstring Hoodies ", "Material: Polyester+Cotton. 100% Brand New and high quality! ", "Occasion: Spring, Autumn, Winter, Outdoor, Daily, Casual, Club, Sports. ", "Please check measurements before ordering. Please allow 1 inch/2cm difference due to hand measurement. ", "Kindly note that Pink and Dark Grey 2 have eyelets on shoulders but don't have pockets. "],
+      opts: [{
+        cover: "/img/amazon/clothes_woman_1/1_1.jpg",
+        optDesc: "0962 Grey ",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_1/1_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_woman_1/2_1.jpg",
+        optDesc: "0965 White ",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_1/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        optDesc: "Blue",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_1/3_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/3_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/3_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_1/3_4.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Jessica Clarkon '
+        },
+        reviewTxt: 'It\'s so cute and soft. I wear it at least a few times a week',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'T Lynnon '
+        },
+        reviewTxt: 'LOVE! So cute and comfortable!!',
+        date: 'June 28, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Christopher  '
+        },
+        reviewTxt: 'Casual, cute, and great to throw on with pretty much anything',
+        date: 'June 23, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Anaon  '
+        },
+        reviewTxt: 'Amazing top, love the way it feels and looks!',
+        date: 'June 20, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Lemon253on '
+        },
+        reviewTxt: 'Very comfy, looks great, feels very soft, is perfect for spring and early fall',
+        date: 'June 19, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron'
+        },
+        reviewTxt: 'The material is so warm, yet light',
+        date: 'June 28, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Stephanie B.on  '
+        },
+        reviewTxt: 'Love the sweatshirt. Comfortable and light weight for those cool nights',
+        date: 'June 25, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Ashley M  '
+        },
+        reviewTxt: 'Fabric is stretchy. Medium is a little big ',
+        date: 'June 20, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Elizabethon   '
+        },
+        reviewTxt: 'The blue in this is slightly less greenish than it looks',
+        date: 'June 20, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Erin Holzeron'
+        },
+        reviewTxt: 'Soft fabric, light weight, cute top, Gorgeous colors',
+        date: 'June 19, 2018'
+      }]
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/clothes.woman.2', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/clothes.woman.2", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "Angashion Women's Dresses-Summer Floral Bohemian Spaghetti Strap Button Down Swing Midi Dress with Pockets    ",
+      details: ["Catagory: Women Hoodies, Floral Printed Sweatshirt, Double Pocket Hooded Sweatshirt, Drawstring Hoodies ", "Material: Polyester+Cotton. 100% Brand New and high quality! ", "Occasion: Spring, Autumn, Winter, Outdoor, Daily, Casual, Club, Sports. ", "Please check measurements before ordering. Please allow 1 inch/2cm difference due to hand measurement. ", "Kindly note that Pink and Dark Grey 2 have eyelets on shoulders but don't have pockets. "],
+      opts: [{
+        cover: "/img/amazon/clothes_woman_2/20_1.jpg",
+        optDesc: "Pink",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_2/20_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_6.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/20_7.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_woman_2/2_1.jpg",
+        optDesc: "0860 Red ",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_2/2_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/2_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/2_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/2_4.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/2_5.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/2_6.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        optDesc: "0860 White",
+        thumbnailList: [{ img: "/img/amazon/clothes_woman_2/3_1.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/3_2.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/3_3.jpg", optDesc: "" }, { img: "/img/amazon/clothes_woman_2/3_4.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'jesmon '
+        },
+        reviewTxt: 'Super comfy and adorable. It\'s stretchy.',
+        date: 'June 30, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Hoof Artedon '
+        },
+        reviewTxt: 'This summer dress is now my favorite go-to dress in my closet',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron'
+        },
+        reviewTxt: 'Super cute summer dress! Loved the look and looks exactly like the picture',
+        date: 'June 30, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Gary Lewison'
+        },
+        reviewTxt: 'Super comfy and perfect for summer',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amandaon  '
+        },
+        reviewTxt: 'The dress is so light and airy. It is perfect for the summer! I love it!!',
+        date: 'June 29, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kimon '
+        },
+        reviewTxt: '85% Polyester+15% Cotton. 100% brand new and high quality',
+        date: 'June 30, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron'
+        },
+        reviewTxt: 'it has POCKETS! The pockets are deep and super handy',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Jonathan Alveson'
+        },
+        reviewTxt: 'The Style is Sexy, Floral, V Neck, Backless',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'MQon'
+        },
+        reviewTxt: 'A Line, Spaghetti Strap, Midi Length',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'cody fisheron'
+        },
+        reviewTxt: 'It has two pockets',
+        date: 'June 29, 2018'
+      }]
     }
   };
 });
@@ -1113,74 +1982,74 @@ define("amazon/pod/amazon/amazon-comp/goods/phone.2", ["exports"], function (exp
       reviewQuality: [{
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Thomas Kingon '
+          userName: 'Win2000on '
         },
-        reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
-        date: 'January 1, 2018'
+        reviewTxt: 'The speakers are excellent, music sounds great and phone calls come through very clear',
+        date: 'April 1, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'V12 Vantageon'
+          userName: 'CVPIon '
         },
-        reviewTxt: 'I\'m loving it every day when I wake up and touch it',
-        date: 'November 5, 2017'
+        reviewTxt: 'This phone is really fast, great camera, speakers, screen',
+        date: 'March 16, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron  '
+          userName: 'KGon'
         },
-        reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
-        date: 'February 22, 2018'
+        reviewTxt: 'The camera is nice, the pictures come out clean and clear',
+        date: 'March 17, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Keith H.on '
+          userName: 'Alexon '
         },
-        reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
-        date: 'June 29, 2018'
+        reviewTxt: 'Very nice upgrade. I\'m glad I went with the cell . I really like the big screen, and extra camera',
+        date: 'June 14, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Buyeron '
+          userName: 'Mad Scientiston '
         },
-        reviewTxt: 'I quickly became comfortable using my cell phone',
-        date: 'June 27, 2018'
+        reviewTxt: 'The S9 works VERY fast when loading apps and pages',
+        date: 'May 16, 2018'
       }],
       reviewExperience: [{
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Carlon '
+          userName: 'sam surbruggon '
         },
-        reviewTxt: 'This is a great phone with an amazing camera. ',
-        date: 'June 19, 2018'
+        reviewTxt: 'It\'s gorgeous! I love the display and the infinity edge ',
+        date: 'June 29, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Kekanon   '
+          userName: 'Stephen '
         },
-        reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
-        date: 'June 8, 2018'
+        reviewTxt: 'it feels good in the hand, excellent screen quality, finally an excellent cell',
+        date: 'June 29, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customer '
+          userName: 'keithmichalon '
         },
-        reviewTxt: 'The cell phone uses a super retina display, with 2436-by-1125 pixel resolution and a contrast ratio of 1,000,000:1',
-        date: 'June 4, 2018'
+        reviewTxt: 'Great camera, awesome software, fast and productive',
+        date: 'June 27, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Annaon'
+          userName: 'Margie Nunezon '
         },
-        reviewTxt: 'The cell phone boasts the largest battery in Apple history',
-        date: 'May 31, 2018'
+        reviewTxt: 'This phone features ability to record video at 4K 60fps',
+        date: 'June 26, 2018'
       }, {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'steven hellmichon'
+          userName: 'jon slusarzon'
         },
-        reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
-        date: 'May 23, 2018'
+        reviewTxt: 'The phone provides the security features like the fingerprint scanner and face detection',
+        date: 'June 26, 2018'
       }]
     }
   };
@@ -1230,7 +2099,7 @@ define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "/rVI4uUX", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[26,\"or\",[[22,[\"activeOpt\",\"title\"]],[21,7,[\"title\"]]],null],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[26,\"or\",[[22,[\"activeOpt\",\"details\"]],[21,7,[\"details\"]]],null]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "4nZPGm1y", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n      \"],[6,\"img\"],[10,\"src\",\"/img/amazon/share.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"shareImg\"]]],null]]]],[8],[9],[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"addToCartContainer\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"button\"],[11,\"class\",[27,[\"btn \",[26,\"unbound\",[[22,[\"__styles__\",\"addToCartBtn\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"img\"],[10,\"src\",\"/img/amazon/icon_cart.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"cartIcon\"]]],null]]]],[8],[9],[0,\"\\n           Add To Cart\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[26,\"or\",[[22,[\"activeOpt\",\"title\"]],[21,7,[\"title\"]]],null],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[26,\"or\",[[22,[\"activeOpt\",\"details\"]],[21,7,[\"details\"]]],null]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
 });
 define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], function (exports, _object) {
   'use strict';
@@ -1239,6 +2108,54 @@ define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], 
     value: true
   });
   exports.default = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
 
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
@@ -1271,18 +2188,33 @@ define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], 
 
   var _dec, _desc, _value, _class;
 
-  let SurveyController = (_dec = (0, _object.computed)('g'), (_class = class SurveyController extends Ember.Controller {
-    constructor(...args) {
-      var _temp;
+  var SurveyController = (_dec = (0, _object.computed)('g'), (_class = function (_EmberController) {
+    _inherits(SurveyController, _EmberController);
 
-      return _temp = super(...args), this.queryParams = ['g'], this.g = '1', _temp;
+    function SurveyController() {
+      var _ref;
+
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, SurveyController);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyController.__proto__ || Object.getPrototypeOf(SurveyController)).call.apply(_ref, [this].concat(args))), _this), _this.queryParams = ['g'], _this.g = '1', _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    get gList() {
-      let gList = this.getWithDefault('g', '1_2');
-      return gList.split('_');
-    }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'gList', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'gList'), _class.prototype)), _class));
+    _createClass(SurveyController, [{
+      key: 'gList',
+      get: function get() {
+        var gList = this.getWithDefault('g', '1_2');
+        return gList.split('_');
+      }
+    }]);
+
+    return SurveyController;
+  }(Ember.Controller), (_applyDecoratedDescriptor(_class.prototype, 'gList', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'gList'), _class.prototype)), _class));
   exports.default = SurveyController;
 });
 define('amazon/pod/amazon/route', ['exports'], function (exports) {
@@ -1291,7 +2223,74 @@ define('amazon/pod/amazon/route', ['exports'], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  let AmazonRoute = class AmazonRoute extends Ember.Route {};
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var AmazonRoute = function (_EmberRoute) {
+    _inherits(AmazonRoute, _EmberRoute);
+
+    function AmazonRoute() {
+      _classCallCheck(this, AmazonRoute);
+
+      return _possibleConstructorReturn(this, (AmazonRoute.__proto__ || Object.getPrototypeOf(AmazonRoute)).apply(this, arguments));
+    }
+
+    _createClass(AmazonRoute, [{
+      key: 'activate',
+      value: function activate() {
+        window.scrollTo(0, 0);
+      }
+    }]);
+
+    return AmazonRoute;
+  }(Ember.Route);
+
   exports.default = AmazonRoute;
 });
 define("amazon/pod/amazon/styles", ["exports"], function (exports) {
@@ -1318,7 +2317,49 @@ define('amazon/pod/amazon/user-review/component', ['exports'], function (exports
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  let UserReviewComponent = class UserReviewComponent extends Ember.Component {};
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var UserReviewComponent = function (_EmberComponent) {
+    _inherits(UserReviewComponent, _EmberComponent);
+
+    function UserReviewComponent() {
+      _classCallCheck(this, UserReviewComponent);
+
+      return _possibleConstructorReturn(this, (UserReviewComponent.__proto__ || Object.getPrototypeOf(UserReviewComponent)).apply(this, arguments));
+    }
+
+    return UserReviewComponent;
+  }(Ember.Component);
+
   exports.default = UserReviewComponent;
 });
 define("amazon/pod/amazon/user-review/styles", ["exports"], function (exports) {
@@ -1351,6 +2392,54 @@ define('amazon/pod/components/progress-bar/component', ['exports', '@ember-decor
   });
   exports.default = undefined;
 
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
     Object['ke' + 'ys'](descriptor).forEach(function (key) {
@@ -1382,12 +2471,25 @@ define('amazon/pod/components/progress-bar/component', ['exports', '@ember-decor
 
   var _dec, _desc, _value, _class;
 
-  let ProgressBarComponent = (_dec = (0, _object.computed)('ratio'), (_class = class ProgressBarComponent extends Ember.Component {
-    get width() {
-      let ratio = this.getWithDefault('ratio', 0);
-      return ratio * 100 + '%';
+  var ProgressBarComponent = (_dec = (0, _object.computed)('ratio'), (_class = function (_EmberComponent) {
+    _inherits(ProgressBarComponent, _EmberComponent);
+
+    function ProgressBarComponent() {
+      _classCallCheck(this, ProgressBarComponent);
+
+      return _possibleConstructorReturn(this, (ProgressBarComponent.__proto__ || Object.getPrototypeOf(ProgressBarComponent)).apply(this, arguments));
     }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'width', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'width'), _class.prototype)), _class));
+
+    _createClass(ProgressBarComponent, [{
+      key: 'width',
+      get: function get() {
+        var ratio = this.getWithDefault('ratio', 0);
+        return ratio * 100 + '%';
+      }
+    }]);
+
+    return ProgressBarComponent;
+  }(Ember.Component), (_applyDecoratedDescriptor(_class.prototype, 'width', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'width'), _class.prototype)), _class));
   exports.default = ProgressBarComponent;
 });
 define("amazon/pod/components/progress-bar/styles", ["exports"], function (exports) {
@@ -1415,14 +2517,57 @@ define('amazon/pod/survey/controller', ['exports'], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  let SurveyController = class SurveyController extends Ember.Controller {
-    constructor(...args) {
-      var _temp;
 
-      return _temp = super(...args), this.queryParams = ['s'], this.s = 1, _temp;
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
     }
 
-  };
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var SurveyController = function (_EmberController) {
+    _inherits(SurveyController, _EmberController);
+
+    function SurveyController() {
+      var _ref;
+
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, SurveyController);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyController.__proto__ || Object.getPrototypeOf(SurveyController)).call.apply(_ref, [this].concat(args))), _this), _this.queryParams = ['s'], _this.s = 1, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    return SurveyController;
+  }(Ember.Controller);
+
   exports.default = SurveyController;
 });
 define('amazon/pod/survey/route', ['exports'], function (exports) {
@@ -1431,7 +2576,74 @@ define('amazon/pod/survey/route', ['exports'], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  let SurveyRoute = class SurveyRoute extends Ember.Route {};
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var SurveyRoute = function (_EmberRoute) {
+    _inherits(SurveyRoute, _EmberRoute);
+
+    function SurveyRoute() {
+      _classCallCheck(this, SurveyRoute);
+
+      return _possibleConstructorReturn(this, (SurveyRoute.__proto__ || Object.getPrototypeOf(SurveyRoute)).apply(this, arguments));
+    }
+
+    _createClass(SurveyRoute, [{
+      key: 'activate',
+      value: function activate() {
+        window.scrollTo(0, 0);
+      }
+    }]);
+
+    return SurveyRoute;
+  }(Ember.Route);
+
   exports.default = SurveyRoute;
 });
 define("amazon/pod/survey/styles", ["exports"], function (exports) {
@@ -1451,6 +2663,54 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
     value: true
   });
   exports.default = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
 
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
@@ -1483,51 +2743,75 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
 
   var _dec, _desc, _value, _class;
 
-  const SURVEY = {
+  var SURVEY = {
     SURVEY_1: 1,
     SURVEY_2: 2,
     SURVEY_3: 3,
     SURVEY_4: 4
   };
 
-  let SurveyCompComponent = (_dec = (0, _object.computed)('s'), (_class = class SurveyCompComponent extends Ember.Component {
-    constructor(...args) {
-      var _temp;
+  var SurveyCompComponent = (_dec = (0, _object.computed)('s'), (_class = function (_EmberComponent) {
+    _inherits(SurveyCompComponent, _EmberComponent);
 
-      return _temp = super(...args), this.survey1 = _survey.default, this.survey2 = _survey2.default, this.survey3 = _survey3.default, this.survey4 = _survey4.default, _temp;
-    }
+    function SurveyCompComponent() {
+      var _ref;
 
-    get activeSurvey() {
-      let s = this.getWithDefault('s', 1);
-      return this.get(`survey${s}`);
-    }
+      var _temp, _this, _ret;
 
-    surveySubmitAction1() {
-      this.get('appController').transitionToRoute('amazon', { queryParams: {
-          g: '1_2'
-        } });
-    }
+      _classCallCheck(this, SurveyCompComponent);
 
-    submit() {
-      let s = this.getWithDefault('s', 1);
-      switch (s) {
-        case SURVEY.SURVEY_1:
-          this.send('surveySubmitAction1');
-          break;
-        case SURVEY.SURVEY_2:
-          this.send('surveySubmitAction2');
-          break;
-        case SURVEY.SURVEY_3:
-          this.send('surveySubmitAction3');
-          break;
-        case SURVEY.SURVEY_4:
-          this.send('surveySubmitAction4');
-          break;
-        default:
-          break;
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
       }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyCompComponent.__proto__ || Object.getPrototypeOf(SurveyCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.survey1 = _survey.default, _this.survey2 = _survey2.default, _this.survey3 = _survey3.default, _this.survey4 = _survey4.default, _temp), _possibleConstructorReturn(_this, _ret);
     }
-  }, (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'surveySubmitAction1', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'surveySubmitAction1'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'submit', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'submit'), _class.prototype)), _class));
+
+    _createClass(SurveyCompComponent, [{
+      key: 'surveySubmitAction1',
+      value: function surveySubmitAction1() {
+        var _getProperties = this.getProperties(['activeSurvey', 'appController']),
+            activeSurvey = _getProperties.activeSurvey,
+            appController = _getProperties.appController;
+
+        var genderSelected = activeSurvey.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+        if (genderSelected.optText === 'Male') {
+          appController.transitionToRoute('amazon', { queryParams: { g: '1_2_5_6' } });
+        } else {
+          appController.transitionToRoute('amazon', { queryParams: { g: '3_4_5_6' } });
+        }
+      }
+    }, {
+      key: 'submit',
+      value: function submit() {
+        var s = this.getWithDefault('s', 1);
+        switch (s) {
+          case SURVEY.SURVEY_1:
+            this.send('surveySubmitAction1');
+            break;
+          case SURVEY.SURVEY_2:
+            this.send('surveySubmitAction2');
+            break;
+          case SURVEY.SURVEY_3:
+            this.send('surveySubmitAction3');
+            break;
+          case SURVEY.SURVEY_4:
+            this.send('surveySubmitAction4');
+            break;
+          default:
+            break;
+        }
+      }
+    }, {
+      key: 'activeSurvey',
+      get: function get() {
+        var s = this.getWithDefault('s', 1);
+        return this.get('survey' + s);
+      }
+    }]);
+
+    return SurveyCompComponent;
+  }(Ember.Component), (_applyDecoratedDescriptor(_class.prototype, 'activeSurvey', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'activeSurvey'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'surveySubmitAction1', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'surveySubmitAction1'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'submit', [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, 'submit'), _class.prototype)), _class));
   exports.default = SurveyCompComponent;
 });
 define("amazon/pod/survey/survey-comp/styles", ["exports"], function (exports) {
@@ -1563,7 +2847,7 @@ define("amazon/pod/survey/survey-comp/surveys/survey.1", ["exports"], function (
       "desc": "Gerder",
       "type": "radio",
       "opts": [{
-        "optText": "Mail"
+        "optText": "Male"
       }, {
         "optText": "Female"
       }]
@@ -2878,7 +4162,7 @@ define('amazon/router', ['exports', 'amazon/config/environment'], function (expo
   });
 
 
-  const Router = Ember.Router.extend({
+  var Router = Ember.Router.extend({
     location: _environment.default.locationType,
     rootURL: _environment.default.rootURL
   });
@@ -2959,6 +4243,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+f6748145"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+dddded86"});
 }
 //# sourceMappingURL=amazon.map

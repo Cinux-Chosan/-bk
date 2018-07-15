@@ -87,84 +87,84 @@ export default {
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Thomas Kingon '
+          userName: 'Win2000on '
         },
-        reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
-        date: 'January 1, 2018'
+        reviewTxt: 'The speakers are excellent, music sounds great and phone calls come through very clear',
+        date: 'April 1, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'V12 Vantageon'
+          userName: 'CVPIon '
         },
-        reviewTxt: 'I\'m loving it every day when I wake up and touch it',
-        date: 'November 5, 2017'
+        reviewTxt: 'This phone is really fast, great camera, speakers, screen',
+        date: 'March 16, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron  '
+          userName: 'KGon'
         },
-        reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
-        date: 'February 22, 2018'
+        reviewTxt: 'The camera is nice, the pictures come out clean and clear',
+        date: 'March 17, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Keith H.on '
+          userName: 'Alexon '
         },
-        reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
-        date: 'June 29, 2018'
+        reviewTxt: 'Very nice upgrade. I\'m glad I went with the cell . I really like the big screen, and extra camera',
+        date: 'June 14, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Buyeron '
+          userName: 'Mad Scientiston '
         },
-        reviewTxt: 'I quickly became comfortable using my cell phone',
-        date: 'June 27, 2018'
+        reviewTxt: 'The S9 works VERY fast when loading apps and pages',
+        date: 'May 16, 2018'
       },
     ],
     reviewExperience: [
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Carlon '
+          userName: 'sam surbruggon '
         },
-        reviewTxt: 'This is a great phone with an amazing camera. ',
-        date: 'June 19, 2018'
+        reviewTxt: 'It\'s gorgeous! I love the display and the infinity edge ',
+        date: 'June 29, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Kekanon   '
+          userName: 'Stephen '
         },
-        reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
-        date: 'June 8, 2018'
+        reviewTxt: 'it feels good in the hand, excellent screen quality, finally an excellent cell',
+        date: 'June 29, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customer '
+          userName: 'keithmichalon '
         },
-        reviewTxt: 'The cell phone uses a super retina display, with 2436-by-1125 pixel resolution and a contrast ratio of 1,000,000:1',
-        date: 'June 4, 2018'
+        reviewTxt: 'Great camera, awesome software, fast and productive',
+        date: 'June 27, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Annaon'
+          userName: 'Margie Nunezon '
         },
-        reviewTxt: 'The cell phone boasts the largest battery in Apple history',
-        date: 'May 31, 2018'
+        reviewTxt: 'This phone features ability to record video at 4K 60fps',
+        date: 'June 26, 2018'
       },
       {
         userInfo: {
           avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'steven hellmichon'
+          userName: 'jon slusarzon'
         },
-        reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
-        date: 'May 23, 2018'
+        reviewTxt: 'The phone provides the security features like the fingerprint scanner and face detection',
+        date: 'June 26, 2018'
       },
     ]
   }

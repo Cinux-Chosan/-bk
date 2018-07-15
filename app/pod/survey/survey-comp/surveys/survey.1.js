@@ -4,7 +4,7 @@ export default {
     "desc": "Gerder",
     "type": "radio",
     "opts": [{
-      "optText": "Mail"
+      "optText": "Male"
     }, {
       "optText": "Female"
     }]

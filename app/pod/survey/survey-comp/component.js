@@ -25,9 +25,13 @@ export default class SurveyCompComponent extends Component {
   }
   @action
   surveySubmitAction1() {
-    this.get('appController').transitionToRoute('amazon', { queryParams: {
-      g: '1_2'
-    }});
+    let { activeSurvey, appController } = this.getProperties(['activeSurvey', 'appController']);
+    let genderSelected = activeSurvey.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+    if (genderSelected.optText === 'Male') {
+      appController.transitionToRoute('amazon', { queryParams: { g: '1_2_5_6' }});
+    } else {
+      appController.transitionToRoute('amazon', { queryParams: { g: '3_4_5_6' }});
+    }
   }
 
   @action

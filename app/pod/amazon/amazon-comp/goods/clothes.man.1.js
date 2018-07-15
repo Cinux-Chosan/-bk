@@ -33,7 +33,6 @@ export default {
           { img: "/img/amazon/clothes_man_1/2_3.jpg", optDesc: "" },
           { img: "/img/amazon/clothes_man_1/2_4.jpg", optDesc: "" },
           { img: "/img/amazon/clothes_man_1/2_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_man_1/2_6.jpg", optDesc: "" },
           { img: "/img/amazon/clothes_man_1/1_7.jpg", optDesc: "" }
         ]
       },
