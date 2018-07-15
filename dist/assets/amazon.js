@@ -1064,15 +1064,124 @@ define("amazon/pod/amazon/amazon-comp/goods/phone.1", ["exports"], function (exp
     }
   };
 });
-define('amazon/pod/amazon/amazon-comp/goods/phone.2', ['exports'], function (exports) {
-  'use strict';
+define("amazon/pod/amazon/amazon-comp/goods/phone.2", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = {
     goodsInfo: {
-      thumbnailList: ['/img/amazon/clothes_man_2/1.jpg', '/img/amazon/clothes_man_2/2.jpg', '/img/amazon/clothes_man_2/3.jpg', '/img/amazon/clothes_man_2/4.jpg', '/img/amazon/clothes_man_2/5.jpg', '/img/amazon/clothes_man_2/6.jpg', '/img/amazon/clothes_man_2/7.jpg']
+      title: "Apple iPhone X, GSM Unlocked 5.8\", 256 GB - Space Gray",
+      details: ["Super Speed Dual Pixel Camera ", "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*", "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***", "Internal Memory 64 GB. Expandable Storage up to 400GB****", "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "],
+      opts: [{
+        cover: "/img/amazon/phone_2/1_1.jpg",
+        optDesc: "Coral Blue",
+        title: "Samsung Galaxy S9 Unlocked Smartphone - Coral Blue - US Warranty",
+        thumbnailList: [{ img: "/img/amazon/phone_2/1_1.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/1_2.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/1_3.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/1_4.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/1_5.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/1_6.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/phone_2/2_1.jpg",
+        optDesc: "Lilac Purple",
+        title: "Samsung Galaxy S9 Unlocked Smartphone - Lilac Purple - US Warranty ",
+        details: ["Super Speed Dual Pixel Camera ", "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*", "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***", "Internal Memory 64 GB. Expandable Storage up to 400GB. Video Recording Resolution : UHD 4K (3840 x 2160)@60fps ", "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "],
+        thumbnailList: [{ img: "/img/amazon/phone_2/2_1.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/2_2.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/2_3.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/2_4.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/2_5.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/2_6.jpg", optDesc: "" }]
+      }, {
+        cover: "/img/amazon/phone_2/2_1.jpg",
+        optDesc: "Midnight Black",
+        title: "Samsung Galaxy S9 Unlocked Smartphone - Midnight Black - US Warranty ",
+        thumbnailList: [{ img: "/img/amazon/phone_2/3_1.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/3_2.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/3_3.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/3_4.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/3_5.jpg", optDesc: "" }, { img: "/img/amazon/phone_2/3_6.jpg", optDesc: "" }]
+      }]
+    },
+    reviewData: {
+      total: 500,
+      details: [{
+        label: '5 star',
+        ratio: .7
+      }, {
+        label: '4 star',
+        ratio: .15
+      }, {
+        label: '3 star',
+        ratio: .05
+      }, {
+        label: '2 star',
+        ratio: .05
+      }, {
+        label: '1 star',
+        ratio: .05
+      }],
+      reviewQuality: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Thomas Kingon '
+        },
+        reviewTxt: 'Love my cell phone from every aspect and it is very sleek. ',
+        date: 'January 1, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'V12 Vantageon'
+        },
+        reviewTxt: 'I\'m loving it every day when I wake up and touch it',
+        date: 'November 5, 2017'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customeron  '
+        },
+        reviewTxt: 'it gives me new feeling of likeness since I started using it about two weeks now',
+        date: 'February 22, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Keith H.on '
+        },
+        reviewTxt: 'I have no issues phone works great I am enjoying it. Overall a good product.',
+        date: 'June 29, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Buyeron '
+        },
+        reviewTxt: 'I quickly became comfortable using my cell phone',
+        date: 'June 27, 2018'
+      }],
+      reviewExperience: [{
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Carlon '
+        },
+        reviewTxt: 'This is a great phone with an amazing camera. ',
+        date: 'June 19, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Kekanon   '
+        },
+        reviewTxt: '5.8” OLED is the most vibrant and clear screen ever produced ',
+        date: 'June 8, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Amazon Customer '
+        },
+        reviewTxt: 'The cell phone uses a super retina display, with 2436-by-1125 pixel resolution and a contrast ratio of 1,000,000:1',
+        date: 'June 4, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'Annaon'
+        },
+        reviewTxt: 'The cell phone boasts the largest battery in Apple history',
+        date: 'May 31, 2018'
+      }, {
+        userInfo: {
+          avatar: '/img/amazon/defaultUserAvatar.png',
+          userName: 'steven hellmichon'
+        },
+        reviewTxt: 'The cell phone has an amazing stainless-steel frame which is thought by ',
+        date: 'May 23, 2018'
+      }]
     }
   };
 });
@@ -1121,7 +1230,7 @@ define("amazon/pod/amazon/amazon-comp/template", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "aY2rO9TG", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n  \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n      \"],[6,\"img\"],[10,\"src\",\"/img/amazon/share.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"shareImg\"]]],null]]]],[8],[9],[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"addToCartContainer\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"button\"],[11,\"class\",[27,[\"btn \",[26,\"unbound\",[[22,[\"__styles__\",\"addToCartBtn\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"img\"],[10,\"src\",\"/img/amazon/icon_cart.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"cartIcon\"]]],null]]]],[8],[9],[0,\"\\n           Add To Cart\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[21,7,[\"title\"]],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[0,\"\\n          \"],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,7,[\"details\"]]],null,{\"statements\":[[0,\"        \"],[6,\"li\"],[8],[0,\"\\n          \"],[1,[21,8,[]],false],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n      \"]],\"parameters\":[7]},null],[0,\" \"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"\\n      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\"\\n            \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,6,[\"label\"]],false],[0,\" \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\\n\"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"  \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n  \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\" \"]],\"parameters\":[4]},null],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n      \"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\" \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\" \"]],\"parameters\":[3]},null],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "/rVI4uUX", "block": "{\"symbols\":[\"goods\",\"review\",\"experienceRvw\",\"qualityRvw\",\"review\",\"detail\",\"info\",\"detail\",\"opt\",\"info\",\"thumbnail\",\"thumbnailIndex\"],\"statements\":[[4,\"with\",[[22,[\"activeGoods\"]]],null,{\"statements\":[[0,\" \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section1\"]]],null]]]],[8],[0,\"\\n   \"],[6,\"header\"],[8],[0,\"Overall Reviews\"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"left\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"    \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"activeOpt\",\"thumbnailList\"]]],null,{\"statements\":[[0,\"      \"],[6,\"li\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"thumbnail\"]]],null]]]],[3,\"action\",[[21,0,[]],\"setThumbnailIndex\",[21,12,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n        \"],[6,\"img\"],[11,\"src\",[21,11,[\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[11,12]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"preview\"]]],null]]]],[8],[0,\"\\n      \"],[1,[26,\"log\",[[22,[\"activeThumbnail\"]]],null],false],[0,\"\\n      \"],[6,\"img\"],[11,\"src\",[22,[\"activeThumbnail\",\"img\"]],null],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"previewImg\"]]],null]]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[10]},null],[0,\"  \"],[9],[0,\"\\n\\n  \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"right\"]]],null]]]],[8],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"goodsInfo\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsTitle\"]]],null]]]],[8],[0,\"\\n        \"],[1,[26,\"or\",[[22,[\"activeOpt\",\"title\"]],[21,7,[\"title\"]]],null],false],[0,\"\\n      \"],[9],[0,\"\\n      \"],[6,\"dl\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"goodsOpts\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"dt\"],[8],[6,\"b\"],[8],[0,\"Color\"],[9],[0,\": \"],[1,[22,[\"activeOpt\",\"optDesc\"]],false],[9],[0,\"\\n\"],[4,\"each\",[[21,7,[\"opts\"]]],null,{\"statements\":[[0,\"        \"],[6,\"dd\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"thumbnail \",[26,\"if\",[[26,\"eq\",[[21,9,[]],[22,[\"activeOpt\"]]],null],\"active\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"setActiveOpt\",[21,9,[]]],[[\"on\"],[\"mouseEnter\"]]],[8],[0,\"\\n          \"],[6,\"img\"],[11,\"src\",[21,9,[\"thumbnailList\",\"firstObject\",\"img\"]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[9]},null],[0,\"      \"],[9],[0,\"\\n      \"],[6,\"ul\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"goodsDetails\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[26,\"or\",[[22,[\"activeOpt\",\"details\"]],[21,7,[\"details\"]]],null]],null,{\"statements\":[[0,\"          \"],[6,\"li\"],[8],[0,\"\\n            \"],[1,[21,8,[]],false],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[8]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[7]},null],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"review\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewsSum\"]]],null]]]],[8],[0,\"\\n          \"],[6,\"h2\"],[8],[0,\"Customer Reviews\"],[9],[0,\"\\n          \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"imgAndCount\"]]],null]]]],[8],[0,\"\\n            \"],[6,\"img\"],[10,\"src\",\"/img/amazon/stars_4.5.png\"],[10,\"alt\",\"\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumImg\"]]],null]]]],[8],[9],[0,\" \"],[6,\"b\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumCount\"]]],null]]]],[8],[1,[21,5,[\"total\"]],false],[9],[0,\"\\n          \"],[9],[0,\"\\n          \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewSumDesc\"]]],null]]]],[8],[0,\"4.7 out of 5 stars\"],[9],[0,\"\\n        \"],[9],[0,\"\\n        \"],[6,\"ul\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetailList\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,5,[\"details\"]]],null,{\"statements\":[[0,\"            \"],[6,\"li\"],[8],[0,\"\\n              \"],[1,[21,6,[\"label\"]],false],[0,\"\\n              \"],[1,[26,\"progress-bar\",null,[[\"ratio\",\"class\"],[[21,6,[\"ratio\"]],[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"progressBar\"]]],null]],null]]]],false],[0,\" \"],[1,[26,\"to-percent\",[[21,6,[\"ratio\"]]],null],false],[0,\"\\n            \"],[9],[0,\"\\n\"]],\"parameters\":[6]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[5]},null],[0,\"    \"],[9],[0,\"\\n    \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rRight\"]]],null]]]],[8],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\\n\\n  \"],[6,\"section\"],[11,\"class\",[27,[\"clearfix \",[26,\"unbound\",[[22,[\"__styles__\",\"section2\"]]],null]]]],[8],[0,\"\\n\"],[4,\"with\",[[21,1,[\"reviewData\"]]],null,{\"statements\":[[0,\"      \"],[6,\"header\"],[8],[0,\"Details of review content\"],[9],[0,\"\\n      \"],[6,\"section\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"reviewDetails\"]]],null]]]],[8],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwLeft\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewQuality\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,4,[]]]]],false],[0,\"\\n\"]],\"parameters\":[4]},null],[0,\"        \"],[9],[0,\"\\n        \"],[6,\"div\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"rvwRight\"]]],null]]]],[8],[0,\"\\n\"],[4,\"each\",[[21,2,[\"reviewExperience\"]]],null,{\"statements\":[[0,\"            \"],[1,[26,\"amazon/user-review\",null,[[\"reviewData\"],[[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null],[0,\"        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"  \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/amazon/amazon-comp/template.hbs" } });
 });
 define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], function (exports, _object) {
   'use strict';

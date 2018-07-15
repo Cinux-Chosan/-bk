@@ -1,11 +1,11 @@
  {{#with activeGoods as |goods|}}
-<section local-class="section1" class="clearfix">
-  <header>Overall Reviews</header>
+ <section local-class="section1" class="clearfix">
+   <header>Overall Reviews</header>
   <div local-class="left">
     {{#with goods.goodsInfo as |info|}}
     <ul local-class="thumbnailList">
       {{#each activeOpt.thumbnailList as |thumbnail thumbnailIndex|}}
-      <li local-class="thumbnail" {{action "setThumbnailIndex" thumbnailIndex on="mouseEnter" }}>
+      <li local-class="thumbnail" {{action "setThumbnailIndex" thumbnailIndex on="mouseEnter"}}>
         <img src={{thumbnail.img}} alt="">
       </li>
       {{/each}}
@@ -18,23 +18,13 @@
   </div>
 
   <div local-class="right">
-    <div local-class="rRight">
-      <img src="/img/amazon/share.png" local-class="shareImg" alt="">
-      <div local-class="addToCartContainer">
-        <button local-class="addToCartBtn" class="btn">
-          <img src="/img/amazon/icon_cart.png" local-class="cartIcon" alt="">
-           Add To Cart
-        </button>
-      </div>
-    </div>
     <div local-class="rLeft">
       {{#with goods.goodsInfo as |info|}}
       <div local-class="goodsTitle">
-        {{info.title}}
+        {{or activeOpt.title info.title}}
       </div>
       <dl local-class="goodsOpts">
-        <dt>
-          <b>Color</b>: {{activeOpt.optDesc}}</dt>
+        <dt><b>Color</b>: {{activeOpt.optDesc}}</dt>
         {{#each info.opts as |opt|}}
         <dd local-class="thumbnail {{if (eq opt activeOpt) 'active'}}" {{action "setActiveOpt" opt on="mouseEnter" }}>
           <img src={{opt.thumbnailList.firstObject.img}} alt="">
@@ -42,47 +32,54 @@
         {{/each}}
       </dl>
       <ul local-class="goodsDetails" class="clearfix">
-        {{#each info.details as |detail|}}
-        <li>
-          {{detail}}
-        </li>
+        {{#each (or activeOpt.details info.details) as |detail|}}
+          <li>
+            {{detail}}
+          </li>
         {{/each}}
       </ul>
-      {{/with}} {{#with goods.reviewData as |review|}}
+      {{/with}}
+      {{#with goods.reviewData as |review|}}
       <div local-class="review">
         <div local-class="reviewsSum">
           <h2>Customer Reviews</h2>
           <div local-class="imgAndCount">
-            <img src="/img/amazon/stars_4.5.png" local-class="reviewSumImg" alt="">
-            <b local-class="reviewSumCount">{{review.total}}</b>
+            <img src="/img/amazon/stars_4.5.png" local-class="reviewSumImg" alt=""> <b local-class="reviewSumCount">{{review.total}}</b>
           </div>
           <p local-class="reviewSumDesc">4.7 out of 5 stars</p>
         </div>
         <ul local-class="reviewDetailList">
           {{#each review.details as |detail|}}
-          <li>
-            {{detail.label}} {{progress-bar ratio=detail.ratio local-class="progressBar"}} {{to-percent detail.ratio}}
-          </li>
+            <li>
+              {{detail.label}}
+              {{progress-bar ratio=detail.ratio local-class="progressBar"}} {{to-percent detail.ratio}}
+            </li>
           {{/each}}
         </ul>
       </div>
       {{/with}}
     </div>
+    <div local-class="rRight">
+    </div>
   </div>
-</section>
-
-
-<section local-class="section2" class="clearfix">
-  {{#with goods.reviewData as |review|}}
-  <header>Details of review content</header>
-  <section local-class="reviewDetails">
-    <div local-class="rvwLeft">
-      {{#each review.reviewQuality as |qualityRvw|}} {{amazon/user-review reviewData=qualityRvw}} {{/each}}
-    </div>
-    <div local-class="rvwRight">
-      {{#each review.reviewExperience as |experienceRvw|}} {{amazon/user-review reviewData=experienceRvw}} {{/each}}
-    </div>
   </section>
-  {{/with}}
-</section>
+
+
+  <section local-class="section2" class="clearfix">
+    {{#with goods.reviewData as |review|}}
+      <header>Details of review content</header>
+      <section local-class="reviewDetails">
+        <div local-class="rvwLeft">
+          {{#each review.reviewQuality as |qualityRvw|}}
+            {{amazon/user-review reviewData=qualityRvw}}
+          {{/each}}
+        </div>
+        <div local-class="rvwRight">
+          {{#each review.reviewExperience as |experienceRvw|}}
+            {{amazon/user-review reviewData=experienceRvw}}
+          {{/each}}
+        </div>
+      </section>
+    {{/with}}
+  </section>
 {{/with}}

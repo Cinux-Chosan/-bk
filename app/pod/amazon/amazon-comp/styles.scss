@@ -126,6 +126,7 @@
   margin-left: 1.2em;
   li+li{
     margin-top: 8px;
+    clear: both;
   }
   line-height: 16px;
 }
@@ -177,7 +178,7 @@
 
 .section2{
   margin-top: 30px;
-  
+
   .reviewDetails{
     .rvwLeft, .rvwRight{
       width: 50%;

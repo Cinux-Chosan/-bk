@@ -447,6 +447,29 @@ define('amazon/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/pod/wenjuan/route-test.js should pass ESLint\n\n');
   });
 });
+define('amazon/tests/unit/initializers/inject-router-test', ['amazon/initializers/inject-router', 'qunit', 'ember-qunit', 'amazon/tests/helpers/destroy-app'], function (_injectRouter, _qunit, _emberQunit, _destroyApp) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Initializer | inject-router', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+        hooks.beforeEach(function () {
+            this.TestApplication = Ember.Application.extend();
+            this.TestApplication.initializer({
+                name: 'initializer under test',
+                initialize: _injectRouter.initialize
+            });
+            this.application = this.TestApplication.create({ autoboot: false });
+        });
+        hooks.afterEach(function () {
+            (0, _destroyApp.default)(this.application);
+        });
+        // Replace this with your real tests.
+        (0, _qunit.test)('it works', async function (assert) {
+            await this.application.boot();
+            assert.ok(true);
+        });
+    });
+});
 define('amazon/tests/unit/pod/amazon/route-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
     'use strict';
 
