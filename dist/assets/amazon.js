@@ -2868,7 +2868,7 @@ define("amazon/pod/components/export-xlsx/component", ["exports", "@ember-decora
       key: "doExport",
       value: function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-          var svUserFills, xlsData, i, svResultItem, item;
+          var svUserFills, xlsData, heads, i, svResultItem, item;
           return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
@@ -2880,67 +2880,67 @@ define("amazon/pod/components/export-xlsx/component", ["exports", "@ember-decora
                   svUserFills = _context2.sent;
 
                   if (!svUserFills) {
-                    _context2.next = 30;
+                    _context2.next = 31;
                     break;
                   }
 
                   xlsData = [];
+                  heads = {};
                   i = 0;
 
-                case 6:
+                case 7:
                   if (!(i < svUserFills.length)) {
-                    _context2.next = 27;
+                    _context2.next = 28;
                     break;
                   }
 
                   svResultItem = svUserFills[i];
                   item = {};
-                  _context2.prev = 9;
-                  _context2.next = 12;
+                  _context2.prev = 10;
+                  _context2.next = 13;
                   return this.buildXslData(svResultItem.sv1.items, item);
 
-                case 12:
-                  _context2.next = 14;
+                case 13:
+                  _context2.next = 15;
                   return this.buildXslData(svResultItem.sv2.items, item);
 
-                case 14:
-                  _context2.next = 16;
+                case 15:
+                  _context2.next = 17;
                   return this.buildXslData(svResultItem.sv3.items, item);
 
-                case 16:
-                  _context2.next = 18;
+                case 17:
+                  _context2.next = 19;
                   return this.buildXslData(svResultItem.sv4.items, item);
 
-                case 18:
+                case 19:
+                  heads = _extends({}, heads, item, svResultItem.goods);
                   xlsData.push(_extends({}, item, svResultItem.goods));
-                  _context2.next = 24;
+                  _context2.next = 25;
                   break;
 
-                case 21:
-                  _context2.prev = 21;
-                  _context2.t0 = _context2["catch"](9);
+                case 23:
+                  _context2.prev = 23;
+                  _context2.t0 = _context2["catch"](10);
 
-                  console.log(_context2.t0);
-
-                case 24:
+                case 25:
                   i++;
-                  _context2.next = 6;
+                  _context2.next = 7;
                   break;
 
-                case 27:
-                  (0, _exportXlsx.downloadExl)(xlsData, '问卷记录');
-                  _context2.next = 31;
+                case 28:
+                  (0, _exportXlsx.downloadExl)(xlsData, Object.keys(heads), '问卷记录');
+                  _context2.next = 32;
                   break;
-
-                case 30:
-                  alert('没有数据');
 
                 case 31:
+                  alert('没有数据');
+
+                case 32:
                 case "end":
                   return _context2.stop();
               }
             }
-          }, _callee2, this, [[9, 21]]);
+          }, _callee2, this, [[10, 23]]);
         }));
 
         function doExport() {
@@ -5101,20 +5101,30 @@ define("amazon/utils/export-xlsx", ["exports"], function (exports) {
     value: true
   });
   function downloadExl(json) {
-    var fileName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '导出数据';
-    var bookType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "xlsx";
+    var heads = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var fileName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '导出数据';
+    var bookType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "xlsx";
 
     var tmpDown; //导出的二进制对象
-    var keyMap = []; //获取keys
-    var tmpdata = json[0];
+    // var heads = []; //获取keys
     json.unshift({});
-    for (var k in tmpdata) {
-      keyMap.push(k);
-      json[0][k] = k;
+
+    if (heads && heads.length) {
+      heads.forEach(function (el) {
+        return json[0][el] = el;
+      });
+    } else {
+      var tmp = json[0];
+      json.unshift({});
+      for (var k in tmp) {
+        heads.push(k);
+        json[0][k] = k;
+      }
     }
-    tmpdata = []; //用来保存转换好的json
+
+    var tmpdata = []; //用来保存转换好的json
     json.map(function (v, i) {
-      return keyMap.map(function (k, j) {
+      return heads.map(function (k, j) {
         return Object.assign({}, {
           v: v[k],
           position: (j > 25 ? getCharCol(j) : String.fromCharCode(65 + j)) + (i + 1)
@@ -5269,6 +5279,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+23770fd1"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+8b76b36a"});
 }
 //# sourceMappingURL=amazon.map

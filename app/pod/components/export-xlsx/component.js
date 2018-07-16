@@ -7,6 +7,7 @@ const { localforage: { getItem } } = window;
 export default class ExportXlsxComponent extends Component {
   tagName = 'button';
   classNames = ['btn'];
+
   exportBtnText = '导出问卷数据';
   async buildXslData(svItemList = [], rt = {}) {
     for (let i = 0; i < svItemList.length; i++) {
@@ -24,6 +25,7 @@ export default class ExportXlsxComponent extends Component {
     let svUserFills = await getItem("svUserFills");
     if (svUserFills) {
       let xlsData = [];
+      let heads = {};
       for (let i = 0; i < svUserFills.length; i++) {
         const svResultItem = svUserFills[i];
         let item = {};
@@ -32,12 +34,13 @@ export default class ExportXlsxComponent extends Component {
           await this.buildXslData(svResultItem.sv2.items, item);
           await this.buildXslData(svResultItem.sv3.items, item);
           await this.buildXslData(svResultItem.sv4.items, item);
+          heads = { ...heads, ...item, ...svResultItem.goods };
           xlsData.push({ ...item, ...svResultItem.goods });
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
-      downloadExl(xlsData, '问卷记录');
+      downloadExl(xlsData, Object.keys(heads) ,'问卷记录');
     } else {
       alert('没有数据');
     }

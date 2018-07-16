@@ -192,7 +192,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('pod/components/export-xlsx/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'pod/components/export-xlsx/component.js should pass ESLint\n\n37:11 - Unexpected console statement. (no-console)');
+    assert.ok(true, 'pod/components/export-xlsx/component.js should pass ESLint\n\n');
   });
 
   QUnit.test('pod/components/progress-bar/component.js', function (assert) {
