@@ -22,18 +22,21 @@ export default class ExportXlsxComponent extends Component {
   @action
   async doExport() {
     let svUserFills = await getItem("svUserFills");
-    let xlsData = [];
-    for (let i = 0; i < svUserFills.length; i++) {
-      const svResultItem = svUserFills[i];
-      let item = {};
-      await this.buildXslData(svResultItem.sv1.items, item);
-      await this.buildXslData(svResultItem.sv2.items, item);
-      await this.buildXslData(svResultItem.sv3.items, item);
-      await this.buildXslData(svResultItem.sv4.items, item);
-      xlsData.push(item);
+    if (svUserFills) {
+      let xlsData = [];
+      for (let i = 0; i < svUserFills.length; i++) {
+        const svResultItem = svUserFills[i];
+        let item = {};
+        await this.buildXslData(svResultItem.sv1.items, item);
+        await this.buildXslData(svResultItem.sv2.items, item);
+        await this.buildXslData(svResultItem.sv3.items, item);
+        await this.buildXslData(svResultItem.sv4.items, item);
+        xlsData.push(item);
+      }
+      downloadExl(xlsData, '问卷记录');
+    } else {
+      alert('没有数据');
     }
-    debugger
-    downloadExl(xlsData, '问卷记录');
   }
   click() {
     this.send('doExport');

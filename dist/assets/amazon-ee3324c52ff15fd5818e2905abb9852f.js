@@ -173,17 +173,20 @@ case 13:return e.abrupt("return",a)
 case 14:case"end":return e.stop()}},e,this)}))
 return function(){return e.apply(this,arguments)}}()},{key:"doExport",value:function(){var e=r(regeneratorRuntime.mark(function e(){var t,r,a,n,i
 return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,g("svUserFills")
-case 2:t=e.sent,r=[],a=0
-case 5:if(!(a<t.length)){e.next=20
-break}return n=t[a],i={},e.next=10,this.buildXslData(n.sv1.items,i)
-case 10:return e.next=12,this.buildXslData(n.sv2.items,i)
-case 12:return e.next=14,this.buildXslData(n.sv3.items,i)
-case 14:return e.next=16,this.buildXslData(n.sv4.items,i)
-case 16:r.push(i)
-case 17:a++,e.next=5
+case 2:if(!(t=e.sent)){e.next=24
+break}r=[],a=0
+case 6:if(!(a<t.length)){e.next=21
+break}return n=t[a],i={},e.next=11,this.buildXslData(n.sv1.items,i)
+case 11:return e.next=13,this.buildXslData(n.sv2.items,i)
+case 13:return e.next=15,this.buildXslData(n.sv3.items,i)
+case 15:return e.next=17,this.buildXslData(n.sv4.items,i)
+case 17:r.push(i)
+case 18:a++,e.next=6
 break
-case 20:(0,o.downloadExl)(r,"问卷记录")
-case 22:case"end":return e.stop()}},e,this)}))
+case 21:(0,o.downloadExl)(r,"问卷记录"),e.next=25
+break
+case 24:alert("没有数据")
+case 25:case"end":return e.stop()}},e,this)}))
 return function(){return e.apply(this,arguments)}}()},{key:"click",value:function(){this.send("doExport")}}]),t}(),s=a.prototype,l="doExport",u=[t.action],p=Object.getOwnPropertyDescriptor(a.prototype,"doExport"),c=a.prototype,m={},Object.keys(p).forEach(function(e){m[e]=p[e]}),m.enumerable=!!m.enumerable,m.configurable=!!m.configurable,("value"in m||m.initializer)&&(m.writable=!0),m=u.slice().reverse().reduce(function(e,t){return t(s,l,e)||e},m),c&&void 0!==m.initializer&&(m.value=m.initializer?m.initializer.call(c):void 0,m.initializer=void 0),void 0===m.initializer&&(Object.defineProperty(s,l,m),m=null),a)
 e.default=f}),define("amazon/pod/components/export-xlsx/styles",["exports"],function(e){Object.defineProperty(e,"__esModule",{value:!0}),e.default={root:"_root_1k1ihv"}}),define("amazon/pod/components/export-xlsx/template",["exports"],function(e){Object.defineProperty(e,"__esModule",{value:!0}),e.default=Ember.HTMLBars.template({id:"cgItz4ZH",block:'{"symbols":[],"statements":[[1,[20,"exportBtnText"],false]],"hasEval":false}',meta:{moduleName:"amazon/pod/components/export-xlsx/template.hbs"}})}),define("amazon/pod/components/progress-bar/component",["exports","@ember-decorators/object"],function(e,t){Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var o,r,a=function(){function e(e,t){for(var o=0;o<t.length;o++){var r=t[o]
@@ -257,4 +260,4 @@ var u=URL.createObjectURL(t),p=document.createElement("a")
 p.download=o+"."+r,p.href=u,p.click(),setTimeout(function(){URL.revokeObjectURL(t)},100)}}),define("amazon/utils/local-storage",[],function(){var e=function(){function e(e,t){for(var o=0;o<t.length;o++){var r=t[o]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,o,r){return o&&e(t.prototype,o),r&&e(t,r),t}}(),t=function(){function t(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,t),this.data={}}return e(t,[{key:"getItem",value:function(e){return this.data[e]}},{key:"setItem",value:function(e,t){this.data[e]=t}},{key:"clear",value:function(){this.data={}}}]),t}()
 window.myLocalStorage=window.localStorage||new t}),define("amazon/utils/util",["exports"],function(e){Object.defineProperty(e,"__esModule",{value:!0}),e.scrollTo=function(e){(e=Ember.$(e)).length&&window.scrollTo(0,e.offset().top-150)}}),define("amazon/config/environment",[],function(){try{var e="amazon/config/environment",t=document.querySelector('meta[name="'+e+'"]').getAttribute("content"),o={default:JSON.parse(unescape(t))}
-return Object.defineProperty(o,"__esModule",{value:!0}),o}catch(t){throw new Error('Could not read config from meta tag with name "'+e+'".')}}),runningTests||require("amazon/app").default.create({name:"amazon",version:"0.0.0+c0c44001"})
+return Object.defineProperty(o,"__esModule",{value:!0}),o}catch(t){throw new Error('Could not read config from meta tag with name "'+e+'".')}}),runningTests||require("amazon/app").default.create({name:"amazon",version:"0.0.0+855706c5"})
