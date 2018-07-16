@@ -12,38 +12,38 @@ export default {
     ],
     opts: [
       {
-        cover: "/img/amazon/clothes_woman_1/1_1.jpg",
+        cover: "img/amazon/clothes_woman_1/1_1.jpg",
         optDesc: "0962 Grey ",
         thumbnailList: [
-          { img: "/img/amazon/clothes_woman_1/1_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_4.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_7.jpg", optDesc: "" }
+          { img: "img/amazon/clothes_woman_1/1_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_5.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_7.jpg", optDesc: "" }
         ]
       },
       {
-        cover: "/img/amazon/clothes_woman_1/2_1.jpg",
+        cover: "img/amazon/clothes_woman_1/2_1.jpg",
         optDesc: "0965 White ",
         thumbnailList: [
-          { img: "/img/amazon/clothes_woman_1/2_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/2_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/2_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/2_4.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/2_5.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }
+          { img: "img/amazon/clothes_woman_1/2_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/2_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/2_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/2_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/2_5.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }
         ]
       },
       {
-        cover: "/img/amazon/clothes_man_2/3_1.jpg",
+        cover: "img/amazon/clothes_man_2/3_1.jpg",
         optDesc: "Blue",
         thumbnailList: [
-          { img: "/img/amazon/clothes_woman_1/3_1.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/3_2.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/3_3.jpg", optDesc: "" },
-          { img: "/img/amazon/clothes_woman_1/3_4.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/3_1.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/3_2.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/3_3.jpg", optDesc: "" },
+          { img: "img/amazon/clothes_woman_1/3_4.jpg", optDesc: "" },
         ]
       }
     ]
@@ -75,23 +75,23 @@ export default {
     reviewQuality: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Jessica Clarkon '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Jessica Clark'
         },
         reviewTxt: 'It\'s so cute and soft. I wear it at least a few times a week',
         date: 'June 29, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'T Lynnon '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'T Lynn '
         },
         reviewTxt: 'LOVE! So cute and comfortable!!',
         date: 'June 28, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Christopher  '
         },
         reviewTxt: 'Casual, cute, and great to throw on with pretty much anything',
@@ -99,16 +99,16 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Anaon  '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Ana'
         },
         reviewTxt: 'Amazing top, love the way it feels and looks!',
         date: 'June 20, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Lemon253on '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Lemon253'
         },
         reviewTxt: 'Very comfy, looks great, feels very soft, is perfect for spring and early fall',
         date: 'June 19, 2018'
@@ -117,23 +117,23 @@ export default {
     reviewExperience: [
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Amazon Customeron'
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Amazon Customer'
         },
         reviewTxt: 'The material is so warm, yet light',
         date: 'June 28, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Stephanie B.on  '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Stephanie B'
         },
         reviewTxt: 'Love the sweatshirt. Comfortable and light weight for those cool nights',
         date: 'June 25, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
           userName: 'Ashley M  '
         },
         reviewTxt: 'Fabric is stretchy. Medium is a little big ',
@@ -141,16 +141,16 @@ export default {
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Elizabethon   '
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Elizabeth'
         },
         reviewTxt: 'The blue in this is slightly less greenish than it looks',
         date: 'June 20, 2018'
       },
       {
         userInfo: {
-          avatar: '/img/amazon/defaultUserAvatar.png',
-          userName: 'Erin Holzeron'
+          avatar: 'img/amazon/defaultUserAvatar.jpg',
+          userName: 'Erin Holzer'
         },
         reviewTxt: 'Soft fabric, light weight, cute top, Gorgeous colors',
         date: 'June 19, 2018'

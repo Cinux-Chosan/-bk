@@ -1,9 +1,9 @@
 export default {
-  title: "问卷三",
+  title: "Survey 4",
   items: [{
     "desc": "Please indicate how much you disagree or agree with each of the following statements.",
     "type": "group",
-    "opts": [{
+    "items": [{
       "desc": "The quantity of the reviews released was large.",
       "type": "radio",
       "opts": [{

@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'amazon',
     podModulePrefix: 'amazon/pod',
     environment,
-    rootURL: '/',
+    rootURL: '',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {

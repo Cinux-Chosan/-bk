@@ -6,6 +6,7 @@ import Component from '@ember/component';
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
+import 'amazon/utils/local-storage';
 
 const App = Application.extend({
   modulePrefix: config.modulePrefix,

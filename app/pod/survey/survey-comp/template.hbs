@@ -9,22 +9,22 @@
     </h1>
 
     <div local-class="surveyBody">
-      {{#each sv.items as |item index|}}
-      <div local-class="surveyItem">
+      {{#each sv.items as |svItem svItemIndex|}}
+      <div local-class="surveyItem" data-desc={{svItem.desc}}>
         <div local-class="desc">
-          {{add 1 index}}、{{{item.desc}}}
+          {{add 1 svItemIndex}}、{{{svItem.desc}}}
         </div>
-        {{#if (eq item.type "group")}}
-          {{#each item.opts as |subItem subIndex|}}
-            <div local-class="subItem">
+        {{#if (eq svItem.type "group")}}
+          {{#each svItem.items as |subItem subIndex|}}
+            <div local-class="subItem" data-desc={{subItem.desc}}>
             <div local-class="desc">
-              {{add 1 index}}.{{add 1 subIndex}} {{{subItem.desc}}}
+              {{add 1 svItemIndex}}.{{add 1 subIndex}} {{{subItem.desc}}}
             </div>
             <ul local-class="surveyOpts" class="clearfix">
-              {{#each subItem.opts as |opt|}}
+              {{#each subItem.opts as |opt optIndex|}}
                 <li local-class="surveyOpt {{if (gte subItem.opts.length 5) 'largeOpts'}}">
                   <label for={{subItem.desc}}>
-                    {{i-check type=subItem.type name=subItem.desc checked=opt.isChecked value=opt.optText}} {{opt.optText}} 
+                    {{i-check type=subItem.type name=subItem.desc checked=opt.isChecked value=opt.optText elementId=(concat 'i-check' svItem.type subIndex optIndex)}} {{opt.optText}} 
                   </label>
                 </li>
               {{/each}}
@@ -33,10 +33,10 @@
           {{/each}}
         {{else}}
           <ul local-class="surveyOpts" class="clearfix">
-            {{#each item.opts as |opt|}}
-              <li local-class="surveyOpt {{if (gte item.opts.length 5) 'largeOpts'}}">
-                <label for={{item.desc}}>
-                  {{i-check type=item.type name=item.desc checked=opt.isChecked value=opt.optText}} {{opt.optText}}
+            {{#each svItem.opts as |opt optIndex|}}
+              <li local-class="surveyOpt {{if (gte svItem.opts.length 5) 'largeOpts'}}">
+                <label for={{svItem.desc}}>
+                  {{i-check type=svItem.type name=svItem.desc checked=opt.isChecked value=opt.optText elementId=(concat 'i-check' svItem.type svItemIndex optIndex)}} {{opt.optText}}
                 </label>
               </li>
             {{/each}}
@@ -48,6 +48,6 @@
   </div>
   {{/with}}
   <div local-class="surveyFooter">
-    <button type="submit" class="btn btn-primary" {{action "submit" }}>提交问卷</button>
+    <button type="submit" class="btn btn-primary" {{action "submit" }}>submit</button>
   </div>
 </div>
