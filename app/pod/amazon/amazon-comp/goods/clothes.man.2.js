@@ -55,7 +55,7 @@ export default {
     ]
   },
   reviewData: {
-    total: 500,
+    total: 723,
     details: [
       {
         label: '5 star',

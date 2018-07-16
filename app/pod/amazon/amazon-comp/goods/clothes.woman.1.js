@@ -49,7 +49,7 @@ export default {
     ]
   },
   reviewData: {
-    total: 500,
+    total: 867,
     details: [
       {
         label: '5 star',
