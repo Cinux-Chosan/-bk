@@ -1,8 +1,8 @@
 import Component from "@ember/component";
-import { computed, action } from "@ember-decorators/object";
+import { action } from "@ember-decorators/object";
 import { downloadExl } from "amazon/utils/export-xlsx";
 
-const { localforage: { getItem, setItem } } = window;
+const { localforage: { getItem } } = window;
 
 export default class ExportXlsxComponent extends Component {
   tagName = 'button';
@@ -27,11 +27,15 @@ export default class ExportXlsxComponent extends Component {
       for (let i = 0; i < svUserFills.length; i++) {
         const svResultItem = svUserFills[i];
         let item = {};
-        await this.buildXslData(svResultItem.sv1.items, item);
-        await this.buildXslData(svResultItem.sv2.items, item);
-        await this.buildXslData(svResultItem.sv3.items, item);
-        await this.buildXslData(svResultItem.sv4.items, item);
-        xlsData.push(item);
+        try {
+          await this.buildXslData(svResultItem.sv1.items, item);
+          await this.buildXslData(svResultItem.sv2.items, item);
+          await this.buildXslData(svResultItem.sv3.items, item);
+          await this.buildXslData(svResultItem.sv4.items, item);
+          xlsData.push({ ...item, ...svResultItem.goods });
+        } catch (error) {
+          console.log(error);
+        }
       }
       downloadExl(xlsData, '问卷记录');
     } else {

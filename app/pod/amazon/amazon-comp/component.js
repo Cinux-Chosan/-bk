@@ -16,10 +16,10 @@ export default class AmazonCompComponent extends Component {
   goods5 = goods5;
   goods6 = goods6;
   goods;
-  @computed('g')
+  @computed('goods')
   get activeGoods() {
-    let s = this.getWithDefault('goods', 1);
-    return this.get(`goods${s}`);
+    let g = this.getWithDefault('goods', 1);
+    return this.get(`goods${g}`);
   }
 
   currentOpt = null;

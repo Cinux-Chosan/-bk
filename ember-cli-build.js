@@ -7,6 +7,11 @@ module.exports = function(defaults) {
     // Add options here
     SRI: {
       enabled : false
+    },
+    babel: {
+      plugins: [
+        'transform-object-rest-spread'
+      ]
     }
   });
 

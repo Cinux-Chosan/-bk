@@ -144,13 +144,14 @@ export default class SurveyCompComponent extends Component {
     let survey2 = JSON.parse(myLocalStorage.getItem('survey2'));
     let survey3 = JSON.parse(myLocalStorage.getItem('survey3'));
     let survey4 = JSON.parse(myLocalStorage.getItem('survey4'));
+    let goods = JSON.parse(myLocalStorage.getItem('goods'));
     let sv1 = { title: survey1.title, items: this.formatSurveyData(survey1.items) };
     let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items) };
     let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
     let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
     try {
       let svUserFills = await getItem('svUserFills') || [];
-      svUserFills.pushObject({ sv1, sv2, sv3, sv4 });
+      svUserFills.pushObject({ sv1, sv2, sv3, sv4, goods });
       await setItem('svUserFills', svUserFills);
     } catch (error) {
       // console.log(error);

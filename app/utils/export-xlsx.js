@@ -1,4 +1,4 @@
-function downloadExl(json, fileName = '导出数据', bookType = "xlsx") {
+function downloadExl(json, fileName = '导出数据',  bookType = "xlsx") {
   var tmpDown; //导出的二进制对象
   var keyMap = []; //获取keys
   var tmpdata = json[0];
@@ -7,7 +7,7 @@ function downloadExl(json, fileName = '导出数据', bookType = "xlsx") {
     keyMap.push(k);
     json[0][k] = k;
   }
-  var tmpdata = []; //用来保存转换好的json
+  tmpdata = []; //用来保存转换好的json
   json
     .map((v, i) =>
       keyMap.map((k, j) =>
@@ -23,7 +23,7 @@ function downloadExl(json, fileName = '导出数据', bookType = "xlsx") {
     )
     .reduce((prev, next) => prev.concat(next))
     .forEach(
-      (v, i) =>
+      v =>
         (tmpdata[v.position] = {
           v: v.v
         })
@@ -44,7 +44,7 @@ function downloadExl(json, fileName = '导出数据', bookType = "xlsx") {
   tmpDown = new Blob(
     [
       s2ab(
-        XLSX.write(
+        window.XLSX.write(
           tmpWB,
           { bookType, bookSST: false, type: "binary" } //这里的数据是用来定义导出的格式类型
         )
@@ -76,8 +76,7 @@ function s2ab(s) {
 }
 // 将指定的自然数转换为26进制表示。映射关系：[0-25] -> [A-Z]。
 function getCharCol(n) {
-  let temCol = "",
-    s = "",
+  let s = "",
     m = 0;
   while (n > 0) {
     m = (n % 26) + 1;
