@@ -1,30 +1,32 @@
-html, body {
-  &, & > .ember-view{
+html,
+body {
+  &,
+  & > .ember-view {
     height: 100%;
   }
 }
 
-ul{
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  li{
+  li {
     float: left;
   }
 }
 
-ul, section{
-  &:global(.clearfix){
-    &::after{
-      content: '';
+ul,
+section {
+  &:global(.clearfix) {
+    &::after {
+      content: "";
       clear: both;
       display: block;
     }
   }
 }
 
-
-button:global(.btn){
+button:global(.btn) {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -44,16 +46,18 @@ button:global(.btn){
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  &:hover {
+    background-color: #e4e3e3;
+  }
 }
 
 button:global(.btn-primary) {
   color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-    &:hover{
-
-  color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
-}
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  &:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+  }
 }

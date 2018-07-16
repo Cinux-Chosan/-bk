@@ -24,7 +24,7 @@
               {{#each subItem.opts as |opt optIndex|}}
                 <li local-class="surveyOpt {{if (gte subItem.opts.length 5) 'largeOpts'}}">
                   <label for={{subItem.desc}}>
-                    {{i-check type=subItem.type name=subItem.desc checked=opt.isChecked value=opt.optText elementId=(concat 'i-check' svItem.type subIndex optIndex)}} {{opt.optText}} 
+                    {{i-check type=subItem.type name=subItem.desc checked=opt.isChecked value=opt.optText elementId=(concat 'i-check' svItem.type subIndex optIndex)}} {{opt.optText}}
                   </label>
                 </li>
               {{/each}}

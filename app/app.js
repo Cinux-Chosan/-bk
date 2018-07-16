@@ -26,3 +26,11 @@ let base = {
 
 Component.reopen(base)
 Controller.reopen(base);
+
+// 配置 localforage
+window.localforage.config({
+  name        : 'amazon',
+  version     : 1.0,
+  storeName   : 'amazon', // Should be alphanumeric, with underscores.
+  description : 'for amazon use'
+});

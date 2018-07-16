@@ -1,7 +1,7 @@
 .root{
   min-height: 100%;
-  position: relative;
   overflow: hidden;
+  position: relative;
   .surveyBG{
     background: #e4ce83 url(../img/Nview.jpg) no-repeat  top center;
     position: fixed;
@@ -19,52 +19,52 @@
   margin-top: 68px;
   background: #fff;
   padding-left: 70px;
-  padding-right: 70px;
-  box-sizing: border-box;
   position: relative;
   margin-bottom: 80px;
+  padding-right: 70px;
+  box-sizing: border-box;
 }
 
 .surveyHead{
+  width: 96%;
   line-height: 20px;
   text-align: center;
-  width: 96%;
   padding: 40px 0 30px;
   h1{
-    font-weight: bold;
-    color: #39a4db;
     font-size: 24px;
+    color: #39a4db;
+    font-weight: bold;
     margin-bottom: 30px;
-    border-bottom: 1px dashed #eee;
     padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
   }
 }
 
 
 .surveyBody{
-  text-align: left;
   font-size: 18px;
+  text-align: left;
   .surveyItem{
     padding: 2% 2% 8px;
-    border: 2px solid transparent;
     border-radius: 5px;
+    border: 2px solid transparent;
     &.error{
       border-color: rgb(255, 153, 0);
     }
     .desc{
-      font-weight: bold;
       font-size: 1em;
+      font-weight: bold;
       &:first-letter {
         text-transform: capitalize;
       }
     }
     .surveyOpts{
-      line-height: 20px;
       margin-top: 16px;
+      line-height: 20px;
       .surveyOpt{
         &, label{
-          cursor: pointer !important;
           border-radius: 5px;
+          cursor: pointer !important;
         }
         label{
           width: 100%;
@@ -82,16 +82,16 @@
     }
     .largeOpts{
       clear: both;
-      margin: 0 !important;
       width: 100%;
+      margin: 0 !important;
     }
     .subItem{
       margin-top: 4px;
       font-size: .8em;
-      padding-left: 14px;
       padding-top: 12px;
-      border: 2px solid transparent;
+      padding-left: 14px;
       border-radius: 5px;
+      border: 2px solid transparent;
       &.error{
         border-color: rgb(255, 153, 0);
       }
@@ -101,8 +101,8 @@
 
 .surveyFooter{
   width: 100%;
-  border-top: 1px dashed #eee;
   padding: 30px;
   text-align: center;
+  border-top: 1px dashed #eee;
 }
 

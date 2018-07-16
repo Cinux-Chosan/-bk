@@ -1,23 +1,23 @@
-.root{
+.root {
+  padding: 20px;
   font-size: 16px;
   border-bottom: 1px dashed #eee;
-  padding: 20px;
 }
 
-.userInfo{
-  .avatar{
+.userInfo {
+  .avatar {
     width: 34px;
     height: 34px;
+    margin-right: 8px;
     border-radius: 34px;
     vertical-align: middle;
-    margin-right: 8px;
   }
 }
 
-.review{
-  .date{
-    font-size: .8em;
-    margin-top: .3em;
+.review {
+  .date {
+    font-size: 0.8em;
+    margin-top: 0.3em;
     // margin-left: 50px;
   }
 }

@@ -1,0 +1,48 @@
+.exportMask{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  position: fixed;
+  text-align: center;
+  transition: all .2s;
+  z-index: -1;
+  background: rgba($color: #000000, $alpha: 0);
+  &::before{
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    content: "关闭";
+    cursor: pointer;
+    text-align: left;
+    text-indent: 1em;
+    line-height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    &:hover {
+      background-color: #e4e3e3;
+    }
+  }
+  &.show{
+    z-index: 1;
+    background: rgba($color: #000000, $alpha: .6);
+  }
+}
+
+button.initExportBtn{
+  left: 50%;
+  top: 10000px;
+  margin: auto;
+  position: fixed;
+}
+
+button.showExportBtn[id]{
+  top: 50% ;
+  padding: 20px;
+  display: block !important;
+  transform: translate(-50%, -50%);
+}

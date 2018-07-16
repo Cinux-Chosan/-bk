@@ -8,7 +8,7 @@ import { copy } from '@ember/object/internals';
 import { scrollTo } from 'amazon/utils/util';
 import styles from './styles';
 
-const myLocalStorage = window.myLocalStorage;
+const { localforage: { getItem, setItem }, myLocalStorage } = window;
 const { random } = Math;
 
 const SURVEY = {
@@ -77,7 +77,7 @@ export default class SurveyCompComponent extends Component {
   @action
   surveySubmitAction2() {
     let { appController } = this.getProperties(['appController']);
-    if (myLocalStorage.getItem('survey3')) {  
+    if (myLocalStorage.getItem('survey3')) {
       // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
       appController.transitionToRoute({ queryParams: { s: 4 }});
     } else {
@@ -105,8 +105,9 @@ export default class SurveyCompComponent extends Component {
   }
 
   @action
-  surveySubmitAction4() {
+  async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
+    await this.updateStorage();
     let appController  = this.get('appController');
     appController.transitionToRoute({ queryParams: { s: 1 }});
   }
@@ -136,5 +137,37 @@ export default class SurveyCompComponent extends Component {
       default:
         break;
     }
+  }
+
+  async updateStorage() {
+    let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
+    let survey2 = JSON.parse(myLocalStorage.getItem('survey2'));
+    let survey3 = JSON.parse(myLocalStorage.getItem('survey3'));
+    let survey4 = JSON.parse(myLocalStorage.getItem('survey4'));
+    let sv1 = { title: survey1.title, items: this.formatSurveyData(survey1.items) };
+    let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items) };
+    let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
+    let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
+    try {
+      let svUserFills = await getItem('svUserFills') || [];
+      svUserFills.pushObject({ sv1, sv2, sv3, sv4 });
+      await setItem('svUserFills', svUserFills);
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+
+  formatSurveyData(svItem = []) {
+    svItem.forEach(item => {
+      if (item.type === 'radio') {
+        // radio
+        item.result = item.opts.findBy('isChecked', true).optText;
+        delete item.opts;
+      } else if (item.type === 'group') {
+        // group
+        this.formatSurveyData(item.items);
+      }
+    })
+    return svItem;
   }
 }
