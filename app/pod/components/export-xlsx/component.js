@@ -22,7 +22,6 @@ export default class ExportXlsxComponent extends Component {
   }
   @action
   async doExport() {
-    debugger
     let svUserFills = JSON.parse(await getItem('svUserFills') || false);
     if (svUserFills) {
       let xlsData = [];
@@ -31,10 +30,11 @@ export default class ExportXlsxComponent extends Component {
         const svResultItem = svUserFills[i];
         let item = {};
         try {
-          await this.buildXslData(svResultItem.sv1.items, item);
-          await this.buildXslData(svResultItem.sv2.items, item);
-          await this.buildXslData(svResultItem.sv3.items, item);
-          await this.buildXslData(svResultItem.sv4.items, item);
+          let sv1 = this.buildXslData(svResultItem.sv1.items, item);
+          let sv2 = this.buildXslData(svResultItem.sv2.items, item);
+          let sv3 = this.buildXslData(svResultItem.sv3.items, item);
+          let sv4 = this.buildXslData(svResultItem.sv4.items, item);
+          await Promise.all([sv1, sv2, sv3, sv4]);
           heads = { ...heads, ...item, ...svResultItem.goods };
           xlsData.push({ ...item, ...svResultItem.goods });
         } catch (error) {

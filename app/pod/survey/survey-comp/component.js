@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import Component from '@ember/component';
 import { computed, action } from '@ember-decorators/object';
 import survey1 from './surveys/survey.1';
@@ -111,7 +110,6 @@ export default class SurveyCompComponent extends Component {
     let appController  = this.get('appController');
     await this.updateStorage();
     let { isIE, isLocalFile } = window.env;
-    debugger
     if (isIE && isLocalFile) {
       // appController.get('exportXlsx').send('doExport');
       let exportXlsx = appController.get('exportXlsx');
