@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Component from '@ember/component';
 import { computed, action } from '@ember-decorators/object';
 import survey1 from './surveys/survey.1';
@@ -67,9 +68,9 @@ export default class SurveyCompComponent extends Component {
       let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
       let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
       if (genderSelected.optText === 'Male') {
-        appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});  // 跳男人装
+        appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});  // 跳男装
       } else {
-        appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});  // 跳女人装
+        appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});  // 跳女装
       }
     }
   }
@@ -107,8 +108,15 @@ export default class SurveyCompComponent extends Component {
   @action
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
-    await this.updateStorage();
     let appController  = this.get('appController');
+    await this.updateStorage();
+    let { isIE, isLocalFile } = window.env;
+    debugger
+    if (isIE && isLocalFile) {
+      // appController.get('exportXlsx').send('doExport');
+      let exportXlsx = appController.get('exportXlsx');
+      await exportXlsx.actions.doExport.call(exportXlsx);
+    }
     appController.transitionToRoute({ queryParams: { s: 1 }});
   }
 
@@ -150,9 +158,9 @@ export default class SurveyCompComponent extends Component {
     let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
     let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
     try {
-      let svUserFills = await getItem('svUserFills') || [];
+      let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       svUserFills.pushObject({ sv1, sv2, sv3, sv4, goods });
-      await setItem('svUserFills', svUserFills);
+      await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {
       // console.log(error);
     }

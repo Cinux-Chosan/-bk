@@ -1,3 +1,10 @@
 {{outlet}}
-<div local-class="exportMask {{if export 'show'}}" {{action "closeExport"}}> </div>
-{{export-xlsx elementId="export-xlsx" local-class="initExportBtn" class=(if export (local-class 'showExportBtn'))}}
+<div local-class="exportMask {{if (or export tip) 'showMask'}}" {{action "closeExport"}}> </div>
+<div local-class="tip {{if tip 'showTip'}}">
+{{tip}}
+</div>
+
+
+{{#export-xlsx elementId="btn-export-xlsx" local-class="initExportBtn" class=(if export (local-class 'showExportBtn')) as |exportXlsx|}}
+  {{set this 'exportXlsx' exportXlsx}}
+{{/export-xlsx}}

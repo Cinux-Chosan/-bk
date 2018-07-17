@@ -1,6 +1,6 @@
-import Component from "@ember/component";
-import { action } from "@ember-decorators/object";
-import { downloadExl } from "amazon/utils/export-xlsx";
+import Component from '@ember/component';
+import { action } from '@ember-decorators/object';
+import { downloadExl } from 'amazon/utils/export-xlsx';
 
 const { localforage: { getItem } } = window;
 
@@ -12,9 +12,9 @@ export default class ExportXlsxComponent extends Component {
   async buildXslData(svItemList = [], rt = {}) {
     for (let i = 0; i < svItemList.length; i++) {
       const svItem = svItemList[i];
-      if (svItem.type === "radio") {
+      if (svItem.type === 'radio') {
         rt[svItem.desc] = svItem.result;
-      } else if (svItem.type === "group") {
+      } else if (svItem.type === 'group') {
         await this.buildXslData(svItem.items, rt);
       }
     }
@@ -22,7 +22,8 @@ export default class ExportXlsxComponent extends Component {
   }
   @action
   async doExport() {
-    let svUserFills = await getItem("svUserFills");
+    debugger
+    let svUserFills = JSON.parse(await getItem('svUserFills') || false);
     if (svUserFills) {
       let xlsData = [];
       let heads = {};
@@ -37,10 +38,15 @@ export default class ExportXlsxComponent extends Component {
           heads = { ...heads, ...item, ...svResultItem.goods };
           xlsData.push({ ...item, ...svResultItem.goods });
         } catch (error) {
-          // console.log(error);
+          console.log(error);
         }
       }
+    try {
       downloadExl(xlsData, Object.keys(heads) ,'问卷记录');
+    } catch (error) {
+      console.log(error);
+    }
+
     } else {
       alert('没有数据');
     }

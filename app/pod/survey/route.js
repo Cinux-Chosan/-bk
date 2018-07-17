@@ -20,5 +20,5 @@ export default class SurveyRoute extends Route {
     // } else {
     //   trans.abort();
     // }
-  } 
+  }
 }

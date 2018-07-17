@@ -10,7 +10,7 @@ module.exports = function(defaults) {
     },
     babel: {
       plugins: [
-        'transform-object-rest-spread'
+        'transform-object-rest-spread', 'transform-object-assign'
       ]
     }
   });

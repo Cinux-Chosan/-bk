@@ -27,10 +27,19 @@ let base = {
 Component.reopen(base)
 Controller.reopen(base);
 
-// 配置 localforage
-window.localforage.config({
-  name        : 'amazon',
-  version     : 1.0,
-  storeName   : 'amazon', // Should be alphanumeric, with underscores.
-  description : 'for amazon use'
-});
+let env = window.env = {};
+let isIE = env.isIE = 'msSaveOrOpenBlob' in window.navigator;
+let isLocalFile = env.isLocalFile = !window.location.host;
+
+if (isIE && !window.location.host) {  // 通过本地文件方式在 IE 中打开
+  window.localforage = myLocalStorage;
+} else {
+  // 配置 localforage
+  window.localforage.config({
+    name        : 'amazon',
+    version     : 1.0,
+    storeName   : 'amazon', // Should be alphanumeric, with underscores.
+    description : 'for amazon use'
+  });
+}
+

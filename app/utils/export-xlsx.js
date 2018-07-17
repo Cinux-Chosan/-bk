@@ -1,10 +1,15 @@
-function downloadExl(json, heads = [], fileName = '导出数据', bookType = "xlsx") {
+function downloadExl(
+  json,
+  heads = [],
+  fileName = "导出数据",
+  bookType = "xlsx"
+) {
   var tmpDown; //导出的二进制对象
   // var heads = []; //获取keys
   json.unshift({});
 
   if (heads && heads.length) {
-    heads.forEach(el => json[0][el] = el);
+    heads.forEach(el => (json[0][el] = el));
   } else {
     var tmp = json[0];
     json.unshift({});
@@ -12,7 +17,7 @@ function downloadExl(json, heads = [], fileName = '导出数据', bookType = "xl
       heads.push(k);
       json[0][k] = k;
     }
-  } 
+  }
 
   var tmpdata = []; //用来保存转换好的json
   json
@@ -61,17 +66,22 @@ function downloadExl(json, heads = [], fileName = '导出数据', bookType = "xl
       type: ""
     }
   ); //创建二进制对象写入转换好的字节流
-  var href = URL.createObjectURL(tmpDown); //创建对象超链接
-  let url = document.createElement('a');
-  url.download = `${fileName}.${bookType}`;
-  url.href = href;
-  url.click();
-  // document.getElementById("export-link").href = href; //绑定a标签
-  // document.getElementById("export-link").click(); //模拟点击实现下载
-  setTimeout(function() {
-    //延时释放
-    URL.revokeObjectURL(tmpDown); //用URL.revokeObjectURL()来释放这个object URL
-  }, 100);
+
+  if ("msSaveOrOpenBlob" in navigator) {  // IE 中
+    window.navigator.msSaveOrOpenBlob(tmpDown, `${fileName}.${bookType}`);
+  } else {  // Chrome 或其它
+    var href = URL.createObjectURL(tmpDown); //创建对象超链接
+    let url = document.createElement("a");
+    url.download = `${fileName}.${bookType}`;
+    url.href = href;
+    url.click();
+    // document.getElementById("export-link").href = href; //绑定a标签
+    // document.getElementById("export-link").click(); //模拟点击实现下载
+    setTimeout(function() {
+      //延时释放
+      URL.revokeObjectURL(tmpDown); //用URL.revokeObjectURL()来释放这个object URL
+    }, 100);
+  }
 }
 
 function s2ab(s) {
@@ -93,7 +103,4 @@ function getCharCol(n) {
   return s;
 }
 
-
-export {
-  downloadExl
-}
+export { downloadExl };
