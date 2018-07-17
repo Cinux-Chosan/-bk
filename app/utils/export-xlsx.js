@@ -1,16 +1,23 @@
-function downloadExl(json, fileName = '导出数据',  bookType = "xlsx") {
+function downloadExl(json, heads = [], fileName = '导出数据', bookType = "xlsx") {
   var tmpDown; //导出的二进制对象
-  var keyMap = []; //获取keys
-  var tmpdata = json[0];
+  // var heads = []; //获取keys
   json.unshift({});
-  for (var k in tmpdata) {
-    keyMap.push(k);
-    json[0][k] = k;
-  }
-  tmpdata = []; //用来保存转换好的json
+
+  if (heads && heads.length) {
+    heads.forEach(el => json[0][el] = el);
+  } else {
+    var tmp = json[0];
+    json.unshift({});
+    for (var k in tmp) {
+      heads.push(k);
+      json[0][k] = k;
+    }
+  } 
+
+  var tmpdata = []; //用来保存转换好的json
   json
     .map((v, i) =>
-      keyMap.map((k, j) =>
+      heads.map((k, j) =>
         Object.assign(
           {},
           {
