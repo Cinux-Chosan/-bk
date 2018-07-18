@@ -161,7 +161,7 @@ export default class SurveyCompComponent extends Component {
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       let data = { sv1, sv2, sv3, sv4, goods }
-      $.post(`http://${location.hostname}:65342/serveies`, data).then(res => console.log(res), rej => console.log(rej));
+      $.post(`http://${location.hostname}:65535/surveies`, data).then(res => console.log(res), rej => console.log(rej));
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {
