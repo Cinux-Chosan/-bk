@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Component from '@ember/component';
 import { computed, action } from '@ember-decorators/object';
 import survey1 from './surveys/survey.1';
@@ -108,6 +109,7 @@ export default class SurveyCompComponent extends Component {
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
     let appController  = this.get('appController');
+    debugger
     await this.updateStorage();
     let { isIE, isLocalFile } = window.env;
     if (isIE && isLocalFile) {
@@ -155,9 +157,12 @@ export default class SurveyCompComponent extends Component {
     let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items) };
     let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
     let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
+    debugger
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
-      svUserFills.pushObject({ sv1, sv2, sv3, sv4, goods });
+      let data = { sv1, sv2, sv3, sv4, goods }
+      $.post(`http://${location.hostname}:65342/serveies`, data).then(res => console.log(res), rej => console.log(rej));
+      svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {
       // console.log(error);
