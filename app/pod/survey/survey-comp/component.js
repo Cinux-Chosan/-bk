@@ -160,7 +160,8 @@ export default class SurveyCompComponent extends Component {
     debugger
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
-      let data = { sv1, sv2, sv3, sv4, goods }
+      let meta = { date: new Date().toLocaleString() };
+      let data = { sv1, sv2, sv3, sv4, goods, meta  };
       $.post(`http://${location.hostname}:8888/surveies`, data).then(res => console.log(res), rej => console.log(rej));
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));

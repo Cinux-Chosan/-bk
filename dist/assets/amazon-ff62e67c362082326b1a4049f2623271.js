@@ -196,7 +196,7 @@ case 6:if(e.t2=e.t1,!(t=e.t0.parse.call(e.t0,e.t2))){e.next=35
 break}a=[],n={},i=0
 case 12:if(!(i<t.length)){e.next=32
 break}return s=t[i],l={},e.prev=15,u=this.buildXslData(s.sv1.items,l),p=this.buildXslData(s.sv2.items,l),c=this.buildXslData(s.sv3.items,l),m=this.buildXslData(s.sv4.items,l),e.next=22,Promise.all([u,p,c,m])
-case 22:n=r({},n,l,s.goods),a.push(r({},l,s.goods)),e.next=29
+case 22:n=r({},n,l,s.goods,s.meta),a.push(r({},l,s.goods,s.meta)),e.next=29
 break
 case 26:e.prev=26,e.t3=e.catch(15),console.log(e.t3)
 case 29:i++,e.next=12
@@ -256,15 +256,15 @@ case x:this.send("surveySubmitAction2")
 break
 case w:this.send("surveySubmitAction3")
 break
-case T:this.send("surveySubmitAction4")}}},{key:"updateStorage",value:function(){var e=l(regeneratorRuntime.mark(function e(){var t,o,r,a,n,i,s,l,u,p,c
+case T:this.send("surveySubmitAction4")}}},{key:"updateStorage",value:function(){var e=l(regeneratorRuntime.mark(function e(){var t,o,r,a,n,i,s,l,u,p,c,m
 return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return t=JSON.parse(v.getItem("survey1")),o=JSON.parse(v.getItem("survey2")),r=JSON.parse(v.getItem("survey3")),a=JSON.parse(v.getItem("survey4")),n=JSON.parse(v.getItem("goods")),i={title:t.title,items:this.formatSurveyData(t.items)},s={title:o.title,items:this.formatSurveyData(o.items)},l={title:r.title,items:this.formatSurveyData(r.items)},u={title:a.title,items:this.formatSurveyData(a.items)},e.prev=10,e.t0=JSON,e.next=14,h("svUserFills")
 case 14:if(e.t1=e.sent,e.t1){e.next=17
 break}e.t1="[]"
-case 17:return e.t2=e.t1,p=e.t0.parse.call(e.t0,e.t2),c={sv1:i,sv2:s,sv3:l,sv4:u,goods:n},Ember.$.post("http://"+location.hostname+":8888/surveies",c).then(function(e){return console.log(e)},function(e){return console.log(e)}),p.pushObject(c),e.next=24,y("svUserFills",JSON.stringify(p))
-case 24:e.next=28
+case 17:return e.t2=e.t1,p=e.t0.parse.call(e.t0,e.t2),c={date:(new Date).toLocaleString()},m={sv1:i,sv2:s,sv3:l,sv4:u,goods:n,meta:c},Ember.$.post("http://"+location.hostname+":8888/surveies",m).then(function(e){return console.log(e)},function(e){return console.log(e)}),p.pushObject(m),e.next=25,y("svUserFills",JSON.stringify(p))
+case 25:e.next=29
 break
-case 26:e.prev=26,e.t3=e.catch(10)
-case 28:case"end":return e.stop()}},e,this,[[10,26]])}))
+case 27:e.prev=27,e.t3=e.catch(10)
+case 29:case"end":return e.stop()}},e,this,[[10,27]])}))
 return function(){return e.apply(this,arguments)}}()},{key:"formatSurveyData",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[]
 return t.forEach(function(t){"radio"===t.type?(t.result=t.opts.findBy("isChecked",!0).optText,delete t.opts):"group"===t.type&&e.formatSurveyData(t.items)}),t}},{key:"activeSurvey",get:function(){var e=this.getWithDefault("s",1)
 return this.get("survey"+e)}}]),t}()).prototype,"activeSurvey",[u],Object.getOwnPropertyDescriptor(p.prototype,"activeSurvey"),p.prototype),d(p.prototype,"surveySubmitAction1",[t.action],Object.getOwnPropertyDescriptor(p.prototype,"surveySubmitAction1"),p.prototype),d(p.prototype,"surveySubmitAction2",[t.action],Object.getOwnPropertyDescriptor(p.prototype,"surveySubmitAction2"),p.prototype),d(p.prototype,"surveySubmitAction3",[t.action],Object.getOwnPropertyDescriptor(p.prototype,"surveySubmitAction3"),p.prototype),d(p.prototype,"surveySubmitAction4",[t.action],Object.getOwnPropertyDescriptor(p.prototype,"surveySubmitAction4"),p.prototype),d(p.prototype,"submit",[t.action],Object.getOwnPropertyDescriptor(p.prototype,"submit"),p.prototype),p)
@@ -286,4 +286,4 @@ else{var c=URL.createObjectURL(o),m=document.createElement("a")
 m.download=a+"."+n,m.href=c,m.click(),setTimeout(function(){URL.revokeObjectURL(o)},100)}}}),define("amazon/utils/local-storage",[],function(){var e=function(){function e(e,t){for(var o=0;o<t.length;o++){var r=t[o]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,o,r){return o&&e(t.prototype,o),r&&e(t,r),t}}(),t={},o=function(){function o(){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,o)}return e(o,[{key:"getItem",value:function(e){return t[e]}},{key:"setItem",value:function(e,o){t[e]=o}},{key:"clear",value:function(){t={}}}]),o}()
 window.myLocalStorage=new o}),define("amazon/utils/util",["exports"],function(e){Object.defineProperty(e,"__esModule",{value:!0}),e.scrollTo=function(e){(e=Ember.$(e)).length&&window.scrollTo(0,e.offset().top-150)}}),define("amazon/config/environment",[],function(){try{var e="amazon/config/environment",t=document.querySelector('meta[name="'+e+'"]').getAttribute("content"),o={default:JSON.parse(unescape(t))}
-return Object.defineProperty(o,"__esModule",{value:!0}),o}catch(t){throw new Error('Could not read config from meta tag with name "'+e+'".')}}),runningTests||require("amazon/app").default.create({name:"amazon",version:"0.0.0+54900669"})
+return Object.defineProperty(o,"__esModule",{value:!0}),o}catch(t){throw new Error('Could not read config from meta tag with name "'+e+'".')}}),runningTests||require("amazon/app").default.create({name:"amazon",version:"0.0.0+90c4a5bb"})
