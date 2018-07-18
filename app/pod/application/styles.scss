@@ -51,7 +51,7 @@ button.showExportBtn[id]{
 .tip{
   left: 50%;
   z-index: 1;
-  width: 300px;
+  min-width: 300px;
   top: -1000px;
   margin: auto;
   padding: 20px;

@@ -6,7 +6,7 @@ import survey2 from './surveys/survey.2.1';
 import survey3 from './surveys/survey.2.2';
 import survey4 from './surveys/survey.2.3';
 import { copy } from '@ember/object/internals';
-import { scrollTo } from 'amazon/utils/util';
+import { scrollTo, wait } from 'amazon/utils/util';
 import styles from './styles';
 
 const { localforage: { getItem, setItem }, myLocalStorage } = window;
@@ -109,7 +109,6 @@ export default class SurveyCompComponent extends Component {
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
     let appController  = this.get('appController');
-    debugger
     await this.updateStorage();
     let { isIE, isLocalFile } = window.env;
     if (isIE && isLocalFile) {
@@ -117,7 +116,9 @@ export default class SurveyCompComponent extends Component {
       let exportXlsx = appController.get('exportXlsx');
       await exportXlsx.actions.doExport.call(exportXlsx);
     }
-    appController.transitionToRoute({ queryParams: { s: 1 }});
+    appController.set('tip', 'Thanks for your filling out, Redirecting...');
+    await wait(2000);
+    appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
   }
 
   @action
@@ -157,7 +158,6 @@ export default class SurveyCompComponent extends Component {
     let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items) };
     let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
     let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
-    debugger
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       let meta = { date: new Date().toLocaleString() };
