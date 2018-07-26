@@ -2,7 +2,7 @@
 
 export default {
   goodsInfo: {
-    title: "Apple iPhone X, GSM Unlocked 5.8\", 256 GB - Space Gray",
+    title: "Unlocked Smartphone - Coral Blue - US Warranty",
     details: [
       "Super Speed Dual Pixel Camera ",
       "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",

@@ -2,7 +2,7 @@
 
 export default {
   goodsInfo: {
-    title: "Angashion Women's Dresses-Summer Floral Bohemian Spaghetti Strap Button Down Swing Midi Dress with Pockets    ",
+    title: "Dresses-Summer Floral Bohemian Spaghetti Strap Button Down Swing Midi Dress with Pockets    ",
     details: [
       "Catagory: Women Hoodies, Floral Printed Sweatshirt, Double Pocket Hooded Sweatshirt, Drawstring Hoodies ",
       "Material: Polyester+Cotton. 100% Brand New and high quality! ",
