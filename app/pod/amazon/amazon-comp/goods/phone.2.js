@@ -14,7 +14,7 @@ export default {
       {
         cover: "img/amazon/phone_2/1_1.jpg",
         optDesc: "Coral Blue",
-        title: "Samsung Galaxy S9 Unlocked Smartphone - Coral Blue - US Warranty",
+        title: "Unlocked Smartphone - Coral Blue - US Warranty",
         thumbnailList: [
           { img: "img/amazon/phone_2/1_1.jpg", optDesc: "" },
           { img: "img/amazon/phone_2/1_2.jpg", optDesc: "" },
@@ -27,7 +27,7 @@ export default {
       {
         cover: "img/amazon/phone_2/2_1.jpg",
         optDesc: "Lilac Purple",
-        title: "Samsung Galaxy S9 Unlocked Smartphone - Lilac Purple - US Warranty ",
+        title: "Unlocked Smartphone - Lilac Purple - US Warranty ",
         details: [
           "Super Speed Dual Pixel Camera ",
           "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",
@@ -47,7 +47,7 @@ export default {
       {
         cover: "img/amazon/phone_2/2_1.jpg",
         optDesc: "Midnight Black",
-        title: "Samsung Galaxy S9 Unlocked Smartphone - Midnight Black - US Warranty ",
+        title: "Unlocked Smartphone - Midnight Black - US Warranty ",
         thumbnailList: [
           { img: "img/amazon/phone_2/3_1.jpg", optDesc: "" },
           { img: "img/amazon/phone_2/3_2.jpg", optDesc: "" },
