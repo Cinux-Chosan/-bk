@@ -1,6 +1,6 @@
  {{#with activeGoods as |goods|}}
 <section local-class="section1" class="clearfix">
-  <header>Overall Reviews</header>
+  {{!-- <header>Overall Reviews</header> --}}
   <div local-class="left">
     {{#with goods.goodsInfo as |info|}}
     <ul local-class="thumbnailList">
@@ -73,7 +73,7 @@
 
 <section local-class="section2" class="clearfix">
   {{#with goods.reviewData as |review|}}
-  <header>Details of review content</header>
+  {{!-- <header>Details of review content</header> --}}
   <section local-class="reviewDetails">
     <div local-class="rvwLeft">
       {{#each review.reviewQuality as |qualityRvw|}} {{amazon/user-review reviewData=qualityRvw}} {{/each}}

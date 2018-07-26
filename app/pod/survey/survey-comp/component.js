@@ -116,9 +116,16 @@ export default class SurveyCompComponent extends Component {
       let exportXlsx = appController.get('exportXlsx');
       await exportXlsx.actions.doExport.call(exportXlsx);
     }
-    appController.set('tip', 'Thanks for your filling out, Redirecting...');
-    await wait(2000);
-    appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
+    let redirectTime = 3;
+    appController.set('tip', `Thanks for your filling out, Redirecting after ${redirectTime} seconds...`);
+    let task_id = setInterval(async () => {
+      appController.set('tip', `Thanks for your filling out, Redirecting after ${--redirectTime} seconds...`);
+      if (redirectTime <= 0) {
+        clearInterval(task_id);
+        await wait(100);
+        appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
+      }
+    }, 1000);
   }
 
   @action

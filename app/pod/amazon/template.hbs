@@ -1,4 +1,7 @@
 <div local-class="amazonContainer">
+  <div local-class="note">
+  <b> Notice:</b> you have a need to buy a cellphone and a clothing from other countries in Amazon.com, and now you can browse two representative products for them, respectively. You have enough time to scrutinize these products and choose a product to a shopping cart.
+  </div>
   {{#each gList as |g|}}
     {{amazon/amazon-comp goods=g onAdding2Cart=(action "onAdding2Cart" g)}}
   {{/each}}

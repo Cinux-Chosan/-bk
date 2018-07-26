@@ -22,12 +22,12 @@
     float: left;
     $cartBoxWidth: 240px;
     .rLeft {
-      padding: 18px;
+      padding: 18px 18px 0;
       box-sizing: border-box;
       margin-right: $cartBoxWidth;
       .goodsTitle {
         color: #555;
-        font-size: 20px;
+        font-size: 1.5em;
         font-weight: 400;
         padding-bottom: 10px;
         border-bottom: 1px solid #e7e7e7;
@@ -123,19 +123,19 @@
   }
 
   .goodsDetails {
-    font-size: 0.7em;
+    font-size: 1em;
     margin-left: 1.2em;
     list-style-type: disc;
     li + li {
       clear: both;
       margin-top: 8px;
     }
-    line-height: 16px;
+    line-height: 1.3em;
   }
 
   .review {
     clear: both;
-    margin-top: 30px;
+    // margin-top: 30px;
   }
 
   .reviewsSum {
@@ -178,7 +178,7 @@
 }
 
 .section2 {
-  margin-top: 30px;
+  // margin-top: 30px;
 
   .reviewDetails {
     .rvwLeft,
