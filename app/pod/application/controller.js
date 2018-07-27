@@ -12,8 +12,9 @@ export default class ApplicationController extends Controller {
     this.set('export', '');
   }
   @action
-  cleanStorage() {
-    window.localforage.clear();
+  async cleanStorage() {
+    await window.localforage.clear();
     this.set('clean', '');
+    this.set('tip', 'Cleaned!');
   }
 }
