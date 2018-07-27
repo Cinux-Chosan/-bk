@@ -1,9 +1,20 @@
 <div local-class="amazonContainer">
   <div local-class="note">
-  <b> Notice:</b> you have a need to buy a cellphone and a clothing from other countries in Amazon.com, and now you can browse two representative products for them, respectively. You have enough time to scrutinize these products and choose a product to a shopping cart.
+  <b> Notice:</b> you have a need to buy a {{if isPhone 'cellphone' 'clothing'}} from other countries in Amazon.com, and now you can browse two representative products for them, respectively. You have enough time to scrutinize these products and choose a product to a shopping cart.
   </div>
   {{#each gList as |g|}}
-    {{amazon/amazon-comp goods=g onAdding2Cart=(action "onAdding2Cart" g)}}
+    {{amazon/amazon-comp goods=g onAdding2Cart=(action "showConfirm" g)}}
   {{/each}}
 </div>
 
+{{#if showConfirm}}
+{{#common-dialog title="Tip" onClickOverlay=(action (mut showConfirm) (not showConfirm)) as |d|}}
+  {{#d.body}}
+    Are you sure to put <b><i>{{or activeOpts.title activeGoods.goodsInfo.title}}</i></b> into the shopping cart?
+  {{/d.body}}
+  {{#d.footer local-class="confirmFooter"}}
+    <button class="btn btn-primary" {{action "confirm" activeGoodsNumber}}>Confirm</button>
+    <button class="btn" {{action (mut showConfirm) (not showConfirm)}}>Cancel</button>
+  {{/d.footer}}
+{{/common-dialog}}
+{{/if}}

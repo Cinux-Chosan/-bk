@@ -1,0 +1,10 @@
+{{#modal-dialog
+  containerClass=(local-class "dialog")
+  translucentOverlay=true
+  onClickOverlay=onClickOverlay
+}}
+<div local-class="header">
+  {{title}}
+</div>
+{{yield (hash body=(component "components/common-dialog/body") footer=(component "components/common-dialog/footer"))}}
+{{/modal-dialog}}

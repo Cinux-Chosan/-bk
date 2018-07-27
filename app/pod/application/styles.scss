@@ -64,3 +64,15 @@ button.showExportBtn[id]{
 .showTip {
   top: 50%;
 }
+
+.cleanDialog{
+  button:first-child{
+    float: left;
+  }
+  button:last-child{
+    float: right;
+  }
+}
+.textCenter{
+  text-align: center;
+}

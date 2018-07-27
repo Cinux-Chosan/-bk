@@ -15,11 +15,20 @@ const GOODS = {
 export default class SurveyController extends Controller {
   queryParams = ['g'];
   g;
+  showConfirm = false;
+
   @computed('g')
   get gList() {
     let gList = this.getWithDefault('g', '1_2');
     return gList.split('_');
   }
+
+  @computed('gList')
+  get isPhone() {
+    let goods = this.get('gList');
+    return ~goods.indexOf('5') || ~goods.indexOf('6');
+  }
+
   @action
   onAdding2Cart(goods) {
     let goodsList = JSON.parse(myLocalStorage.getItem('goods') || '{}');
@@ -52,5 +61,19 @@ export default class SurveyController extends Controller {
         break;
     }
     myLocalStorage.setItem('goods', JSON.stringify(goodsList));
+  }
+
+  @action
+  showConfirm(activeGoodsNumber, activeOpts, activeGoods) {
+    this.set('activeGoodsNumber', activeGoodsNumber);
+    this.set('activeGoods', activeGoods);
+    this.set('activeOpts', activeOpts);
+    this.set('showConfirm', true);
+  }
+
+  @action
+  confirm(g) {
+    this.send('onAdding2Cart', g);
+    this.set('showConfirm', false);
   }
 }

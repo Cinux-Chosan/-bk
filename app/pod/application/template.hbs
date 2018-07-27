@@ -8,3 +8,16 @@
 {{#export-xlsx elementId="btn-export-xlsx" local-class="initExportBtn" class=(if export (local-class 'showExportBtn')) as |exportXlsx|}}
   {{set this 'exportXlsx' exportXlsx}}
 {{/export-xlsx}}
+
+{{#if clean}}
+{{#common-dialog title="Tip" onClickOverlay=(action (mut clean) "") as |d|}}
+  {{#d.body}}
+    是否删除所有本地数据? (Are you sure to clean up all the local storages)?
+     <p local-class="textCenter"><small>(为了防止用户误删, 服务器数据需要联系开发人员进行清理)</small></p>
+  {{/d.body}}
+  {{#d.footer local-class="cleanDialog"}}
+    <button class="btn btn-primary" {{action "cleanStorage"}}>Confirm</button>
+    <button class="btn" {{action (mut clean) ""}}>Cancel</button>
+  {{/d.footer}}
+{{/common-dialog}}
+{{/if}}

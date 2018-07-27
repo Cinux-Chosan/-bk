@@ -6,3 +6,12 @@
     padding: 8px;
   }
 }
+
+.confirmFooter{
+  button:first-child{
+    float: left;
+  }
+  button:last-child{
+    float: right;
+  }
+}
