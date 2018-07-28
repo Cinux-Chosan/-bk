@@ -16,6 +16,11 @@ export default class AmazonCompComponent extends Component {
   goods5 = goods5;
   goods6 = goods6;
   goods;
+
+  didInsertElement() {
+    document.title = 'Amazon';
+  }
+
   @computed('goods')
   get activeGoods() {
     let g = this.getWithDefault('goods', 1);

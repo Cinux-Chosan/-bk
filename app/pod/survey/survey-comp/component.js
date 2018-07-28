@@ -8,6 +8,7 @@ import survey4 from './surveys/survey.2.3';
 import { copy } from '@ember/object/internals';
 import { scrollTo, wait } from 'amazon/utils/util';
 import styles from './styles';
+import { get } from '@ember/object';
 
 const { localforage: { getItem, setItem }, myLocalStorage } = window;
 const { random } = Math;
@@ -34,6 +35,8 @@ export default class SurveyCompComponent extends Component {
   didInsertElement() {
     let radios = this.$('[id^="i-check"]');
     let ctx = this;
+    let activeSurvey = this.get('activeSurvey');
+    document.title = get(activeSurvey, 'title');
     radios.on('ifToggled', function() {
       if (this.checked) {
         ctx.$(this).closest(`.${styles['error']}`).removeClass(styles['error']);
