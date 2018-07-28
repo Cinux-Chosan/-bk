@@ -64,8 +64,9 @@ export default class SurveyController extends Controller {
   }
 
   @action
-  showConfirm(activeGoodsNumber, activeOpts, activeGoods) {
+  showConfirm(activeGoodsNumber, activeThumbnail, activeOpts, activeGoods) {
     this.set('activeGoodsNumber', activeGoodsNumber);
+    this.set('activeThumbnail', activeThumbnail);
     this.set('activeGoods', activeGoods);
     this.set('activeOpts', activeOpts);
     this.set('showConfirm', true);

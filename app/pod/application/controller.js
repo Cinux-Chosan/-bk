@@ -15,6 +15,6 @@ export default class ApplicationController extends Controller {
   async cleanStorage() {
     await window.localforage.clear();
     this.set('clean', '');
-    this.set('tip', 'Cleaned!');
+    this.set('tip', 'Cleaned up!');
   }
 }

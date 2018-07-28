@@ -10,6 +10,9 @@
 {{#if showConfirm}}
 {{#common-dialog title="Tip" onClickOverlay=(action (mut showConfirm) (not showConfirm)) as |d|}}
   {{#d.body}}
+    <div local-class="goodsPic">
+      <img src={{activeThumbnail.img}} alt="">
+    </div>
     Are you sure to put <b><i>{{or activeOpts.title activeGoods.goodsInfo.title}}</i></b> into the shopping cart?
   {{/d.body}}
   {{#d.footer local-class="confirmFooter"}}

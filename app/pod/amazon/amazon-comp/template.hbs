@@ -11,7 +11,6 @@
       {{/each}}
     </ul>
     <div local-class="preview">
-      {{log activeThumbnail}}
       <img src={{activeThumbnail.img}} local-class="previewImg" alt="">
     </div>
     {{/with}}
@@ -21,7 +20,7 @@
     <div local-class="rRight">
       <img src="img/amazon/share.png" local-class="shareImg" alt="">
       <div local-class="addToCartContainer">
-        <button local-class="addToCartBtn" class="btn" {{action onAdding2Cart activeOpt activeGoods}}>
+        <button local-class="addToCartBtn" class="btn" {{action onAdding2Cart activeThumbnail activeOpt activeGoods}}>
           <img src="img/amazon/icon_cart.png" local-class="cartIcon" alt=""> Add To Cart
         </button>
       </div>
