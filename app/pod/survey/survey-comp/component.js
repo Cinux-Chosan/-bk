@@ -28,6 +28,7 @@ export default class SurveyCompComponent extends Component {
   s;
   @computed('s')
   get activeSurvey() {
+    this.getStatisticsCount();
     let s = this.getWithDefault('s', 1);
     return this.get(`survey${s}`);
   }
@@ -35,7 +36,6 @@ export default class SurveyCompComponent extends Component {
   didRender() {
     let activeSurvey = this.get('activeSurvey');
     document.title = get(activeSurvey, 'title');
-    this.getStatisticsCount();
   }
 
   didInsertElement() {
@@ -53,7 +53,7 @@ export default class SurveyCompComponent extends Component {
     let { isIE, isLocalFile } = window.env;
     if (isIE && isLocalFile) {
       try {
-        let { data } = await $.get('http://mlo.kim:8888/queryCount');
+        let { data } = await $.get(`http://mlo.kim:8888/queryCount?t=${Date.now()}`);
         this.set('statisticsCount', + data + 1);
       } catch (error) {
         this.set('statisticsCount', svUserFills.length ? svUserFills.length + 1 : ((window.statisticsCount || 0) + 1));
@@ -140,14 +140,6 @@ export default class SurveyCompComponent extends Component {
   @action
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
-    let appController  = this.get('appController');
-    await this.updateStorage();
-    let { isIE, isLocalFile } = window.env;
-    if (isIE && isLocalFile) {
-      // appController.get('exportXlsx').send('doExport');
-      let exportXlsx = appController.get('exportXlsx');
-      await exportXlsx.actions.doExport.call(exportXlsx);
-    }
 
     this.set('showRedirectConfirm', true);
 
@@ -192,10 +184,21 @@ export default class SurveyCompComponent extends Component {
   }
 
   @action
-  redirectConfirm() {
+  async redirectConfirm() {
     this.set('showRedirectConfirm', '');
     let appController  = this.get('appController');
-    appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
+    appController.set('unclosable', true);
+    appController.set('tip', 'Saving...');
+    this.set('disableConfirm', true);
+    await this.updateStorage();
+    let { isIE, isLocalFile } = window.env;
+    if (isIE && isLocalFile) {
+      // appController.get('exportXlsx').send('doExport');
+      let exportXlsx = appController.get('exportXlsx');
+      await exportXlsx.actions.doExport.call(exportXlsx);
+    }
+    this.set('disableConfirm', false);
+    appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' }});
   }
 
   async updateStorage() {
@@ -212,7 +215,11 @@ export default class SurveyCompComponent extends Component {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       let meta = { date: new Date().toLocaleString() };
       let data = { sv1, sv2, sv3, sv4, goods, meta  };
-      $.post(`http://mlo.kim:8888/surveies`, data).then(res => console.log(res), rej => console.log(rej));
+      try {
+        await $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data);
+      } catch (error) {
+        console.log(error);
+      }
       window.statisticsCount = window.statisticsCount || 0;
       window.statisticsCount += 1; 
       svUserFills.pushObject(data);
