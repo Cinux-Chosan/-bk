@@ -32,11 +32,14 @@ export default class SurveyCompComponent extends Component {
     return this.get(`survey${s}`);
   }
 
+  didRender() {
+    let activeSurvey = this.get('activeSurvey');
+    document.title = get(activeSurvey, 'title');
+  }
+
   didInsertElement() {
     let radios = this.$('[id^="i-check"]');
     let ctx = this;
-    let activeSurvey = this.get('activeSurvey');
-    document.title = get(activeSurvey, 'title');
     radios.on('ifToggled', function() {
       if (this.checked) {
         ctx.$(this).closest(`.${styles['error']}`).removeClass(styles['error']);
