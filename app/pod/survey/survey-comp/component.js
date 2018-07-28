@@ -28,7 +28,7 @@ export default class SurveyCompComponent extends Component {
   s;
   @computed('s')
   get activeSurvey() {
-    this.getStatisticsCount();
+    this.getinvestigateCount();
     let s = this.getWithDefault('s', 1);
     return this.get(`survey${s}`);
   }
@@ -48,29 +48,35 @@ export default class SurveyCompComponent extends Component {
     })
   }
 
-  async getStatisticsCount () {
+  async getinvestigateCount () {
     let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
     let { isIE, isLocalFile } = window.env;
     if (isIE && isLocalFile) {
       try {
         let { data } = await $.get(`http://mlo.kim:8888/queryCount?t=${Date.now()}`);
-        this.set('statisticsCount', + data + 1);
+        this.set('investigateCount', + data + 1);
       } catch (error) {
-        this.set('statisticsCount', svUserFills.length ? svUserFills.length + 1 : ((window.statisticsCount || 0) + 1));
+        this.set('investigateCount', svUserFills.length ? svUserFills.length + 1 : ((window.investigateCount || 0) + 1));
       }
     } else {
-      this.set('statisticsCount', svUserFills.length + 1);
+      this.set('investigateCount', svUserFills.length + 1);
     }
   }
 
-  @computed('s', 'statisticsCount')
-  get statistics() {
+  @computed('investigateCount') 
+  get formattedInvestigateCount() {
+    let investigateCount = this.getWithDefault('investigateCount', 1);
+    return String(investigateCount).padStart(4, '0');
+  }
+
+  @computed('s', 'formattedInvestigateCount')
+  get investigateInfo() {
     let time = new Date;
     let year = time.getFullYear();
     let month = time.getMonth() + 1;
     let day = time.getDate();
-    let statisticsCount = this.getWithDefault('statisticsCount', 1);
-    return `${year + String(month).padStart(2, '0') +  String(day).padStart(2, '0')}/${String(statisticsCount).padStart(4, '0')}`
+    let formattedInvestigateCount = this.get('formattedInvestigateCount');
+    return `${year + String(month).padStart(2, '0') +  String(day).padStart(2, '0')}/${formattedInvestigateCount}`;
   }
 
   validate(surveyItems) {
@@ -213,15 +219,16 @@ export default class SurveyCompComponent extends Component {
     let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
-      let meta = { date: new Date().toLocaleString() };
+      let formattedInvestigateCount = this.get('formattedInvestigateCount');
+      let meta = { date: new Date().toLocaleString(), 'No.': formattedInvestigateCount };
       let data = { sv1, sv2, sv3, sv4, goods, meta  };
       try {
         await $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data);
       } catch (error) {
         console.log(error);
       }
-      window.statisticsCount = window.statisticsCount || 0;
-      window.statisticsCount += 1; 
+      window.investigateCount = window.investigateCount || 0;
+      window.investigateCount += 1; 
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {

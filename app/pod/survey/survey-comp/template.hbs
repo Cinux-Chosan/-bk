@@ -54,15 +54,15 @@
 
 
 {{#if (eq s 1)}}
-  <div local-class="statistics">
-    {{statistics}}
+  <div local-class="investigateInfo">
+    {{investigateInfo}}
   </div>
 {{/if}}
 
 {{#if showRedirectConfirm}}
 {{#common-dialog title="Tip" onClickOverlay=(action (mut showRedirectConfirm) (not showRedirectConfirm)) as |d|}}
   {{#d.body class="text-center"}}
-    是否需要跳转？
+    The current experiment number is {{formattedInvestigateCount}}，Whether to conduct the investigate into the next one？
   {{/d.body}}
   {{#d.footer local-class="confirmFooter"}}
     <button class="btn btn-primary" disabled={{disableConfirm}} {{action "redirectConfirm" activeGoodsNumber}}>Confirm</button>
