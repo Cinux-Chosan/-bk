@@ -42,4 +42,3 @@ if (isIE && isLocalFile) {  // 通过本地文件方式在 IE 中打开
     description : 'for amazon use'
   });
 }
-

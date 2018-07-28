@@ -6,7 +6,7 @@ import survey2 from './surveys/survey.2.1';
 import survey3 from './surveys/survey.2.2';
 import survey4 from './surveys/survey.2.3';
 import { copy } from '@ember/object/internals';
-import { scrollTo, wait } from 'amazon/utils/util';
+import { scrollTo } from 'amazon/utils/util';
 import styles from './styles';
 import { get } from '@ember/object';
 
@@ -35,6 +35,7 @@ export default class SurveyCompComponent extends Component {
   didRender() {
     let activeSurvey = this.get('activeSurvey');
     document.title = get(activeSurvey, 'title');
+    this.getStatisticsCount();
   }
 
   didInsertElement() {
@@ -45,6 +46,31 @@ export default class SurveyCompComponent extends Component {
         ctx.$(this).closest(`.${styles['error']}`).removeClass(styles['error']);
       }
     })
+  }
+
+  async getStatisticsCount () {
+    let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
+    let { isIE, isLocalFile } = window.env;
+    if (isIE && isLocalFile) {
+      try {
+        let { data } = await $.get('http://mlo.kim:8888/queryCount');
+        this.set('statisticsCount', + data + 1);
+      } catch (error) {
+        this.set('statisticsCount', svUserFills.length ? svUserFills.length + 1 : ((window.statisticsCount || 0) + 1));
+      }
+    } else {
+      this.set('statisticsCount', svUserFills.length + 1);
+    }
+  }
+
+  @computed('s', 'statisticsCount')
+  get statistics() {
+    let time = new Date;
+    let year = time.getFullYear();
+    let month = time.getMonth() + 1;
+    let day = time.getDate();
+    let statisticsCount = this.getWithDefault('statisticsCount', 1);
+    return `${year + String(month).padStart(2, '0') +  String(day).padStart(2, '0')}/${String(statisticsCount).padStart(4, '0')}`
   }
 
   validate(surveyItems) {
@@ -122,16 +148,20 @@ export default class SurveyCompComponent extends Component {
       let exportXlsx = appController.get('exportXlsx');
       await exportXlsx.actions.doExport.call(exportXlsx);
     }
-    let redirectTime = 3;
-    appController.set('tip', `Thanks for your filling out, Redirecting after ${redirectTime} seconds...`);
-    let task_id = setInterval(async () => {
-      appController.set('tip', `Thanks for your filling out, Redirecting after ${--redirectTime} seconds...`);
-      if (redirectTime <= 0) {
-        clearInterval(task_id);
-        await wait(100);
-        appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
-      }
-    }, 1000);
+
+    this.set('showRedirectConfirm', true);
+
+    // 之前的自动调整逻辑，甲方需要手动确认进行跳转
+    // let redirectTime = 3;
+    // appController.set('tip', `Thanks for your filling out, Redirecting after ${redirectTime} seconds...`);
+    // let task_id = setInterval(async () => {
+    //   appController.set('tip', `Thanks for your filling out, Redirecting after ${--redirectTime} seconds...`);
+    //   if (redirectTime <= 0) {
+    //     clearInterval(task_id);
+    //     await wait(100);
+    //     appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
+    //   }
+    // }, 1000);
   }
 
   @action
@@ -161,6 +191,13 @@ export default class SurveyCompComponent extends Component {
     }
   }
 
+  @action
+  redirectConfirm() {
+    this.set('showRedirectConfirm', '');
+    let appController  = this.get('appController');
+    appController.transitionToRoute({ queryParams: { s: 1, tip: '' }});
+  }
+
   async updateStorage() {
     let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
     let survey2 = JSON.parse(myLocalStorage.getItem('survey2'));
@@ -175,7 +212,9 @@ export default class SurveyCompComponent extends Component {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       let meta = { date: new Date().toLocaleString() };
       let data = { sv1, sv2, sv3, sv4, goods, meta  };
-      $.post(`http://${location.hostname}:8888/surveies`, data).then(res => console.log(res), rej => console.log(rej));
+      $.post(`http://mlo.kim:8888/surveies`, data).then(res => console.log(res), rej => console.log(rej));
+      window.statisticsCount = window.statisticsCount || 0;
+      window.statisticsCount += 1; 
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {

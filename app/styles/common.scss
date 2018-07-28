@@ -61,3 +61,7 @@ button:global(.btn-primary) {
     border-color: #204d74;
   }
 }
+
+div:global(.text-center) {
+  text-align: center;
+}

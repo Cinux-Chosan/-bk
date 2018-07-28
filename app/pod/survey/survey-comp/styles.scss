@@ -106,3 +106,19 @@
   border-top: 1px dashed #eee;
 }
 
+.confirmFooter{
+  button:first-child{
+    float: left;
+  }
+  button:last-child{
+    float: right;
+  }
+}
+
+.statistics{
+  top: 0;
+  right: 0;
+  position: fixed;
+  background: #fff;
+  padding: 4px;
+}

@@ -51,3 +51,23 @@
     <button type="submit" class="btn btn-primary" {{action "submit" }}>submit</button>
   </div>
 </div>
+
+
+{{#if (eq s 1)}}
+  <div local-class="statistics">
+    {{statistics}}
+  </div>
+{{/if}}
+
+{{#if showRedirectConfirm}}
+{{#common-dialog title="Tip" onClickOverlay=(action (mut showRedirectConfirm) (not showRedirectConfirm)) as |d|}}
+  {{#d.body class="text-center"}}
+    是否需要跳转？
+  {{/d.body}}
+  {{#d.footer local-class="confirmFooter"}}
+    <button class="btn btn-primary" {{action "redirectConfirm" activeGoodsNumber}}>Confirm</button>
+    <button class="btn" {{action (mut showRedirectConfirm) (not showRedirectConfirm)}}>Cancel</button>
+  {{/d.footer}}
+{{/common-dialog}}
+{{/if}}
+
