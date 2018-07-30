@@ -48,6 +48,7 @@ export default class SurveyCompComponent extends Component {
     })
   }
 
+
   async getinvestigateCount () {
     let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
     let { isIE, isLocalFile } = window.env;
@@ -63,20 +64,29 @@ export default class SurveyCompComponent extends Component {
     }
   }
 
-  @computed('investigateCount') 
+  @computed('investigateCount')
   get formattedInvestigateCount() {
     let investigateCount = this.getWithDefault('investigateCount', 1);
     return String(investigateCount).padStart(4, '0');
   }
 
-  @computed('s', 'formattedInvestigateCount')
-  get investigateInfo() {
+  formatDate(seconds) {
     let time = new Date;
     let year = time.getFullYear();
     let month = time.getMonth() + 1;
     let day = time.getDate();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let strDate = `${year + String(month).padStart(2, '0') +  String(day).padStart(2, '0')}`;
+    return seconds ? `${strDate + String(hour).padStart(2, '0') + String(min).padStart(2, '0')}` : strDate;
+  }
+
+
+  @computed('s', 'formattedInvestigateCount')
+  get investigateInfo() {
+    let date = this.formatDate();
     let formattedInvestigateCount = this.get('formattedInvestigateCount');
-    return `${year + String(month).padStart(2, '0') +  String(day).padStart(2, '0')}/${formattedInvestigateCount}`;
+    return `${date}/${formattedInvestigateCount}`;
   }
 
   validate(surveyItems) {
@@ -198,10 +208,11 @@ export default class SurveyCompComponent extends Component {
     this.set('disableConfirm', true);
     await this.updateStorage();
     let { isIE, isLocalFile } = window.env;
-    if (isIE && isLocalFile) {
-      // appController.get('exportXlsx').send('doExport');
+    if (true || isIE && isLocalFile) {  // 客户后来要求所有浏览器都填完了导出当前条, 不再将所有数据导出到一个 excel
       let exportXlsx = appController.get('exportXlsx');
-      await exportXlsx.actions.doExport.call(exportXlsx);
+      // await exportXlsx.actions.doExport.call(exportXlsx);
+      let fileName = `${this.formatDate(true)}/${this.get('formattedInvestigateCount')}`;
+      await exportXlsx.actions.doExportLast.call(exportXlsx, fileName);
     }
     this.set('disableConfirm', false);
     appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' }});
@@ -228,7 +239,7 @@ export default class SurveyCompComponent extends Component {
         console.log(error);
       }
       window.investigateCount = window.investigateCount || 0;
-      window.investigateCount += 1; 
+      window.investigateCount += 1;
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {

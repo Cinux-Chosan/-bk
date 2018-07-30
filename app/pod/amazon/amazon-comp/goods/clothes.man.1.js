@@ -2,7 +2,8 @@
 
 export default {
   goodsInfo: {
-    title: "100% Cotton Casual Slim Fit Long Sleeve Button Down Printed Dress Shirts",
+    // title: "100% Cotton Casual Slim Fit Long Sleeve Button Down Printed Dress Shirts",
+    title: "Clothing1",
     details: [
       "US Size,100% Cotton",
       "Style: Casual, Fashion, Relax, Business, Date",

@@ -2,7 +2,9 @@
 
 export default {
   goodsInfo: {
-    title: "100% Cotton Long Sleeve Plaid Slim Fit Button Down Dress Shirt ",
+    // title: "100% Cotton Long Sleeve Plaid Slim Fit Button Down Dress Shirt ",
+    title: "Clothing2",
+
     details: [
       "Notice: If There is Smell in Your Package, Please Wash the Shirt in Cold Water before You Wear, we have asked our factory to wash it in the next goods.",
       "GUARANTEE from localmode: Some buyers say our shirt size is way off which we are so confused, we have updated our shirt size measurement on Product Description of the page. Please check the size chart carefully before you order and we will give you free exchange and full refund if you get wrong size from us. THANK YOU!!!",

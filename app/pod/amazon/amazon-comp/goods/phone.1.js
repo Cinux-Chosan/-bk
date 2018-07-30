@@ -2,7 +2,8 @@
 
 export default {
   goodsInfo: {
-    title: "GSM Unlocked 5.8\", 256 GB - Space Gray",
+    // title: "GSM Unlocked 5.8\", 256 GB - Space Gray",
+    title: "Cellphone1",
     details: [
       "An all‑new 5.8‑inch Super Retina screen with all-screen OLED Multi-Touch display",
       "12MP wide-angle and telephoto cameras with Dual optical image stabilization",

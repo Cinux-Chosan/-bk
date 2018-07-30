@@ -1,6 +1,6 @@
 <div local-class="amazonContainer">
   <div local-class="note">
-  <b> Notice:</b> You have a need to buy {{if isPhone 'a cellphone' 'clothing'}} from other countries in Amazon.com, and now you can browse two representative products for them, respectively. You have enough time to scrutinize these products and choose a product to a shopping cart.
+  <b> Notice:</b> You have a need to buy {{if isPhone 'a cellphone' 'clothing'}} from other countries in Amazon.com, and now you can browse two representative products, respectively. You have enough time to scrutinize these products and choose a product to a shopping cart.
   </div>
   {{#each gList as |g|}}
     {{amazon/amazon-comp goods=g onAdding2Cart=(action "showConfirm" g)}}
@@ -13,7 +13,9 @@
     <div local-class="goodsPic">
       <img src={{activeThumbnail.img}} alt="">
     </div>
-    Are you sure to put <b><i>{{or activeOpts.title activeGoods.goodsInfo.title}}</i></b> into the shopping cart?
+    Are you sure to put this term
+    {{!-- <b><i>{{or activeOpts.title activeGoods.goodsInfo.title}}</i></b>  --}}
+    into the shopping cart?
   {{/d.body}}
   {{#d.footer local-class="confirmFooter"}}
     <button class="btn btn-primary" {{action "confirm" activeGoodsNumber}}>Confirm</button>

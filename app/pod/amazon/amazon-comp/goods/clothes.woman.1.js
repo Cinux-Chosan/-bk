@@ -2,7 +2,9 @@
 
 export default {
   goodsInfo: {
-    title: "Hoodies-Tops- Floral Printed Long Sleeve Pocket Drawstring Sweatshirt with Pocket",
+    // title: "Hoodies-Tops- Floral Printed Long Sleeve Pocket Drawstring Sweatshirt with Pocket",
+    title: "Clothing1",
+
     details: [
       "Catagory: Women Hoodies, Floral Printed Sweatshirt, Double Pocket Hooded Sweatshirt, Drawstring Hoodies ",
       "Material: Polyester+Cotton. 100% Brand New and high quality! ",
