@@ -251,7 +251,7 @@ export default class SurveyCompComponent extends Component {
       let formattedInvestigateCount = this.get('formattedInvestigateCount');
       let meta = { date: new Date().toLocaleString(), 'No.': formattedInvestigateCount };
       let data = { sv1, sv2, sv3, sv4, goods, meta  };
-      $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data).then(data => console.log(data), reason => console.error(reason));
+      $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data).then(result => console.log(result), reason => console.error(reason));
       window.investigateCount = window.investigateCount || 0;
       window.investigateCount += 1;
       svUserFills.pushObject(data);
