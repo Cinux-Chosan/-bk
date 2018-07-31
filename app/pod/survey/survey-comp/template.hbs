@@ -48,7 +48,7 @@
   </div>
   {{/with}}
   <div local-class="surveyFooter">
-    <button type="submit" class="btn btn-primary" {{action "submit" }}>submit</button>
+    <button type="submit" disabled={{disableConfirm}} class="btn btn-primary" {{action "submitSurvey" s}}>submit</button>
   </div>
 </div>
 
@@ -57,6 +57,18 @@
   <div local-class="investigateInfo">
     {{investigateInfo}}
   </div>
+{{/if}}
+
+{{#if showNextPageDialog}}
+  {{#common-dialog title="Tip" onClickOverlay=(action (mut showNextPageDialog) (not showNextPageDialog)) as |d|}}
+    {{#d.body class="text-center"}}
+      Next page?
+    {{/d.body}}
+    {{#d.footer local-class="confirmFooter"}}
+      <button class="btn btn-primary" disabled={{disableConfirm}} {{action "nextPageDialogConfirm" activeGoodsNumber}}>Confirm</button>
+      <button class="btn" {{action (mut showNextPageDialog) (not showNextPageDialog)}}>Cancel</button>
+    {{/d.footer}}
+  {{/common-dialog}}
 {{/if}}
 
 {{#if showRedirectConfirm}}

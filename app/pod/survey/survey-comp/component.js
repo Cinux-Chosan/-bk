@@ -157,7 +157,8 @@ export default class SurveyCompComponent extends Component {
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
 
-    this.set('showRedirectConfirm', true);
+    // this.set('showRedirectConfirm', true);
+    this.send('redirectConfirm');
 
     // 之前的自动调整逻辑，甲方需要手动确认进行跳转
     // let redirectTime = 3;
@@ -173,14 +174,31 @@ export default class SurveyCompComponent extends Component {
   }
 
   @action
+  submitSurvey(s) {
+    if (s == 4) {
+      this.send('submit');
+    } else {
+      this.set('showNextPageDialog', true);
+    }
+  }
+
+  @action
+  nextPageDialogConfirm() {
+    this.send('submit');
+    this.set('showNextPageDialog', false);
+  }
+
+  @action
   submit() {
     let activeSurvey = this.get('activeSurvey');
     let s = this.getWithDefault('s', 1);
+
     if (this.validate(activeSurvey.items)) {
       myLocalStorage.setItem(`survey${s}`, JSON.stringify(activeSurvey)); // 存储当前问卷数据
     } else {
       return;
     }
+
     switch (Number(s)) {
       case SURVEY.SURVEY_1:
         this.send('surveySubmitAction1');  // 填完第一个问卷
@@ -203,8 +221,8 @@ export default class SurveyCompComponent extends Component {
   async redirectConfirm() {
     this.set('showRedirectConfirm', '');
     let appController  = this.get('appController');
-    appController.set('unclosable', true);
-    appController.set('tip', 'Saving...');
+    // appController.set('unclosable', true);
+    // appController.set('tip', 'Saving...');
     this.set('disableConfirm', true);
     await this.updateStorage();
     let { isIE, isLocalFile } = window.env;
@@ -233,17 +251,13 @@ export default class SurveyCompComponent extends Component {
       let formattedInvestigateCount = this.get('formattedInvestigateCount');
       let meta = { date: new Date().toLocaleString(), 'No.': formattedInvestigateCount };
       let data = { sv1, sv2, sv3, sv4, goods, meta  };
-      try {
-        await $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data);
-      } catch (error) {
-        console.log(error);
-      }
+      $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data).then(data => console.log(data), reason => console.error(reason));
       window.investigateCount = window.investigateCount || 0;
       window.investigateCount += 1;
       svUserFills.pushObject(data);
       await setItem('svUserFills', JSON.stringify(svUserFills));
     } catch (error) {
-      // console.log(error);
+      // console.error(error);
     }
   }
 

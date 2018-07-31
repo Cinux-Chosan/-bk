@@ -9,17 +9,6 @@ export default {
       "optText": "Female"
     }]
   }, {
-    "desc": "Age",
-    "type": "radio",
-    "value": "",
-    "opts": [{
-      "optText": " < 18"
-    }, {
-      "optText": " 18 ~ 20"
-    }, {
-      "optText": " > 20"
-    }]
-  }, {
     "desc": "How often do you shop online?",
     "type": "radio",
     "opts": [{
