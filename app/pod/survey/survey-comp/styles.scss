@@ -122,3 +122,22 @@
   background: #fff;
   padding: 4px;
 }
+
+.fixedBtnBox{
+  position: fixed;
+  height: 0;
+  background: rgba(#000000, $alpha: .6);
+  bottom: 0;
+  width: 100%;
+  transition: all .2s;
+  z-index: 2;
+  text-align: center;
+  line-height: 0;
+  &.show{
+    height: 150px;
+    line-height: 100px;
+  }
+  button:first-child{
+    margin-right: 50px;
+  }
+}

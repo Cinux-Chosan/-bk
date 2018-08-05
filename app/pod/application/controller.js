@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember-decorators/object';
+import { later } from '@ember/runloop';
 
 export default class ApplicationController extends Controller {
   queryParams = ['export', 'tip', 'clean', 'unclosable'];
@@ -19,6 +20,10 @@ export default class ApplicationController extends Controller {
   async cleanStorage() {
     await window.localforage.clear();
     this.set('clean', '');
-    this.set('tip', 'Cleaned up!');
+    this.set('tip', 'Cleaned up, page reloading!');
+    later(() => {
+      this.set('tip', '');
+      window.location.reload();
+    }, 1000);
   }
 }

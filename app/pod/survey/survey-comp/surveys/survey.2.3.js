@@ -1,9 +1,9 @@
 export default {
   title: "Survey 4",
   items: [{
-    "desc": "Please indicate how much you disagree or agree with each of the following statements.",
-    "type": "group",
-    "items": [{
+    // "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+    // "type": "group",
+    // "items": [{
       "desc": "The quantity of the reviews released was large.",
       "type": "radio",
       "opts": [{
@@ -111,6 +111,6 @@ export default {
       }, {
         "optText": "Strongly  Agree"
       }]
-    }]
+    // }]
   }]
 };

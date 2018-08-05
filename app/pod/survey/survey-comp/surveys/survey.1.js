@@ -37,9 +37,9 @@ export default {
       "optText": "never"
     }]
   }, {
-    "desc": "Please indicate how much you disagree or agree with each of the following statements.",
-    "type": "group",
-    "items": [{
+    // "desc": "Please indicate how much you disagree or agree with each of the following statements.",
+    // "type": "group",
+    // "items": [{
       "desc": "People in higher positions should make most decisions without consulting people in lower positions.",
       "type": "radio",
       "opts": [{
@@ -723,6 +723,6 @@ export default {
       }, {
         "optText": "Strongly  Agree"
       }]
-    }]
+    // }]
   }]
 };

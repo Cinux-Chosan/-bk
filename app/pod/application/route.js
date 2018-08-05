@@ -4,7 +4,9 @@ export default class ApplicationRoute extends Route {
   redirect() {
     this.replaceWith("survey", {
       queryParams: {
-        s: 1
+        s: 1,
+        tip: '',
+        unclosable: ''
       }
     });
   }

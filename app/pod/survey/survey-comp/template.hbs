@@ -12,7 +12,7 @@
       {{#each sv.items as |svItem svItemIndex|}}
       <div local-class="surveyItem" data-desc={{svItem.desc}}>
         <div local-class="desc">
-          {{add 1 svItemIndex}}、{{{svItem.desc}}}
+          {{s}}.{{add 1 svItemIndex}}、{{{svItem.desc}}}
         </div>
         {{#if (eq svItem.type "group")}}
           {{#each svItem.items as |subItem subIndex|}}
@@ -71,15 +71,33 @@
   {{/common-dialog}}
 {{/if}}
 
-{{#if showRedirectConfirm}}
-{{#common-dialog title="Tip" onClickOverlay=(action (mut showRedirectConfirm) (not showRedirectConfirm)) as |d|}}
+{{#if showSaveTip}}
+{{#common-dialog title="Tip" onClickOverlay=(action (mut showSaveTip) (not showSaveTip)) as |d|}}
   {{#d.body class="text-center"}}
-    The current experiment number is {{formattedInvestigateCount}}，Whether to conduct the investigate into the next one？
+    The current experiment has been completed, please save the data file below the window.
+    <!--The current experiment number is {{formattedInvestigateCount}}，Whether to conduct the investigate into the next one？-->
   {{/d.body}}
   {{#d.footer local-class="confirmFooter"}}
-    <button class="btn btn-primary" disabled={{disableConfirm}} {{action "redirectConfirm" activeGoodsNumber}}>Confirm</button>
-    <button class="btn" {{action (mut showRedirectConfirm) (not showRedirectConfirm)}}>Cancel</button>
+    <button class="btn btn-primary" disabled={{disableConfirm}} {{action "showSaveConfirmDialog"}}>Confirm</button>
+    <button class="btn" {{action (mut showSaveTip) (not showSaveTip)}}>Cancel</button>
   {{/d.footer}}
 {{/common-dialog}}
 {{/if}}
 
+{{#if showSaveConfirm}}
+{{#common-dialog title="Tip" onClickOverlay=(action (mut showSaveConfirm) (not showSaveConfirm)) as |d|}}
+  {{#d.body class="text-center"}}
+    Have you saved the experiment data file?
+  {{/d.body}}
+  {{#d.footer local-class="confirmFooter"}}
+    <button class="btn btn-primary" disabled={{disableConfirm}} {{action "saveConfirmed" activeGoodsNumber}}>Confirm</button>
+    <button class="btn" {{action (mut showSaveConfirm) (not showSaveConfirm)}}>Cancel</button>
+  {{/d.footer}}
+{{/common-dialog}}
+{{/if}}
+
+
+<div local-class="fixedBtnBox {{if showNextStepBtn 'show'}}">
+     <button class="btn btn-primary" disabled={{disableConfirm}} {{action "startNewExperiment"}}>Start new experiment</button>
+    <button class="btn" {{action "Quit"}}>Quit</button>
+</div>

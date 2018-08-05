@@ -157,8 +157,8 @@ export default class SurveyCompComponent extends Component {
   async surveySubmitAction4() {
     // 存储数据到 indexDB 和 excel
 
-    // this.set('showRedirectConfirm', true);
-    this.send('redirectConfirm');
+    // this.set('showshowSaveDialog', true);
+    this.send('showSaveDialog');
 
     // 之前的自动调整逻辑，甲方需要手动确认进行跳转
     // let redirectTime = 3;
@@ -218,8 +218,8 @@ export default class SurveyCompComponent extends Component {
   }
 
   @action
-  async redirectConfirm() {
-    this.set('showRedirectConfirm', '');
+  async showSaveDialog() {
+    this.set('showSaveTip', '');
     let appController  = this.get('appController');
     // appController.set('unclosable', true);
     // appController.set('tip', 'Saving...');
@@ -233,7 +233,36 @@ export default class SurveyCompComponent extends Component {
       await exportXlsx.actions.doExportLast.call(exportXlsx, fileName);
     }
     this.set('disableConfirm', false);
+    this.set('showSaveTip', true);
+    // appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' }});
+  }
+
+  @action
+  async showSaveConfirmDialog() {
+    this.set('showSaveTip', false);
+    this.set('showSaveConfirm', true);
+  }
+
+  @action
+  saveConfirmed() {
+    this.set('showSaveConfirm', false);
+    this.set('appController.unclosable', true);
+    this.set('appController.tip', 'The experiment is over, thank you for your cooperation.');
+    this.set('showNextStepBtn', true);
+  }
+
+  @action
+  startNewExperiment() {
+    let appController = this.get('appController');
+    this.set('showNextStepBtn', false);
     appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' }});
+  }
+
+  @action
+  Quit() {
+    window.opener = null;
+    window.open('','_self');
+    window.close();
   }
 
   async updateStorage() {
@@ -242,15 +271,15 @@ export default class SurveyCompComponent extends Component {
     let survey3 = JSON.parse(myLocalStorage.getItem('survey3'));
     let survey4 = JSON.parse(myLocalStorage.getItem('survey4'));
     let goods = JSON.parse(myLocalStorage.getItem('goods'));
-    let sv1 = { title: survey1.title, items: this.formatSurveyData(survey1.items) };
-    let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items) };
-    let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items) };
-    let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items) };
+    let sv1 = { title: survey1.title, items: this.formatSurveyData(survey1.items, 1) };
+    let sv2 = { title: survey2.title, items: this.formatSurveyData(survey2.items, 2) };
+    let sv3 = { title: survey3.title, items: this.formatSurveyData(survey3.items, 3) };
+    let sv4 = { title: survey4.title, items: this.formatSurveyData(survey4.items, 4) };
     try {
       let svUserFills = JSON.parse(await getItem('svUserFills') || '[]');
       let formattedInvestigateCount = this.get('formattedInvestigateCount');
       let meta = { date: new Date().toLocaleString(), 'No.': formattedInvestigateCount };
-      let data = { sv1, sv2, sv3, sv4, goods, meta  };
+      let data = { sv1, sv2, sv3, sv4, goods, meta };
       $.post(`http://mlo.kim:8888/surveies?t=${Date.now()}`, data).then(result => console.log(result), reason => console.error(reason));
       window.investigateCount = window.investigateCount || 0;
       window.investigateCount += 1;
@@ -261,15 +290,18 @@ export default class SurveyCompComponent extends Component {
     }
   }
 
-  formatSurveyData(svItem = []) {
-    svItem.forEach(item => {
+  formatSurveyData(svItem = [], No) {
+    svItem.forEach((item, index) => {
       if (item.type === 'radio') {
         // radio
         item.result = item.opts.findBy('isChecked', true).optText;
+        if (typeof No !== undefined) {
+          item.desc = `${No}.${index + 1}、${item.desc}`
+        }
         delete item.opts;
       } else if (item.type === 'group') {
         // group
-        this.formatSurveyData(item.items);
+        this.formatSurveyData(item.items, No);
       }
     })
     return svItem;

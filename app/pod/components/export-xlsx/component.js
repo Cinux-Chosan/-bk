@@ -29,10 +29,10 @@ export default class ExportXlsxComponent extends Component {
       const svResultItem = svUserFills[svUserFills.length - 1];
       let item = {};
       try {
-        let sv1 = this.buildXslData(svResultItem.sv1.items, item);
-        let sv2 = this.buildXslData(svResultItem.sv2.items, item);
-        let sv3 = this.buildXslData(svResultItem.sv3.items, item);
-        let sv4 = this.buildXslData(svResultItem.sv4.items, item);
+        let sv1 = this.buildXslData(svResultItem.sv1.items, item, 1);
+        let sv2 = this.buildXslData(svResultItem.sv2.items, item, 2);
+        let sv3 = this.buildXslData(svResultItem.sv3.items, item, 3);
+        let sv4 = this.buildXslData(svResultItem.sv4.items, item, 4);
         await Promise.all([sv1, sv2, sv3, sv4]);
         heads = { ...heads, ...item, ...svResultItem.goods, ...svResultItem.meta };
         xlsData.push({ ...item, ...svResultItem.goods, ...svResultItem.meta });
