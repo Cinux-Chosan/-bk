@@ -6564,6 +6564,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+6220f00e"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+a3ca60ef"});
 }
 //# sourceMappingURL=amazon.map
