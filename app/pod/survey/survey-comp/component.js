@@ -110,7 +110,7 @@ export default class SurveyCompComponent extends Component {
   @action
   surveySubmitAction1() {
     let appController  = this.get('appController');
-    if (+random().toFixed()) {  // 随机跳手机、衣服
+    if (false && +random().toFixed()) {  // 随机跳手机、衣服
       appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});  // 跳手机页面
     } else {
       let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
@@ -126,31 +126,35 @@ export default class SurveyCompComponent extends Component {
   @action
   surveySubmitAction2() {
     let { appController } = this.getProperties(['appController']);
-    if (myLocalStorage.getItem('survey3')) {
-      // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
-      appController.transitionToRoute({ queryParams: { s: 4 }});
-    } else {
-      // 否则跳转到衣服
-      let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
-      let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
-      if (genderSelected.optText === 'Male') {
-        appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});
-      } else {
-        appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});
-      }
-    }
+    appController.transitionToRoute({ queryParams: { s: 1 }});
+
+    // if (myLocalStorage.getItem('survey3')) {
+    //   // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
+    //   appController.transitionToRoute({ queryParams: { s: 4 }});
+    // } else {
+    //   // 否则跳转到衣服
+    //   let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
+    //   let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+    //   if (genderSelected.optText === 'Male') {
+    //     appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});
+    //   } else {
+    //     appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});
+    //   }
+    // }
   }
 
   @action
   surveySubmitAction3() {
     let appController  = this.get('appController');
-    if (myLocalStorage.getItem('survey2')) {
-      // 如果 survey2 有记录， 则证明手机问卷已经填写， 则跳最后一个问卷
-      appController.transitionToRoute({ queryParams: { s: 4 }});
-    } else {
-      // 否则跳手机购买页面
-      appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});
-    }
+    appController.transitionToRoute({ queryParams: { s: 4 }});
+
+    // if (myLocalStorage.getItem('survey2')) {
+    //   // 如果 survey2 有记录， 则证明手机问卷已经填写， 则跳最后一个问卷
+    //   appController.transitionToRoute({ queryParams: { s: 4 }});
+    // } else {
+    //   // 否则跳手机购买页面
+    //   appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});
+    // }
   }
 
   @action
@@ -192,7 +196,6 @@ export default class SurveyCompComponent extends Component {
   submit() {
     let activeSurvey = this.get('activeSurvey');
     let s = this.getWithDefault('s', 1);
-
     if (this.validate(activeSurvey.items)) {
       myLocalStorage.setItem(`survey${s}`, JSON.stringify(activeSurvey)); // 存储当前问卷数据
     } else {
@@ -255,7 +258,7 @@ export default class SurveyCompComponent extends Component {
   startNewExperiment() {
     let appController = this.get('appController');
     this.set('showNextStepBtn', false);
-    appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' }});
+    appController.transitionToRoute('amazon', { queryParams: { g: '5_6', tip: '', unclosable: '' }});
   }
 
   @action

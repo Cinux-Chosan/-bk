@@ -2484,6 +2484,34 @@ define('amazon/pod/amazon/controller', ['exports', '@ember-decorators/object'], 
           default:
             break;
         }
+        // switch (Number(goods)) {
+        //   case GOODS.CLOTHES_MAN_1:
+        //     goodsList.clothes_man_1 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 3 }});
+        //   break;
+        //   case GOODS.CLOTHES_MAN_2:
+        //     goodsList.clothes_man_2 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 3 }});
+        //   break;
+        //   case GOODS.CLOTHES_WOMAN_1:
+        //     goodsList.clothes_woman_1 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 3 }});
+        //   break;
+        //   case GOODS.CLOTHES_WOMAN_2:
+        //     goodsList.clothes_woman_2 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 3 }});
+        //   break;
+        //   case GOODS.PHONE_1:
+        //     goodsList.phone_1 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 2 }});
+        //   break;
+        //   case GOODS.PHONE_2:
+        //     goodsList.phone_2 = 1;
+        //     this.transitionToRoute('survey', { queryParams: { s: 2 }});
+        //   break;
+        //   default:
+        //     break;
+        // }
         myLocalStorage.setItem('goods', JSON.stringify(goodsList));
       }
     }, {
@@ -2584,6 +2612,14 @@ define('amazon/pod/amazon/route', ['exports'], function (exports) {
     }
 
     _createClass(AmazonRoute, [{
+      key: 'model',
+      value: function model(params) {
+        if (params.g == '5_6') {
+          window.myLocalStorage.clear();
+        }
+        // window.scrollTo(0, 0);
+      }
+    }, {
       key: 'activate',
       value: function activate() {
         window.scrollTo(0, 0);
@@ -2941,9 +2977,16 @@ define("amazon/pod/application/route", ["exports"], function (exports) {
     _createClass(ApplicationRoute, [{
       key: "redirect",
       value: function redirect() {
-        this.replaceWith("survey", {
+        // this.replaceWith("survey", {
+        //   queryParams: {
+        //     s: 1,
+        //     tip: '',
+        //     unclosable: ''
+        //   }
+        // });
+        this.replaceWith("amazon", {
           queryParams: {
-            s: 1,
+            g: '5_6',
             tip: '',
             unclosable: ''
           }
@@ -4205,7 +4248,7 @@ define('amazon/pod/survey/route', ['exports', '@ember-decorators/object'], funct
       key: 'model',
       value: function model(params) {
         if (params.s == 1) {
-          window.myLocalStorage.clear();
+          // window.myLocalStorage.clear();
         }
         window.scrollTo(0, 0);
       }
@@ -4234,7 +4277,7 @@ define("amazon/pod/survey/styles", ["exports"], function (exports) {
     "surveyContainer": "_surveyContainer_12uhau"
   };
 });
-define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators/object', 'amazon/pod/survey/survey-comp/surveys/survey.1', 'amazon/pod/survey/survey-comp/surveys/survey.2.1', 'amazon/pod/survey/survey-comp/surveys/survey.2.2', 'amazon/pod/survey/survey-comp/surveys/survey.2.3', 'amazon/utils/util', 'amazon/pod/survey/survey-comp/styles'], function (exports, _object, _survey3, _survey4, _survey5, _survey6, _util, _styles) {
+define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators/object', 'amazon/pod/survey/survey-comp/surveys/survey.1', 'amazon/pod/survey/survey-comp/surveys/survey.2.1', 'amazon/pod/survey/survey-comp/surveys/survey.2.2', 'amazon/pod/survey/survey-comp/surveys/survey.2.3', 'amazon/utils/util', 'amazon/pod/survey/survey-comp/styles'], function (exports, _object, _survey2, _survey3, _survey4, _survey5, _util, _styles) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -4385,7 +4428,7 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
         args[_key] = arguments[_key];
       }
 
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyCompComponent.__proto__ || Object.getPrototypeOf(SurveyCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.survey1 = Ember.copy(_survey3.default, true), _this.survey2 = Ember.copy(_survey4.default, true), _this.survey3 = Ember.copy(_survey5.default, true), _this.survey4 = Ember.copy(_survey6.default, true), _temp), _possibleConstructorReturn(_this, _ret);
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SurveyCompComponent.__proto__ || Object.getPrototypeOf(SurveyCompComponent)).call.apply(_ref, [this].concat(args))), _this), _this.survey1 = Ember.copy(_survey2.default, true), _this.survey2 = Ember.copy(_survey3.default, true), _this.survey3 = Ember.copy(_survey4.default, true), _this.survey4 = Ember.copy(_survey5.default, true), _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(SurveyCompComponent, [{
@@ -4517,7 +4560,7 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
       key: 'surveySubmitAction1',
       value: function surveySubmitAction1() {
         var appController = this.get('appController');
-        if (+random().toFixed()) {
+        if (false && +random().toFixed()) {
           // 随机跳手机、衣服
           appController.transitionToRoute('amazon', { queryParams: { g: '5_6' } }); // 跳手机页面
         } else {
@@ -4536,31 +4579,35 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
         var _getProperties = this.getProperties(['appController']),
             appController = _getProperties.appController;
 
-        if (myLocalStorage.getItem('survey3')) {
-          // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
-          appController.transitionToRoute({ queryParams: { s: 4 } });
-        } else {
-          // 否则跳转到衣服
-          var _survey2 = JSON.parse(myLocalStorage.getItem('survey1'));
-          var genderSelected = _survey2.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
-          if (genderSelected.optText === 'Male') {
-            appController.transitionToRoute('amazon', { queryParams: { g: '1_2' } });
-          } else {
-            appController.transitionToRoute('amazon', { queryParams: { g: '3_4' } });
-          }
-        }
+        appController.transitionToRoute({ queryParams: { s: 1 } });
+
+        // if (myLocalStorage.getItem('survey3')) {
+        //   // 如果 survey3 有记录， 则证明衣服问卷已经填写， 则跳最后一个问卷
+        //   appController.transitionToRoute({ queryParams: { s: 4 }});
+        // } else {
+        //   // 否则跳转到衣服
+        //   let survey1 = JSON.parse(myLocalStorage.getItem('survey1'));
+        //   let genderSelected = survey1.items.findBy('desc', 'Gerder').opts.findBy('isChecked', true);
+        //   if (genderSelected.optText === 'Male') {
+        //     appController.transitionToRoute('amazon', { queryParams: { g: '1_2' }});
+        //   } else {
+        //     appController.transitionToRoute('amazon', { queryParams: { g: '3_4' }});
+        //   }
+        // }
       }
     }, {
       key: 'surveySubmitAction3',
       value: function surveySubmitAction3() {
         var appController = this.get('appController');
-        if (myLocalStorage.getItem('survey2')) {
-          // 如果 survey2 有记录， 则证明手机问卷已经填写， 则跳最后一个问卷
-          appController.transitionToRoute({ queryParams: { s: 4 } });
-        } else {
-          // 否则跳手机购买页面
-          appController.transitionToRoute('amazon', { queryParams: { g: '5_6' } });
-        }
+        appController.transitionToRoute({ queryParams: { s: 4 } });
+
+        // if (myLocalStorage.getItem('survey2')) {
+        //   // 如果 survey2 有记录， 则证明手机问卷已经填写， 则跳最后一个问卷
+        //   appController.transitionToRoute({ queryParams: { s: 4 }});
+        // } else {
+        //   // 否则跳手机购买页面
+        //   appController.transitionToRoute('amazon', { queryParams: { g: '5_6' }});
+        // }
       }
     }, {
       key: 'surveySubmitAction4',
@@ -4621,7 +4668,6 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
       value: function submit() {
         var activeSurvey = this.get('activeSurvey');
         var s = this.getWithDefault('s', 1);
-
         if (this.validate(activeSurvey.items)) {
           myLocalStorage.setItem('survey' + s, JSON.stringify(activeSurvey)); // 存储当前问卷数据
         } else {
@@ -4737,7 +4783,7 @@ define('amazon/pod/survey/survey-comp/component', ['exports', '@ember-decorators
       value: function startNewExperiment() {
         var appController = this.get('appController');
         this.set('showNextStepBtn', false);
-        appController.transitionToRoute({ queryParams: { s: 1, tip: '', unclosable: '' } });
+        appController.transitionToRoute('amazon', { queryParams: { g: '5_6', tip: '', unclosable: '' } });
       }
     }, {
       key: 'Quit',
