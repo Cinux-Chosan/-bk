@@ -33,13 +33,13 @@ export default {
         // title: "Unlocked Smartphone - Lilac Purple - US Warranty ",
         title: "Cellphone2",
 
-        details: [
-          "Super Speed Dual Pixel Camera ",
-          "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",
-          "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***",
-          "Internal Memory 64 GB. Expandable Storage up to 400GB. Video Recording Resolution : UHD 4K (3840 x 2160)@60fps ",
-          "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "
-        ],
+        // details: [
+        //   "Super Speed Dual Pixel Camera ",
+        //   "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",
+        //   "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***",
+        //   "Internal Memory 64 GB. Expandable Storage up to 400GB. Video Recording Resolution : UHD 4K (3840 x 2160)@60fps ",
+        //   "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "
+        // ],
         thumbnailList: [
           { img: "img/amazon/phone_2/2_1.jpg", optDesc: "" },
           { img: "img/amazon/phone_2/2_2.jpg", optDesc: "" },
