@@ -3022,7 +3022,7 @@ define("amazon/pod/application/template", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "d94QnQs3", "block": "{\"symbols\":[\"d\",\"exportXlsx\"],\"statements\":[[1,[20,\"outlet\"],false],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"exportMask \",[26,\"if\",[[26,\"or\",[[22,[\"export\"]],[22,[\"tip\"]]],null],\"showMask\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"closeExport\"]],[8],[0,\" \"],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"tip \",[26,\"if\",[[22,[\"tip\"]],\"showTip\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n\"],[1,[20,\"tip\"],false],[0,\"\\n\"],[9],[0,\"\\n\\n\\n\"],[4,\"export-xlsx\",null,[[\"elementId\",\"class\"],[\"btn-export-xlsx\",[26,\"concat\",[[26,\"if\",[[22,[\"export\"]],[26,\"local-class\",[\"showExportBtn\"],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]],null],\" \",[26,\"unbound\",[[22,[\"__styles__\",\"initExportBtn\"]]],null]],null]]],{\"statements\":[[0,\"  \"],[1,[26,\"set\",[[21,0,[]],\"exportXlsx\",[21,2,[]]],null],false],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"clean\"]]],null,{\"statements\":[[4,\"common-dialog\",null,[[\"title\",\"onClickOverlay\"],[\"Tip\",[26,\"action\",[[21,0,[]],[26,\"mut\",[[22,[\"clean\"]]],null],\"\"],null]]],{\"statements\":[[4,\"component\",[[21,1,[\"body\"]]],null,{\"statements\":[[0,\"    是否删除所有本地数据? (Are you sure to clean up all the local storages)?\\n     \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"textCenter\"]]],null]]]],[8],[6,\"small\"],[8],[0,\"(为了防止用户误删, 服务器数据需要联系开发人员进行清理)\"],[9],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"component\",[[21,1,[\"footer\"]]],[[\"class\"],[[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"cleanDialog\"]]],null]],null]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"btn btn-primary\"],[3,\"action\",[[21,0,[]],\"cleanStorage\"]],[8],[0,\"Confirm\"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"btn\"],[3,\"action\",[[21,0,[]],[26,\"mut\",[[22,[\"clean\"]]],null],\"\"]],[8],[0,\"Cancel\"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[1]},null]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/application/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "gmA1gsJl", "block": "{\"symbols\":[\"d\",\"exportXlsx\"],\"statements\":[[1,[20,\"outlet\"],false],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"exportMask \",[26,\"if\",[[26,\"or\",[[22,[\"export\"]],[22,[\"tip\"]]],null],\"showMask\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[3,\"action\",[[21,0,[]],\"closeExport\"]],[8],[0,\" \"],[9],[0,\"\\n\"],[6,\"div\"],[11,\"class\",[27,[[26,\"local-class\",[[26,\"concat\",[\"tip \",[26,\"if\",[[22,[\"tip\"]],\"showTip\"],null]],null]],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]]]],[8],[0,\"\\n\"],[1,[20,\"tip\"],false],[0,\"\\n\"],[9],[0,\"\\n\\n\\n\"],[4,\"export-xlsx\",null,[[\"elementId\",\"class\"],[\"btn-export-xlsx\",[26,\"concat\",[[26,\"if\",[[22,[\"export\"]],[26,\"local-class\",[\"showExportBtn\"],[[\"from\"],[[26,\"unbound\",[[22,[\"__styles__\"]]],null]]]]],null],\" \",[26,\"unbound\",[[22,[\"__styles__\",\"initExportBtn\"]]],null]],null]]],{\"statements\":[[0,\"  \"],[1,[26,\"set\",[[21,0,[]],\"exportXlsx\",[21,2,[]]],null],false],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"clean\"]]],null,{\"statements\":[[4,\"common-dialog\",null,[[\"title\",\"onClickOverlay\"],[\"Tip\",[26,\"action\",[[21,0,[]],[26,\"mut\",[[22,[\"clean\"]]],null],\"\"],null]]],{\"statements\":[[4,\"component\",[[21,1,[\"body\"]]],null,{\"statements\":[[0,\"    是否删除所有本地数据? (Are you sure to clean up all the local storages)?\\n     \"],[6,\"p\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"textCenter\"]]],null]]]],[8],[6,\"small\"],[8],[0,\"(为了防止用户误删, 服务器数据需要联系开发人员进行清理)\"],[9],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"component\",[[21,1,[\"footer\"]]],[[\"class\"],[[26,\"concat\",[[26,\"unbound\",[[22,[\"__styles__\",\"cleanDialog\"]]],null]],null]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"btn btn-primary\"],[3,\"action\",[[21,0,[]],\"cleanStorage\"]],[8],[0,\"Confirm\"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"btn\"],[3,\"action\",[[21,0,[]],[26,\"mut\",[[22,[\"clean\"]]],null],\"\"]],[8],[0,\"Cancel\"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[1]},null]],\"parameters\":[]},null],[0,\"\\n\\n\"],[1,[20,\"load-all-imgs\"],false]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/application/template.hbs" } });
 });
 define('amazon/pod/components/common-dialog/body/component', ['exports'], function (exports) {
   'use strict';
@@ -3949,6 +3949,83 @@ define("amazon/pod/components/export-xlsx/template", ["exports"], function (expo
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "3B3LKvvf", "block": "{\"symbols\":[\"&default\"],\"statements\":[[1,[20,\"exportBtnText\"],false],[0,\"\\n\"],[6,\"span\"],[11,\"class\",[27,[[26,\"unbound\",[[22,[\"__styles__\",\"none\"]]],null]]]],[8],[0,\"\\n  \"],[13,1,[[21,0,[]]]],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/components/export-xlsx/template.hbs" } });
+});
+define('amazon/pod/components/load-all-imgs/component', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    function _possibleConstructorReturn(self, call) {
+        if (!self) {
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }
+
+        return call && (typeof call === "object" || typeof call === "function") ? call : self;
+    }
+
+    function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+            throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+        }
+
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+            constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true
+            }
+        });
+        if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    }
+
+    var LoadAllImgsComponent = function (_EmberComponent) {
+        _inherits(LoadAllImgsComponent, _EmberComponent);
+
+        function LoadAllImgsComponent() {
+            var _ref;
+
+            var _temp, _this, _ret;
+
+            _classCallCheck(this, LoadAllImgsComponent);
+
+            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                args[_key] = arguments[_key];
+            }
+
+            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoadAllImgsComponent.__proto__ || Object.getPrototypeOf(LoadAllImgsComponent)).call.apply(_ref, [this].concat(args))), _this), _this.imgList = ['img/amazon/clothes_man_1/1_1.jpg', 'img/amazon/clothes_man_1/1_2.jpg', 'img/amazon/clothes_man_1/1_3.jpg', 'img/amazon/clothes_man_1/1_4.jpg', 'img/amazon/clothes_man_1/1_5.jpg', 'img/amazon/clothes_man_1/1_6.jpg', 'img/amazon/clothes_man_1/1_7.jpg', 'img/amazon/clothes_man_1/2_1.jpg', 'img/amazon/clothes_man_1/2_2.jpg', 'img/amazon/clothes_man_1/2_3.jpg', 'img/amazon/clothes_man_1/2_4.jpg', 'img/amazon/clothes_man_1/2_5.jpg', 'img/amazon/clothes_man_1/3_1.jpg', 'img/amazon/clothes_man_1/3_2.jpg', 'img/amazon/clothes_man_1/3_3.jpg', 'img/amazon/clothes_man_1/3_4.jpg', 'img/amazon/clothes_man_1/3_5.jpg', 'img/amazon/clothes_man_2/1_1.jpg', 'img/amazon/clothes_man_2/1_2.jpg', 'img/amazon/clothes_man_2/1_3.jpg', 'img/amazon/clothes_man_2/1_4.jpg', 'img/amazon/clothes_man_2/1_5.jpg', 'img/amazon/clothes_man_2/1_6.jpg', 'img/amazon/clothes_man_2/1_7.jpg', 'img/amazon/clothes_man_2/2_1.jpg', 'img/amazon/clothes_man_2/2_2.jpg', 'img/amazon/clothes_man_2/2_3.jpg', 'img/amazon/clothes_man_2/2_4.jpg', 'img/amazon/clothes_man_2/2_5.jpg', 'img/amazon/clothes_man_2/2_6.jpg', 'img/amazon/clothes_man_2/2_7.jpg', 'img/amazon/clothes_man_2/3_1.jpg', 'img/amazon/clothes_man_2/3_2.jpg', 'img/amazon/clothes_man_2/3_3.jpg', 'img/amazon/clothes_man_2/3_4.jpg', 'img/amazon/clothes_man_2/3_5.jpg', 'img/amazon/clothes_man_2/3_6.jpg', 'img/amazon/clothes_man_2/3_7.jpg', 'img/amazon/clothes_woman_1/1_1.jpg', 'img/amazon/clothes_woman_1/1_2.jpg', 'img/amazon/clothes_woman_1/1_3.jpg', 'img/amazon/clothes_woman_1/1_4.jpg', 'img/amazon/clothes_woman_1/1_5.jpg', 'img/amazon/clothes_woman_1/1_6.jpg', 'img/amazon/clothes_woman_1/1_7.jpg', 'img/amazon/clothes_woman_1/2_1.jpg', 'img/amazon/clothes_woman_1/2_2.jpg', 'img/amazon/clothes_woman_1/2_3.jpg', 'img/amazon/clothes_woman_1/2_4.jpg', 'img/amazon/clothes_woman_1/2_5.jpg', 'img/amazon/clothes_woman_1/2_6.jpg', 'img/amazon/clothes_woman_1/3_1.jpg', 'img/amazon/clothes_woman_1/3_2.jpg', 'img/amazon/clothes_woman_1/3_3.jpg', 'img/amazon/clothes_woman_1/3_4.jpg', 'img/amazon/clothes_woman_2/2_1.jpg', 'img/amazon/clothes_woman_2/2_2.jpg', 'img/amazon/clothes_woman_2/2_3.jpg', 'img/amazon/clothes_woman_2/2_4.jpg', 'img/amazon/clothes_woman_2/2_5.jpg', 'img/amazon/clothes_woman_2/2_6.jpg', 'img/amazon/clothes_woman_2/20_1.jpg', 'img/amazon/clothes_woman_2/20_2.jpg', 'img/amazon/clothes_woman_2/20_3.jpg', 'img/amazon/clothes_woman_2/20_4.jpg', 'img/amazon/clothes_woman_2/20_5.jpg', 'img/amazon/clothes_woman_2/20_6.jpg', 'img/amazon/clothes_woman_2/20_7.jpg', 'img/amazon/clothes_woman_2/3_1.jpg', 'img/amazon/clothes_woman_2/3_2.jpg', 'img/amazon/clothes_woman_2/3_3.jpg', 'img/amazon/clothes_woman_2/3_4.jpg', 'img/amazon/defaultUserAvatar.jpg', 'img/amazon/phone_1/1_1.jpg', 'img/amazon/phone_1/2_1.jpg', 'img/amazon/phone_1/2_2.jpg', 'img/amazon/phone_1/2_3.jpg', 'img/amazon/phone_1/2_4.jpg', 'img/amazon/phone_1/2_5.jpg', 'img/amazon/phone_2/1_1.jpg', 'img/amazon/phone_2/1_2.jpg', 'img/amazon/phone_2/1_3.jpg', 'img/amazon/phone_2/1_4.jpg', 'img/amazon/phone_2/1_5.jpg', 'img/amazon/phone_2/1_6.jpg', 'img/amazon/phone_2/2_1.jpg', 'img/amazon/phone_2/2_2.jpg', 'img/amazon/phone_2/2_3.jpg', 'img/amazon/phone_2/2_4.jpg', 'img/amazon/phone_2/2_5.jpg', 'img/amazon/phone_2/2_6.jpg', 'img/amazon/phone_2/3_1.jpg', 'img/amazon/phone_2/3_2.jpg', 'img/amazon/phone_2/3_3.jpg', 'img/amazon/phone_2/3_4.jpg', 'img/amazon/phone_2/3_5.jpg', 'img/amazon/phone_2/3_6.jpg', 'img/amazon/stars_4.5.jpg', 'img/Nview.jpg'], _temp), _possibleConstructorReturn(_this, _ret);
+        }
+
+        return LoadAllImgsComponent;
+    }(Ember.Component);
+
+    exports.default = LoadAllImgsComponent;
+});
+define("amazon/pod/components/load-all-imgs/styles", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = {
+    "root": "_root_jbu17a"
+  };
+});
+define("amazon/pod/components/load-all-imgs/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "ik5LKJbm", "block": "{\"symbols\":[\"img\"],\"statements\":[[4,\"each\",[[22,[\"imgList\"]]],null,{\"statements\":[[0,\"    \"],[6,\"img\"],[11,\"src\",[21,1,[]],null],[10,\"alt\",\"\"],[8],[9],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "amazon/pod/components/load-all-imgs/template.hbs" } });
 });
 define('amazon/pod/components/progress-bar/component', ['exports', '@ember-decorators/object'], function (exports, _object) {
   'use strict';
@@ -6564,6 +6641,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+777eb4fa"});
+  require("amazon/app")["default"].create({"name":"amazon","version":"0.0.0+3bc43a0a"});
 }
 //# sourceMappingURL=amazon.map

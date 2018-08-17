@@ -225,6 +225,11 @@ define('amazon/tests/app.lint-test', [], function () {
     assert.ok(false, 'pod/components/export-xlsx/demo.origin.js should pass ESLint\n\n1:5 - \'jsono\' is assigned a value but never used. (no-unused-vars)\n31:10 - \'downloadExl\' is defined but never used. (no-unused-vars)\n40:7 - \'tmpdata\' is already defined. (no-redeclare)\n44:62 - \'i\' is defined but never used. (no-unused-vars)\n58:3 - Unexpected \'debugger\' statement. (no-debugger)\n59:28 - \'XLSX\' is not defined. (no-undef)\n88:7 - \'temCol\' is assigned a value but never used. (no-unused-vars)');
   });
 
+  QUnit.test('pod/components/load-all-imgs/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pod/components/load-all-imgs/component.js should pass ESLint\n\n');
+  });
+
   QUnit.test('pod/components/progress-bar/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'pod/components/progress-bar/component.js should pass ESLint\n\n');
@@ -619,6 +624,80 @@ define('amazon/tests/integration/pod/components/export-xlsx/component-test', ['q
                                 return (0, _testHelpers.render)(Ember.HTMLBars.template({
                                     "id": "/NXmFISM",
                                     "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"export-xlsx\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                                    "meta": {}
+                                }));
+
+                            case 5:
+                                assert.equal(this.element.textContent.trim(), 'template block text');
+
+                            case 6:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+
+            return function (_x) {
+                return _ref2.apply(this, arguments);
+            };
+        }());
+    });
+});
+define('amazon/tests/integration/pod/components/load-all-imgs/component-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    function _asyncToGenerator(fn) {
+        return function () {
+            var gen = fn.apply(this, arguments);
+            return new Promise(function (resolve, reject) {
+                function step(key, arg) {
+                    try {
+                        var info = gen[key](arg);
+                        var value = info.value;
+                    } catch (error) {
+                        reject(error);
+                        return;
+                    }
+
+                    if (info.done) {
+                        resolve(value);
+                    } else {
+                        return Promise.resolve(value).then(function (value) {
+                            step("next", value);
+                        }, function (err) {
+                            step("throw", err);
+                        });
+                    }
+                }
+
+                return step("next");
+            });
+        };
+    }
+
+    (0, _qunit.module)('Integration | Component | load-all-imgs', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+        (0, _qunit.test)('it renders', function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(assert) {
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.next = 2;
+                                return (0, _testHelpers.render)(Ember.HTMLBars.template({
+                                    "id": "/ZhbiN8w",
+                                    "block": "{\"symbols\":[],\"statements\":[[1,[20,\"load-all-imgs\"],false]],\"hasEval\":false}",
+                                    "meta": {}
+                                }));
+
+                            case 2:
+                                assert.equal(this.element.textContent.trim(), '');
+                                // Template block usage:
+                                _context.next = 5;
+                                return (0, _testHelpers.render)(Ember.HTMLBars.template({
+                                    "id": "+M0iearp",
+                                    "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"load-all-imgs\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
                                     "meta": {}
                                 }));
 
