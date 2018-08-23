@@ -60,7 +60,8 @@
 {{/if}}
 
 {{#if showNextPageDialog}}
-  {{#common-dialog title="Tip" onClickOverlay=(action (mut showNextPageDialog) (not showNextPageDialog)) as |d|}}
+{{!-- onClickOverlay=(action (mut showNextPageDialog) (not showNextPageDialog)) --}}
+  {{#common-dialog title="Tip"  as |d|}}
     {{#d.body class="text-center"}}
       Next page?
     {{/d.body}}
@@ -72,7 +73,8 @@
 {{/if}}
 
 {{#if showSaveTip}}
-{{#common-dialog title="Tip" onClickOverlay=(action (mut showSaveTip) (not showSaveTip)) as |d|}}
+{{!-- onClickOverlay=(action (mut showSaveTip) (not showSaveTip)) --}}
+{{#common-dialog title="Tip"  as |d|}}
   {{#d.body class="text-center"}}
     The current experiment has been completed, please save the data file below the window.
     <!--The current experiment number is {{formattedInvestigateCount}}，Whether to conduct the investigate into the next one？-->
@@ -85,7 +87,8 @@
 {{/if}}
 
 {{#if showSaveConfirm}}
-{{#common-dialog title="Tip" onClickOverlay=(action (mut showSaveConfirm) (not showSaveConfirm)) as |d|}}
+{{!-- onClickOverlay=(action (mut showSaveConfirm) (not showSaveConfirm)) --}}
+{{#common-dialog title="Tip"  as |d|}}
   {{#d.body class="text-center"}}
     Have you saved the experiment data file?
   {{/d.body}}

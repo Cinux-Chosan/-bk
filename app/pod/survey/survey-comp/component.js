@@ -54,6 +54,7 @@ export default class SurveyCompComponent extends Component {
     let { isIE, isLocalFile } = window.env;
     if (isIE && isLocalFile) {
       try {
+        // throw new Error('跳过此步！');
         let { data } = await $.get(`http://mlo.kim:8888/queryCount?t=${Date.now()}`);
         this.set('investigateCount', + data + 1);
       } catch (error) {
@@ -263,9 +264,15 @@ export default class SurveyCompComponent extends Component {
 
   @action
   Quit() {
-    window.opener = null;
-    window.open('','_self');
-    window.close();
+    const browserName = navigator.appName;
+    if (browserName == "Netscape") {
+        window.location.href = "about:blank";                    //关键是这句话
+        window.close();
+    } else if (browserName == "Microsoft Internet Explorer") {
+      window.opener = null;
+      window.open('','_self');
+      window.close();
+    }
   }
 
   async updateStorage() {

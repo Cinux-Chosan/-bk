@@ -242,7 +242,7 @@ define('amazon/tests/app.lint-test', [], function () {
 
   QUnit.test('pod/survey/survey-comp/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'pod/survey/survey-comp/component.js should pass ESLint\n\n113:9 - Unexpected constant condition. (no-constant-condition)\n232:9 - Unexpected constant condition. (no-constant-condition)');
+    assert.ok(false, 'pod/survey/survey-comp/component.js should pass ESLint\n\n114:9 - Unexpected constant condition. (no-constant-condition)\n233:9 - Unexpected constant condition. (no-constant-condition)');
   });
 
   QUnit.test('pod/survey/survey-comp/surveys/survey.1.js', function (assert) {
