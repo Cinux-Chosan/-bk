@@ -18,36 +18,36 @@ export default {
         optDesc: "0962 Grey ",
         thumbnailList: [
           { img: "img/amazon/clothes_woman_1/1_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_7.jpg", optDesc: "" }
+          // { img: "img/amazon/clothes_woman_1/1_2.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_1/1_3.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_1/1_4.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_1/1_5.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_1/1_7.jpg", optDesc: "" }
         ]
       },
-      {
-        cover: "img/amazon/clothes_woman_1/2_1.jpg",
-        optDesc: "0965 White ",
-        thumbnailList: [
-          { img: "img/amazon/clothes_woman_1/2_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/2_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/2_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/2_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/2_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }
-        ]
-      },
-      {
-        cover: "img/amazon/clothes_man_2/3_1.jpg",
-        optDesc: "Blue",
-        thumbnailList: [
-          { img: "img/amazon/clothes_woman_1/3_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/3_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/3_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_1/3_4.jpg", optDesc: "" },
-        ]
-      }
+      // {
+      //   cover: "img/amazon/clothes_woman_1/2_1.jpg",
+      //   optDesc: "0965 White ",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_woman_1/2_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/2_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/2_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/2_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/2_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/1_6.jpg", optDesc: "" }
+      //   ]
+      // },
+      // {
+      //   cover: "img/amazon/clothes_man_2/3_1.jpg",
+      //   optDesc: "Blue",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_woman_1/3_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/3_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/3_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_1/3_4.jpg", optDesc: "" },
+      //   ]
+      // }
     ]
   },
   reviewData: {

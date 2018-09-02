@@ -9,12 +9,12 @@ export default class ApplicationRoute extends Route {
     //     unclosable: ''
     //   }
     // });
-    this.replaceWith("amazon", {
-      queryParams: {
-        g: '5_6',
-        tip: '',
-        unclosable: ''
-      }
-    });
+    // this.replaceWith("amazon", {
+    //   queryParams: {
+    //     g: '5_6',
+    //     tip: '',
+    //     unclosable: ''
+    //   }
+    // });
   }
 }

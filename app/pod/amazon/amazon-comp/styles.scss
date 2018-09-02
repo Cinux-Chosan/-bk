@@ -88,11 +88,18 @@
     margin-left: 60px;
     text-align: center;
     height: 500px;
+    position: relative;
     .previewImg {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 80%;
+      max-height: 80%;
       user-select: none;
       pointer-events: none;
+      position: absolute;
+      top: 0; 
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
     }
   }
 

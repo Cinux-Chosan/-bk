@@ -20,40 +20,40 @@ export default {
         optDesc: "Acid Blue",
         thumbnailList: [
           { img: "img/amazon/clothes_man_2/1_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_6.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/1_7.jpg", optDesc: "" }
+          // { img: "img/amazon/clothes_man_2/1_2.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_man_2/1_3.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_man_2/1_4.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_man_2/1_5.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_man_2/1_6.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_man_2/1_7.jpg", optDesc: "" }
         ]
       },
-      {
-        cover: "img/amazon/clothes_man_2/2_1.jpg",
-        optDesc: "Blue",
-        thumbnailList: [
-          { img: "img/amazon/clothes_man_2/2_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_6.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/2_7.jpg", optDesc: "" }
-        ]
-      },
-      {
-        cover: "img/amazon/clothes_man_2/3_1.jpg",
-        optDesc: "Grey",
-        thumbnailList: [
-          { img: "img/amazon/clothes_man_2/3_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_6.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_man_2/3_7.jpg", optDesc: "" }
-        ]
-      }
+      // {
+      //   cover: "img/amazon/clothes_man_2/2_1.jpg",
+      //   optDesc: "Blue",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_man_2/2_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_6.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/2_7.jpg", optDesc: "" }
+      //   ]
+      // },
+      // {
+      //   cover: "img/amazon/clothes_man_2/3_1.jpg",
+      //   optDesc: "Grey",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_man_2/3_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_6.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_man_2/3_7.jpg", optDesc: "" }
+      //   ]
+      // }
     ]
   },
   reviewData: {

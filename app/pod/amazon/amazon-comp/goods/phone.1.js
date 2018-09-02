@@ -19,17 +19,17 @@ export default {
           { img: "img/amazon/phone_1/1_1.jpg", optDesc: "" },
         ]
       },
-      {
-        cover: "img/amazon/phone_1/2_1.jpg",
-        optDesc: "Space Gray",
-        thumbnailList: [
-          { img: "img/amazon/phone_1/2_1.jpg", optDesc: "" },
-          { img: "img/amazon/phone_1/2_2.jpg", optDesc: "" },
-          { img: "img/amazon/phone_1/2_3.jpg", optDesc: "" },
-          { img: "img/amazon/phone_1/2_4.jpg", optDesc: "" },
-          { img: "img/amazon/phone_1/2_5.jpg", optDesc: "" },
-        ]
-      }
+      // {
+      //   cover: "img/amazon/phone_1/2_1.jpg",
+      //   optDesc: "Space Gray",
+      //   thumbnailList: [
+      //     { img: "img/amazon/phone_1/2_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_1/2_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_1/2_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_1/2_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_1/2_5.jpg", optDesc: "" },
+      //   ]
+      // }
     ]
   },
   reviewData: {

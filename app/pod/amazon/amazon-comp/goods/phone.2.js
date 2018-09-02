@@ -20,50 +20,50 @@ export default {
 
         thumbnailList: [
           { img: "img/amazon/phone_2/1_1.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/1_2.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/1_3.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/1_4.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/1_5.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/1_6.jpg", optDesc: "" },
+          // { img: "img/amazon/phone_2/1_2.jpg", optDesc: "" },
+          // { img: "img/amazon/phone_2/1_3.jpg", optDesc: "" },
+          // { img: "img/amazon/phone_2/1_4.jpg", optDesc: "" },
+          // { img: "img/amazon/phone_2/1_5.jpg", optDesc: "" },
+          // { img: "img/amazon/phone_2/1_6.jpg", optDesc: "" },
         ]
       },
-      {
-        cover: "img/amazon/phone_2/2_1.jpg",
-        optDesc: "Lilac Purple",
-        // title: "Unlocked Smartphone - Lilac Purple - US Warranty ",
-        title: "Cellphone2",
+      // {
+      //   cover: "img/amazon/phone_2/2_1.jpg",
+      //   optDesc: "Lilac Purple",
+      //   // title: "Unlocked Smartphone - Lilac Purple - US Warranty ",
+      //   title: "Cellphone2",
 
-        // details: [
-        //   "Super Speed Dual Pixel Camera ",
-        //   "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",
-        //   "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***",
-        //   "Internal Memory 64 GB. Expandable Storage up to 400GB. Video Recording Resolution : UHD 4K (3840 x 2160)@60fps ",
-        //   "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "
-        // ],
-        thumbnailList: [
-          { img: "img/amazon/phone_2/2_1.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/2_2.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/2_3.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/2_4.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/2_5.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/2_6.jpg", optDesc: "" },
-        ]
-      },
-      {
-        cover: "img/amazon/phone_2/2_1.jpg",
-        optDesc: "Midnight Black",
-        // title: "Unlocked Smartphone - Midnight Black - US Warranty ",
-        title: "Cellphone2",
+      //   // details: [
+      //   //   "Super Speed Dual Pixel Camera ",
+      //   //   "Infinity Display: edge-to-edge immersive screen, enhancing your entertainment experience*",
+      //   //   "IP68 rating: withstands splashes, spills, and rain so it can take a dip, worry-free***",
+      //   //   "Internal Memory 64 GB. Expandable Storage up to 400GB. Video Recording Resolution : UHD 4K (3840 x 2160)@60fps ",
+      //   //   "Fast Wireless Charging: Avoid the wires and power up quickly by placing your phone on a Fast Wireless Charger.***** "
+      //   // ],
+      //   thumbnailList: [
+      //     { img: "img/amazon/phone_2/2_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/2_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/2_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/2_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/2_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/2_6.jpg", optDesc: "" },
+      //   ]
+      // },
+      // {
+      //   cover: "img/amazon/phone_2/2_1.jpg",
+      //   optDesc: "Midnight Black",
+      //   // title: "Unlocked Smartphone - Midnight Black - US Warranty ",
+      //   title: "Cellphone2",
 
-        thumbnailList: [
-          { img: "img/amazon/phone_2/3_1.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/3_2.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/3_3.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/3_4.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/3_5.jpg", optDesc: "" },
-          { img: "img/amazon/phone_2/3_6.jpg", optDesc: "" },
-        ]
-      }
+      //   thumbnailList: [
+      //     { img: "img/amazon/phone_2/3_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_6.jpg", optDesc: "" },
+      //   ]
+      // }
     ]
   },
   reviewData: {

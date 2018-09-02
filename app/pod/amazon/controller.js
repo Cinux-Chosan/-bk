@@ -13,8 +13,9 @@ const GOODS = {
 }
 
 export default class SurveyController extends Controller {
-  queryParams = ['g'];
+  queryParams = ['g', 'linkUrl'];
   g;
+  linkUrl;
   showConfirm = false;
 
   @computed('g')
@@ -31,6 +32,9 @@ export default class SurveyController extends Controller {
 
   @action
   onAdding2Cart(goods) {
+    let linkUrl = this.get('linkUrl');
+    return location.href = linkUrl;
+    
     let goodsList = JSON.parse(myLocalStorage.getItem('goods') || '{}');
     switch (Number(goods)) {
       case GOODS.CLOTHES_MAN_1:

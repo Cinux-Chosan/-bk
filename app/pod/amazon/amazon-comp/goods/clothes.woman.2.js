@@ -18,36 +18,36 @@ export default {
         optDesc: "Pink",
         thumbnailList: [
           { img: "img/amazon/clothes_woman_2/20_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_6.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/20_7.jpg", optDesc: "" }
+          // { img: "img/amazon/clothes_woman_2/20_2.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_2/20_3.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_2/20_4.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_2/20_5.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_2/20_6.jpg", optDesc: "" },
+          // { img: "img/amazon/clothes_woman_2/20_7.jpg", optDesc: "" }
         ]
       },
-      {
-        cover: "img/amazon/clothes_woman_2/2_1.jpg",
-        optDesc: "0860 Red ",
-        thumbnailList: [
-          { img: "img/amazon/clothes_woman_2/2_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/2_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/2_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/2_4.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/2_5.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/2_6.jpg", optDesc: "" }
-        ]
-      },
-      {
-        cover: "img/amazon/clothes_man_2/3_1.jpg",
-        optDesc: "0860 White",
-        thumbnailList: [
-          { img: "img/amazon/clothes_woman_2/3_1.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/3_2.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/3_3.jpg", optDesc: "" },
-          { img: "img/amazon/clothes_woman_2/3_4.jpg", optDesc: "" },
-        ]
-      }
+      // {
+      //   cover: "img/amazon/clothes_woman_2/2_1.jpg",
+      //   optDesc: "0860 Red ",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_woman_2/2_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/2_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/2_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/2_4.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/2_5.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/2_6.jpg", optDesc: "" }
+      //   ]
+      // },
+      // {
+      //   cover: "img/amazon/clothes_man_2/3_1.jpg",
+      //   optDesc: "0860 White",
+      //   thumbnailList: [
+      //     { img: "img/amazon/clothes_woman_2/3_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/3_2.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/3_3.jpg", optDesc: "" },
+      //     { img: "img/amazon/clothes_woman_2/3_4.jpg", optDesc: "" },
+      //   ]
+      // }
     ]
   },
   reviewData: {
