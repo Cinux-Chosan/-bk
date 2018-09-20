@@ -97,6 +97,7 @@ export default class SurveyController extends Controller {
 
   @action
   showConfirm(activeGoodsNumber, activeThumbnail, activeOpts, activeGoods) {
+    return location.href = this.get('linkUrl');   // 现在用户不需要显示弹窗了，直接跳转，改得心累
     this.set('activeGoodsNumber', activeGoodsNumber);
     this.set('activeThumbnail', activeThumbnail);
     this.set('activeGoods', activeGoods);

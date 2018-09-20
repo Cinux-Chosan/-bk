@@ -13,13 +13,13 @@ export default {
     ],
     opts: [
       {
-        cover: "img/amazon/phone_2/1_1.jpg",
+        cover: "img/amazon/phone_2/3_1_no_make.jpg",
         optDesc: "Coral Blue",
         // title: "Unlocked Smartphone - Coral Blue - US Warranty",
         title: "Cellphone2",
 
         thumbnailList: [
-          { img: "img/amazon/phone_2/1_1.jpg", optDesc: "" },
+          { img: "img/amazon/phone_2/3_1_no_make.jpg", optDesc: "" },
           // { img: "img/amazon/phone_2/1_2.jpg", optDesc: "" },
           // { img: "img/amazon/phone_2/1_3.jpg", optDesc: "" },
           // { img: "img/amazon/phone_2/1_4.jpg", optDesc: "" },
@@ -56,7 +56,7 @@ export default {
       //   title: "Cellphone2",
 
       //   thumbnailList: [
-      //     { img: "img/amazon/phone_2/3_1.jpg", optDesc: "" },
+      //     { img: "img/amazon/phone_2/3_1_no_make.jpg", optDesc: "" },
       //     { img: "img/amazon/phone_2/3_2.jpg", optDesc: "" },
       //     { img: "img/amazon/phone_2/3_3.jpg", optDesc: "" },
       //     { img: "img/amazon/phone_2/3_4.jpg", optDesc: "" },
